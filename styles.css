@@ -138,6 +138,23 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
 .pill.down { background: var(--down-bg); color: var(--down); }
 .pill.flat { background: #f1f3f9; color: var(--muted); }
 
+/* ===== 筛选胶囊（课程 / 新闻分类） ===== */
+.filter-chip {
+  flex: none; border: 1px solid #e3e8f2; border-radius: 20px;
+  background: #fff; color: var(--muted); font-family: inherit;
+  font-size: 12px; padding: 5px 10px; cursor: pointer;
+  transition: background .15s, color .15s, border-color .15s;
+}
+.filter-chip em { font-style: normal; margin-left: 4px; color: #b0b8c7; }
+.filter-chip.active {
+  background: var(--primary-soft); border-color: #cdd7ff;
+  color: var(--primary); font-weight: 600;
+}
+.filter-chip.active em { color: var(--primary); }
+.lesson-filters, .news-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.lesson-filters { margin: 2px 0 8px; }
+.news-filters { margin-top: 10px; }
+
 /* ===== 分段式子导航 ===== */
 .subnav {
   display: flex; gap: 4px; margin-bottom: 14px;
@@ -444,7 +461,14 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
 .tabbar button.active .tab-icon { transform: translateY(-2px) scale(1.12); }
 
 /* ===== 宽屏（桌面 APP）双布局：左侧边栏 + 内容区 ===== */
-.side-brand, .tabbar .side-guide, .app-footer { display: none; }
+.side-brand, .tabbar .side-guide { display: none; }
+.app-footer {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+  gap: 8px 12px; padding: 18px 0 0;
+  color: var(--muted); font-size: 12px; letter-spacing: .2px;
+}
+.app-footer .footer-version { color: #9aa3b5; font-variant-numeric: tabular-nums; }
+@media (max-width: 719px) { .app-footer .footer-tag { display: none; } }
 
 @media (min-width: 720px) {
   .topbar { display: none; }
@@ -667,6 +691,21 @@ kbd {
 .news-more { margin-top: auto; font-size: 12.5px; font-weight: 600; color: var(--primary); }
 .news-empty { text-align: center; padding: 40px 20px; }
 .news-empty .btn { margin-top: 12px; }
+.news-item[data-open] { cursor: pointer; }
+.news-reader { padding: 20px 22px 18px; }
+.news-reader-top { margin-bottom: 14px; }
+.news-reader .news-meta { max-width: 760px; margin: 0 auto 6px; }
+.news-reader-title { font-size: 24px; line-height: 1.45; margin: 8px auto 16px; max-width: 760px; }
+.news-reader-body { max-width: 760px; margin: 0 auto; }
+.news-reader-body p {
+  font-size: 16px; line-height: 1.9; color: #2d3648;
+  margin-bottom: 14px;
+}
+.news-reader-err { color: var(--up); }
+.news-reader-foot {
+  max-width: 760px; margin: 18px auto 0; padding-top: 12px;
+  border-top: 1px dashed #e8ecf5; font-size: 12px;
+}
 @media (hover: hover) {
   .news-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16, 24, 40, .08); }
 }
