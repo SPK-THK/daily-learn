@@ -1,9 +1,19 @@
 /* 离线缓存：首次打开后，断网/电脑关机也能打开应用；行情请求走网络，不做缓存。 */
-const CACHE = 'daily-learn-2.1.0-mvv4ryvx';
+const CACHE = 'daily-learn-2.1.0-mvv5zx14';
 const ASSETS = [
   './', './index.html', './app.js', './styles.css',
   './manifest.webmanifest',
   './icons/icon-180.png', './icons/icon-192.png', './icons/icon-512.png',
+    './english/audio/quotes/q0.mp3',
+  './english/audio/quotes/q1.mp3',
+  './english/audio/quotes/q2.mp3',
+  './english/audio/quotes/q3.mp3',
+  './english/audio/quotes/q4.mp3',
+  './english/audio/quotes/q5.mp3',
+  './english/audio/quotes/q6.mp3',
+  './english/audio/quotes/q7.mp3',
+  './english/audio/quotes/q8.mp3',
+  './english/audio/quotes/q9.mp3'
 ];
 
 self.addEventListener('install', e => {

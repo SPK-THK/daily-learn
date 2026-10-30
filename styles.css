@@ -41,6 +41,16 @@ body {
 }
 .topbar-inner { max-width: 640px; margin: 0 auto; padding: 24px 16px 0; }
 .topbar-row { display: flex; align-items: flex-start; justify-content: space-between; }
+.top-actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.install-btn {
+  border: 1.5px solid rgba(255, 255, 255, .55);
+  background: rgba(255, 255, 255, .14); color: #fff;
+  border-radius: 20px; padding: 8px 12px;
+  font-size: 12.5px; font-weight: 600; font-family: inherit;
+  cursor: pointer; white-space: nowrap;
+  transition: transform .15s, background .15s;
+}
+.install-btn:active { transform: scale(.95); background: rgba(255, 255, 255, .28); }
 .topbar h1 { font-size: 24px; letter-spacing: 2px; }
 .date-line { opacity: .88; font-size: 13px; }
 .guide-btn {
@@ -82,6 +92,22 @@ body {
   padding: 12px 14px; font-size: 13.5px; line-height: 1.7;
 }
 .guide-more b { color: #b5760a; }
+
+/* 下载 / 安装弹窗 */
+.install-dialog { width: min(92vw, 520px); }
+.install-steps { list-style: none; margin: 14px 0; display: grid; gap: 10px; }
+.install-steps li { background: #f6f8fd; border-radius: 12px; padding: 12px 14px; }
+.install-steps b { display: block; font-size: 14px; margin-bottom: 3px; }
+.install-steps span { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.install-link { display: flex; gap: 8px; margin-top: 12px; }
+.install-link input {
+  flex: 1; min-width: 0; border: 1.5px solid #dde2ec; border-radius: 10px;
+  padding: 9px 11px; font-size: 12.5px; font-family: inherit;
+  color: var(--text); background: #fafbfe;
+}
+.install-link .btn { flex: none; }
+#install-msg { margin-top: 8px; }
+#install-msg:not(:empty) { background: #f0faf2; border-radius: 8px; padding: 6px 10px; color: var(--down); }
 
 main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; position: relative; }
 .pane { animation: rise .28s ease; }
@@ -353,7 +379,14 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
   opacity: .2; margin-bottom: 2px;
 }
 .quote-en { font-size: 18px; line-height: 1.7; margin: 14px 0; }
-.quote-actions { max-width: 380px; margin: 18px auto 0; }
+.quote-actions { max-width: 480px; margin: 18px auto 0; }
+.quote-actions .btn {
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; text-decoration: none;
+}
+@media (max-width: 420px) {
+  .quote-actions .btn { font-size: 13px; padding: 12px 0; }
+}
 
 /* ===== 行情 ===== */
 .chip-row { display: flex; gap: 8px; margin: 10px 0 2px; }
@@ -461,7 +494,7 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
 .tabbar button.active .tab-icon { transform: translateY(-2px) scale(1.12); }
 
 /* ===== 宽屏（桌面 APP）双布局：左侧边栏 + 内容区 ===== */
-.side-brand, .tabbar .side-guide { display: none; }
+.side-brand, .tabbar .side-guide, .side-install { display: none; }
 .app-footer {
   display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
   gap: 8px 12px; padding: 18px 0 0;
@@ -497,7 +530,16 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
     box-shadow: inset 3px 0 0 #fff;
   }
   .tabbar button.active .tab-icon { transform: none; }
-  .tabbar .side-guide { display: flex; margin-top: auto; align-self: flex-start; margin-left: 10px; }
+  .tabbar .side-install {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    margin-top: auto; padding: 10px 14px;
+    background: rgba(255, 255, 255, .14);
+    border: 1px solid rgba(255, 255, 255, .3);
+    border-radius: 12px; color: #fff;
+    font-size: 13px; letter-spacing: .5px;
+  }
+  .tabbar .side-install:hover { background: rgba(255, 255, 255, .22); }
+  .tabbar .side-guide { display: flex; margin-top: 8px; align-self: flex-start; margin-left: 10px; }
 
   main#view {
     margin-left: 208px; max-width: 800px;
