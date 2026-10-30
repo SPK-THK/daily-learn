@@ -214,6 +214,48 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
 .tip-row b { display: block; font-size: 13.5px; margin-bottom: 1px; }
 .tip-row .hint { display: block; font-size: 12px; }
 
+/* 平板/大屏的今日金句（手机上不重复展示） */
+.today-quote { display: none; }
+.week-card { display: none; }
+
+@media (min-width: 720px) {
+  #pane-today .week-card {
+    display: block; grid-column: 1 / -1;
+  }
+  .week-more { margin: 0; padding: 4px 8px; font-size: 12px; }
+  .week-bars { display: flex; align-items: flex-end; gap: 6px; height: 90px; margin: 10px 0 8px; }
+  .week-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
+  .week-track {
+    width: 52px; max-width: 100%; height: 64px; margin: 0 auto; border-radius: 8px;
+    background: #f4f6fb; display: flex; align-items: flex-end; overflow: hidden;
+  }
+  .week-fill {
+    display: block; width: 100%; min-height: 3px; border-radius: 7px;
+    background: #3b5bfd; transition: height .45s ease;
+  }
+  .week-fill.lv-0 { background: #dde3ee; }
+  .week-fill.lv-1 { background: #a9b8ff; }
+  .week-fill.lv-2 { background: #6f8bff; }
+  .week-fill.lv-3 { background: #3b5bfd; }
+  .week-bar.today .week-fill { background: linear-gradient(180deg, #ffc94d, #f59f00); }
+  .week-bar span { font-size: 11px; color: var(--muted); }
+  .week-bar.today span { color: var(--text); font-weight: 700; }
+}
+
+@media (min-width: 1000px) {
+  #pane-today .today-quote {
+    display: block; grid-column: 1 / -1;
+    text-align: center; padding: 20px 30px 22px;
+    background: linear-gradient(150deg, #eef2ff 0%, #f6f0ff 55%, #fdeef6 100%);
+  }
+  .today-quote-mark {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 46px; line-height: .6; color: var(--primary); opacity: .22;
+  }
+  .today-quote-en { font-size: 17px; line-height: 1.7; margin: 10px auto 8px; max-width: 64ch; }
+  .today-quote-zh { font-size: 16px; font-weight: 600; line-height: 1.7; margin-bottom: 6px; }
+}
+
 /* ===== 进度条 ===== */
 .progress-track { height: 8px; border-radius: 6px; background: #eef1f7; margin: 10px 0 8px; overflow: hidden; }
 .progress-fill { height: 100%; background: linear-gradient(90deg, #3b5bfd, #9c36d6); border-radius: 6px; transition: width .4s; }
@@ -474,6 +516,25 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
   .streak-num { font-size: 30px; }
 }
 
+/* 大平板 / 横屏：内容区加宽，今日页三栏，避免右侧大片留白 */
+@media (min-width: 1100px) {
+  main#view { max-width: 1100px; padding-left: 20px; padding-right: 20px; }
+}
+
+@media (min-width: 1200px) {
+  #pane-today { grid-template-columns: minmax(0, 4fr) minmax(0, 5fr) minmax(0, 4fr); }
+  #pane-today .streak-card { grid-column: 1; grid-row: 1; }
+  #pane-today .tasks-card { grid-column: 2; grid-row: 1; }
+  #pane-today .tips-card {
+    grid-column: 3; grid-row: 1;
+    display: block;
+  }
+  #pane-today .tips-card .card-title { margin-bottom: 6px; }
+  #pane-today .tips-card .tip-row { border-bottom: 1px dashed #e8ecf5; padding: 10px 0; }
+  #pane-today .tips-card .tip-row:last-child { border-bottom: 0; padding-bottom: 0; }
+  #pane-today .footnote { grid-column: 1 / -1; }
+}
+
 /* ===== 行情表头 ===== */
 .q-head {
   display: grid; grid-template-columns: minmax(0, 1fr) 104px 86px 26px; gap: 10px;
@@ -515,6 +576,13 @@ kbd {
   .flashcard { min-height: 340px; }
   .word { font-size: 30px; }
   .fc-tip { margin-top: 16px; }
+}
+@media (min-width: 1000px) {
+  .flashcard { min-height: 470px; }
+  .flashcard .fc-body { align-items: center; text-align: center; }
+  .flashcard #fc-back { text-align: left; width: 100%; align-self: stretch; }
+  .flashcard .chips { align-items: flex-start; }
+  .flashcard .phrase-chip { align-self: flex-start; }
 }
 
 /* ===== 桌面微交互 ===== */
@@ -679,6 +747,18 @@ kbd {
 }
 
 /* ===== 全局细节 ===== */
+.app-toast {
+  position: fixed; left: 50%; bottom: calc(86px + env(safe-area-inset-bottom));
+  transform: translate(-50%, 10px);
+  max-width: 82vw; padding: 10px 16px; border-radius: 12px;
+  background: rgba(28, 35, 51, .92); color: #fff;
+  font-size: 13px; line-height: 1.5; text-align: center;
+  opacity: 0; pointer-events: none; z-index: 60;
+  transition: opacity .2s, transform .2s;
+}
+.app-toast.show { opacity: 1; transform: translate(-50%, 0); }
+@media (min-width: 720px) { .app-toast { bottom: 28px; } }
+
 .q-price, .k-pct, .k-range, .stat-tile b, .streak-num, .ring-label,
 .vocab-total b, .box-row b, .ach-state, .q-head, .k-meta {
   font-variant-numeric: tabular-nums;
