@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pages: write
 
 concurrency:
   group: news-update
@@ -23,9 +24,11 @@ jobs:
       - name: Fetch Eastmoney news
         run: node scripts/fetch-news.mjs
       - name: Commit when changed
+        id: commit
         run: |
           if git diff --quiet -- news.json; then
             echo "news.json unchanged"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
@@ -33,3 +36,12 @@ jobs:
           git add news.json
           git commit -m "chore: update financial news"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Trigger Pages rebuild
+        if: steps.commit.outputs.changed == 'true'
+        run: |
+          curl -sS -X POST \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${{ github.repository }}/pages/builds"
