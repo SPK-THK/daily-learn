@@ -226,7 +226,7 @@ main#view { max-width: 640px; margin: -12px auto 0; padding: 14px 14px 100px; po
   .week-bars { display: flex; align-items: flex-end; gap: 6px; height: 90px; margin: 10px 0 8px; }
   .week-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; height: 100%; justify-content: flex-end; }
   .week-track {
-    width: 52px; max-width: 100%; height: 64px; margin: 0 auto; border-radius: 8px;
+    width: 100%; max-width: 96px; height: 64px; margin: 0 auto; border-radius: 8px;
     background: #f4f6fb; display: flex; align-items: flex-end; overflow: hidden;
   }
   .week-fill {

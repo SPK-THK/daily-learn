@@ -1,5 +1,5 @@
 /* 离线缓存：首次打开后，断网/电脑关机也能打开应用；行情请求走网络，不做缓存。 */
-const CACHE = 'daily-learn-1.9.0-mvuuis7r';
+const CACHE = 'daily-learn-1.9.0-mvuum3wj';
 const ASSETS = [
   './', './index.html', './app.js', './styles.css',
   './manifest.webmanifest',
