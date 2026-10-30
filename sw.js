@@ -1,5 +1,5 @@
 /* 离线缓存：首次打开后，断网/电脑关机也能打开应用；行情请求走网络，不做缓存。 */
-const CACHE = 'daily-learn-1.9.0-mvuum3wj';
+const CACHE = 'daily-learn-1.9.0-mvv43ij5';
 const ASSETS = [
   './', './index.html', './app.js', './styles.css',
   './manifest.webmanifest',
@@ -21,6 +21,17 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // 行情接口不缓存
+  // 新闻快照走网络优先：每次打开尽量取最新，断网再回退缓存
+  if (url.pathname.endsWith('/news.json')) {
+    e.respondWith(
+      fetch(req).then(res => {
+        const copy = res.clone();
+        caches.open(CACHE).then(c => c.put(req, copy));
+        return res;
+      }).catch(() => caches.match(req))
+    );
+    return;
+  }
   e.respondWith(
     caches.match(req).then(hit => hit || fetch(req).then(res => {
       const copy = res.clone();
