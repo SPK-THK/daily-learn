@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#3b5bfd" />
+  <meta name="description" content="每日打卡：英语学习、A股行情与学习统计" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="每日进化" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <title>每日进化 · 英语 × 股票</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- 窄屏顶栏（宽屏隐藏，品牌与日期移至侧边栏） -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-row">
+        <div>
+          <h1>每日进化</h1>
+          <span class="greet js-greet"></span><span class="date-line js-date"></span>
+          <span class="streak-badge js-streak">🔥 0 天</span>
+        </div>
+        <div class="top-actions">
+          <button class="install-btn js-install-btn" title="下载 / 安装到手机">⬇ 下载</button>
+          <button class="guide-btn js-guide-btn" title="使用教程">?</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="view"></main>
+
+  <!-- 窄屏=底部Tab；宽屏=左侧边栏（含品牌/日期/导航/教程入口） -->
+  <nav class="tabbar">
+    <div class="side-brand">
+      <h1>每日进化</h1>
+      <span class="greet js-greet"></span><span class="date-line js-date"></span>
+      <span class="streak-badge js-streak">🔥 0 天</span>
+    </div>
+    <button data-tab="today" class="active"><span class="tab-icon">✅</span><span>今日</span></button>
+    <button data-tab="stock"><span class="tab-icon">📈</span><span>股票</span></button>
+    <button data-tab="english"><span class="tab-icon">📖</span><span>英语</span></button>
+    <button data-tab="news"><span class="tab-icon">📰</span><span>资讯</span></button>
+    <button data-tab="stats"><span class="tab-icon">🏅</span><span>统计</span></button>
+    <button class="install-btn side-install js-install-btn" title="下载 / 安装到手机">⬇ 下载 App</button>
+    <button class="guide-btn js-guide-btn side-guide" title="使用教程">?</button>
+  </nav>
+
+  <dialog id="guide-dialog" class="guide-dialog">
+    <div class="guide-head">
+      <h2>📖 使用教程</h2>
+      <button id="guide-close" class="icon-btn">✕</button>
+    </div>
+    <ol class="guide-steps">
+      <li><b>📈 看一眼自选行情</b><span>进入「股票」页点「刷新」，红涨绿跌一目了然；当日刷新一次即完成「复盘自选股」打卡。</span></li>
+      <li><b>📖 完成今日单词</b><span>「英语 → 背单词」：看卡片 → 显示答案 → 如实选择「记住了 / 又忘了」。系统按遗忘曲线（1/2/4/7/15 天）安排复习，翻面后还有常用搭配和记忆点。</span></li>
+      <li><b>📰 读一篇双语短文</b><span>「英语 → 双语阅读」读今日推荐：段落对照翻译，点词汇可发音，文末有语法讲解，读完标记已读。</span></li>
+    </ol>
+    <div class="guide-more">
+      <p><b>🎯 打卡规则</b>：今日三项全部完成 = 打卡成功，连续天数持续累积。</p>
+      <p><b>🏅 查看成长</b>：「统计」页有 8 周打卡日历、词汇分布和成就墙，记录越多，颜色越深。</p>
+      <p><b>🎓 进阶课程</b>：「股票 → 入门教程」有 8 节零基础课（正文 + 要点 + 小测验），每天一节更健康。</p>
+      <p><b>🔊 发音</b>：单词、词组、金句、词汇表都可点击喇叭朗读（需要浏览器支持语音）。</p>
+      <p><b>💾 数据说明</b>：所有学习记录保存在本机浏览器，无需注册登录；换设备可用下方按钮迁移。</p>
+    </div>
+    <div class="data-io">
+      <h3>📦 数据导出 / 导入</h3>
+      <p class="hint">导出为 JSON 备份文件；导入会<b>合并</b>到当前记录（同名键以导入为准），不会清空现有数据。</p>
+      <div class="row-gap">
+        <button id="data-export" class="btn">⬇️ 导出备份</button>
+        <button id="data-import-btn" class="btn">⬆️ 导入备份</button>
+        <input type="file" id="data-import-file" accept="application/json,.json" class="hidden" />
+      </div>
+      <p id="data-msg" class="hint"></p>
+    </div>
+  </dialog>
+
+  <dialog id="install-dialog" class="guide-dialog install-dialog">
+    <div class="guide-head">
+      <h2>📲 下载 / 安装到手机</h2>
+      <button id="install-close" class="icon-btn">✕</button>
+    </div>
+    <p class="hint">装到主屏幕后，电脑关机、断网也能打开；学习记录仍然只保存在本机。</p>
+    <ol class="install-steps">
+      <li><b>iPhone / iPad</b><span>用 Safari 打开，点底部「分享」→「添加到主屏幕」。</span></li>
+      <li><b>Android</b><span>用 Chrome 打开，点右上角 ⋮ →「安装应用」或「添加到主屏幕」。</span></li>
+      <li><b>电脑</b><span>打开下面地址，用手机扫码或把链接发到手机。</span></li>
+    </ol>
+    <div class="install-link">
+      <input id="install-url" readonly />
+      <button id="install-copy" class="btn small">复制链接</button>
+    </div>
+    <p id="install-msg" class="hint"></p>
+  </dialog>
+  
+<script src="./shim.js"></script>
+<script src="./app.js"></script>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>

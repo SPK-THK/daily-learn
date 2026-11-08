@@ -1,0 +1,243 @@
+{
+ "articles": [
+  {
+   "id": "price-move",
+   "title": "Why Do Stock Prices Move? 股价为什么会波动？",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "A stock price is simply the price buyers and sellers agree on at a moment. When more people want to buy than to sell, the price goes up. When more people want to sell, it goes down.",
+     "zh": "股价就是买卖双方在某一时刻达成的价格。当想买的人多于想卖的人，价格就上涨；当想卖的人更多，价格就下跌。"
+    },
+    {
+     "en": "Behind the buying and selling are expectations. If investors believe a company will earn more in the future, they are willing to pay more for its shares today. Bad news about profits can push the price down quickly.",
+     "zh": "买卖的背后是预期。如果投资者相信一家公司未来能赚更多钱，他们今天就愿意为它的股票付更高的价格。而盈利方面的坏消息会让股价迅速下跌。"
+    },
+    {
+     "en": "Emotions matter too. Fear can make a whole market fall at once, and greed can lift prices far above what a business is really worth. Learning to notice these emotions — in the market and in yourself — is the first step of investing.",
+     "zh": "情绪同样重要。恐惧可以让整个市场同时下跌，贪婪可以把价格抬到远超企业真实价值的水平。学会觉察这些情绪——市场中的和你自己的——是投资的第一步。"
+    }
+   ],
+   "notes": [
+    "agree on sth. 固定搭配：就某事达成一致，介词用 on",
+    "be willing to do 愿意做某事——写作口语双料高频",
+    "far above 远高于；反义 far below 远低于",
+    "in the market and in yourself：介词短语并列，emphasis 结构收尾有力"
+   ],
+   "vocab": [
+    {
+     "w": "expectation",
+     "zh": "预期"
+    },
+    {
+     "w": "investor",
+     "zh": "投资者"
+    },
+    {
+     "w": "profit",
+     "zh": "盈利"
+    },
+    {
+     "w": "emotion",
+     "zh": "情绪"
+    },
+    {
+     "w": "worth",
+     "zh": "价值"
+    }
+   ]
+  },
+  {
+   "id": "bull-bear",
+   "title": "Bull and Bear Markets 牛市与熊市",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "A bull market is a long period in which prices keep rising and people feel confident. A bear market is the opposite: prices fall, often by twenty percent or more, and pessimism spreads.",
+     "zh": "牛市是价格持续上涨、人们充满信心的漫长时期。熊市则相反：价格下跌，跌幅常常达到百分之二十以上，悲观情绪蔓延。"
+    },
+    {
+     "en": "No one can predict exactly when a bull becomes a bear. But history shows one thing clearly: markets have always recovered from every bear market so far, though it can take months or years.",
+     "zh": "没有人能精确预测牛市何时变成熊市。但历史清楚地表明一件事：到目前为止，市场总能从每一次熊市中恢复过来，尽管这可能需要数月甚至数年。"
+    },
+    {
+     "en": "For a beginner, the lesson is simple. In a bull market, stay humble and avoid chasing prices. In a bear market, stay patient — cheap prices are the friend of the long-term buyer.",
+     "zh": "对初学者来说，教训很简单。牛市里保持谦逊，不要追涨；熊市里保持耐心——便宜的价格是长期买入者的朋友。"
+    }
+   ],
+   "notes": [
+    "in which prices keep rising：介词 + which 的定语从句，正式书面句式",
+    "so far 到目前为止——现在完成时的标志性时间状语",
+    "avoid doing sth.：avoid 后接动名词，不说 avoid to do",
+    "破折号 — 引出补充解释，比逗号更有强调感"
+   ],
+   "vocab": [
+    {
+     "w": "period",
+     "zh": "时期"
+    },
+    {
+     "w": "confident",
+     "zh": "自信的"
+    },
+    {
+     "w": "pessimism",
+     "zh": "悲观情绪"
+    },
+    {
+     "w": "predict",
+     "zh": "预测"
+    },
+    {
+     "w": "recover",
+     "zh": "恢复"
+    },
+    {
+     "w": "humble",
+     "zh": "谦逊的"
+    }
+   ]
+  },
+  {
+   "id": "compound",
+   "title": "Compound Interest: The Eighth Wonder 复利：第八大奇迹",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "Compound interest means your money earns returns, and then those returns earn returns too. A small sum, given enough time, can grow far beyond your intuition.",
+     "zh": "复利是指你的钱产生收益，而这些收益又继续产生收益。一笔小钱，只要时间够长，可以增长到远超直觉的程度。"
+    },
+    {
+     "en": "Suppose you invest 10,000 yuan at an 8% yearly return. In 10 years it becomes about 21,600; in 30 years, about 100,600. The last ten years add more than the first twenty combined.",
+     "zh": "假设你以每年 8% 的收益投资一万元。十年后它变成约 21,600 元；三十年后约 100,600 元。最后十年增加的部分，超过了前二十年的总和。"
+    },
+    {
+     "en": "The same rule applies to learning. Twenty English words a day feels small, but a year of consistency is more than seven thousand words. Time multiplies small daily actions — this is the real logic behind this app.",
+     "zh": "同样的规律也适用于学习。每天二十个单词看起来很少，但坚持一年就是七千多个。时间会放大微小的日常行动——这正是这个 APP 背后的真正逻辑。"
+    }
+   ],
+   "notes": [
+    "given enough time = if given enough time，条件句的省略式（写作加分）",
+    "Suppose (that)… 假设……，引出演算例子，比 if 更正式",
+    "apply to 适用于——the rule applies to learning 规律适用于学习",
+    "combined 作后置定语：the first twenty combined 前两者之和"
+   ],
+   "vocab": [
+    {
+     "w": "return",
+     "zh": "收益"
+    },
+    {
+     "w": "intuition",
+     "zh": "直觉"
+    },
+    {
+     "w": "invest",
+     "zh": "投资"
+    },
+    {
+     "w": "consistency",
+     "zh": "坚持不懈"
+    },
+    {
+     "w": "multiply",
+     "zh": "放大；相乘"
+    }
+   ]
+  },
+  {
+   "id": "pe-ratio",
+   "title": "What Is a P/E Ratio? 市盈率是什么？",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "The P/E ratio, or price-to-earnings ratio, is the price of a stock divided by its earnings per share. In plain words, it tells you how many years it would take to earn back your investment, assuming profits stay the same.",
+     "zh": "市盈率（P/E）等于股价除以每股盈利。用大白话说：假设利润不变，它告诉你需要几年才能赚回你的投资。"
+    },
+    {
+     "en": "A high P/E often means investors expect fast growth. A low P/E may signal a boring but stable business — or a company in trouble. The number alone never tells the whole story.",
+     "zh": "高市盈率往往意味着投资者期待快速增长。低市盈率可能代表一门无聊但稳定的生意——也可能是一家陷入麻烦的公司。单看数字永远讲不出全部真相。"
+    },
+    {
+     "en": "Smart investors compare the P/E with the company's own history and with other companies in the same industry. A ratio means something only in context.",
+     "zh": "聪明的投资者会把市盈率和公司自身的历史比、和同行业的公司比。任何比率只有在对比中才有意义。"
+    }
+   ],
+   "notes": [
+    "price-to-earnings：数字复合形容词用连字符合成，如 a 10-year plan",
+    "assuming profits stay the same = if we assume…，分词引出前提",
+    "signal 作动词=预示/表明，财经新闻高频",
+    "in context 在具体背景下——对比才有意义"
+   ],
+   "vocab": [
+    {
+     "w": "ratio",
+     "zh": "比率"
+    },
+    {
+     "w": "earnings",
+     "zh": "盈利"
+    },
+    {
+     "w": "signal",
+     "zh": "预示；信号"
+    },
+    {
+     "w": "stable",
+     "zh": "稳定的"
+    },
+    {
+     "w": "compare",
+     "zh": "比较"
+    }
+   ]
+  },
+  {
+   "id": "position-size",
+   "title": "Don't Bet the Farm 仓位管理：别押上全部家当",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "Betting the farm means risking everything on one move. In investing, it happens when someone puts most of their money into a single stock, hoping to get rich quickly.",
+     "zh": "『押上农场』就是孤注一掷。在投资中，它发生在一个人把大部分钱押进一只股票、幻想快速暴富的时候。"
+    },
+    {
+     "en": "Professional money managers follow a simple rule: no single position should be large enough to destroy the whole portfolio. If one company fails, the rest can still carry you forward.",
+     "zh": "职业基金经理遵守一条简单规则：任何单一持仓都不应大到足以摧毁整个组合。就算一家公司倒下，其余部分仍能带你继续前行。"
+    },
+    {
+     "en": "The math is cruel: a 50% loss needs a 100% gain just to break even. Protecting your capital is not cowardice — it is the first skill of surviving the market.",
+     "zh": "数学很残酷：亏损 50%，需要盈利 100% 才能回本。保护本金不是怯懦——它是你在市场里活下来的第一项技能。"
+    }
+   ],
+   "notes": [
+    "bet the farm 习语：孤注一掷（把农场都押上）",
+    "large enough to…：enough to do 足以……的经典结构",
+    "break even 固定表达：不赚不亏、打平",
+    "冒号 + 解释：The math is cruel: … 口语演讲皆可用的强调句式"
+   ],
+   "vocab": [
+    {
+     "w": "position",
+     "zh": "仓位；头寸"
+    },
+    {
+     "w": "portfolio",
+     "zh": "投资组合"
+    },
+    {
+     "w": "capital",
+     "zh": "本金；资本"
+    },
+    {
+     "w": "survive",
+     "zh": "存活"
+    },
+    {
+     "w": "risk",
+     "zh": "风险"
+    }
+   ]
+  }
+ ]
+}

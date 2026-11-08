@@ -1,0 +1,64 @@
+{
+ "quotes": [
+  {
+   "en": "Rule No.1: Never lose money. Rule No.2: Never forget rule No.1.",
+   "zh": "规则一：永远不要亏钱。规则二：永远不要忘记规则一。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q0.mp3"
+  },
+  {
+   "en": "Be fearful when others are greedy, and greedy when others are fearful.",
+   "zh": "别人贪婪时我恐惧，别人恐惧时我贪婪。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q1.mp3"
+  },
+  {
+   "en": "Price is what you pay; value is what you get.",
+   "zh": "价格是你付出的，价值是你得到的。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q2.mp3"
+  },
+  {
+   "en": "The stock market is a device for transferring money from the impatient to the patient.",
+   "zh": "股市是一种把钱从没耐心的人转移给有耐心的人的装置。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q3.mp3"
+  },
+  {
+   "en": "It takes 20 years to build a reputation and five minutes to ruin it.",
+   "zh": "建立声誉需要二十年，毁掉它只需五分钟。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q4.mp3"
+  },
+  {
+   "en": "The best time to plant a tree was 20 years ago. The second best time is now.",
+   "zh": "种一棵树最好的时间是二十年前，其次是现在。",
+   "who": "Proverb 谚语",
+   "audio": "english/audio/quotes/q5.mp3"
+  },
+  {
+   "en": "We don't have to be smarter than the rest. We have to be more disciplined than the rest.",
+   "zh": "我们不必比别人更聪明，只需比别人更自律。",
+   "who": "Warren Buffett",
+   "audio": "english/audio/quotes/q6.mp3"
+  },
+  {
+   "en": "An investment in knowledge pays the best interest.",
+   "zh": "对知识的投资回报最高。",
+   "who": "Benjamin Franklin",
+   "audio": "english/audio/quotes/q7.mp3"
+  },
+  {
+   "en": "Beware of little expenses; a small leak will sink a great ship.",
+   "zh": "小心小额开支；小漏洞也能沉大船。",
+   "who": "Benjamin Franklin",
+   "audio": "english/audio/quotes/q8.mp3"
+  },
+  {
+   "en": "The market rewards discipline, not intelligence.",
+   "zh": "市场奖励的是自律，而非聪明。",
+   "who": "Market wisdom 市场谚语",
+   "audio": "english/audio/quotes/q9.mp3"
+  }
+ ]
+}
