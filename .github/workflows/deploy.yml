@@ -3,6 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # GITHUB_TOKEN 推送（新闻机器人）不触发 push 事件，靠 workflow_run 补上
+  workflow_run:
+    workflows: ['Update financial news']
+    types: [completed]
   workflow_dispatch:
 
 permissions:
