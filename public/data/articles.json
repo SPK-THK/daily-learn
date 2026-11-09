@@ -238,6 +238,241 @@
      "zh": "风险"
     }
    ]
+  },
+  {
+   "id": "time-in-market",
+   "title": "Time in the Market vs. Timing the Market 在场比择时更重要",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "Many beginners believe the key to investing is buying at the perfect moment. In reality, missing just a few of the best days can destroy years of returns.",
+     "zh": "许多初学者相信投资的关键是买在完美时机。事实上，仅仅错过少数几个最好的交易日，就可能毁掉好几年的收益。"
+    },
+    {
+     "en": "Markets rise and fall unpredictably. Because the best days often come right after the worst ones, people who try to dodge the drops usually miss the rebounds too. Staying invested keeps you present for both.",
+     "zh": "市场的涨跌无法预测。因为最好的日子常常紧跟最糟的日子，试图躲开下跌的人往往也错过反弹。保持在场，你才能同时经历两者。"
+    },
+    {
+     "en": "The practical lesson is simple: decide how much risk you can live with, invest regular amounts, and stop checking prices every hour. Your advantage is not speed — it is patience.",
+     "zh": "可行的结论很简单：先想清楚自己能承受多大风险，定期投入，然后别再每小时看一次价格。你的优势不是速度，而是耐心。"
+    }
+   ],
+   "notes": [
+    "the key to sth 是……的关键，介词固定用 to",
+    "buy at the perfect moment 完美时机买入；at 表示时点",
+    "right after 就在……之后，强调时间紧邻",
+    "stop doing sth 停止做某事（对比 stop to do 停下来去做）"
+   ],
+   "vocab": [
+    {
+     "w": "invest",
+     "zh": "投资"
+    },
+    {
+     "w": "unpredictably",
+     "zh": "不可预测地"
+    },
+    {
+     "w": "dodge",
+     "zh": "躲避"
+    },
+    {
+     "w": "rebound",
+     "zh": "反弹"
+    },
+    {
+     "w": "patience",
+     "zh": "耐心"
+    }
+   ]
+  },
+  {
+   "id": "index-fund",
+   "title": "Why Index Funds Win 为什么指数基金适合大多数人",
+   "minutes": 4,
+   "paras": [
+    {
+     "en": "An index fund simply holds every stock in an index, in proportion. It does not try to pick winners. The result is low fees, high transparency, and a return that matches the market.",
+     "zh": "指数基金就是按比例持有某个指数里的全部股票，并不试图挑选赢家。结果就是：低费用、高透明，以及接近市场的收益。"
+    },
+    {
+     "en": "Most actively managed funds fail to beat the index over long periods, largely because of costs. Every 1% of annual fees quietly removes a huge share of your final wealth after decades.",
+     "zh": "大多数主动管理基金长期跑不赢指数，很大程度上是因为成本。每年 1% 的费用，几十年后会悄悄拿走你最终财富的一大部分。"
+    },
+    {
+     "en": "For a beginner, a broad index fund is a reasonable core. Understand what the index contains, add stocks you have studied only around that core, and let time do the compounding.",
+     "zh": "对新手来说，宽基指数基金是合理的核心仓位。先搞清楚指数里装了什么，只在你研究透的个股上用一小部分仓位，然后让时间去做复利。"
+    }
+   ],
+   "notes": [
+    "try to do sth 试图做某事",
+    "fail to do sth 未能做某事——否定意味比 don't 更正式",
+    "match 作动词=与……一致/匹配，此处=获得与市场一致的回报",
+    "let sb do sth 让某人做某事：let time do the compounding"
+   ],
+   "vocab": [
+    {
+     "w": "proportion",
+     "zh": "比例"
+    },
+    {
+     "w": "transparency",
+     "zh": "透明"
+    },
+    {
+     "w": "beat",
+     "zh": "跑赢"
+    },
+    {
+     "w": "fee",
+     "zh": "费用"
+    },
+    {
+     "w": "wealth",
+     "zh": "财富"
+    }
+   ]
+  },
+  {
+   "id": "behavior-gap",
+   "title": "The Behavior Gap 行为差距：你最大的对手是自己",
+   "minutes": 4,
+   "paras": [
+    {
+     "en": "Studies show that ordinary investors earn less than the funds they hold. The gap is not caused by bad products; it is caused by behavior — buying high in excitement and selling low in fear.",
+     "zh": "研究显示，普通投资者的实际收益低于他们持有的基金。这个差距不是坏产品造成的，而是行为造成的——兴奋时追高，恐惧时割肉。"
+    },
+    {
+     "en": "Markets are designed to test us. Losses hurt roughly twice as much as equal gains please us, a bias called loss aversion. It pushes us to sell at the worst moment and to hold losers too long.",
+     "zh": "市场的设计就是在考验我们。同样的金额，亏损带来的痛苦大约是盈利带来快乐的两倍——这种偏差叫损失厌恶。它让我们在最糟的时刻卖出，又把亏损的股票拿得太久。"
+    },
+    {
+     "en": "The fix is not more intelligence but better rules. Write down your plan before you invest, set a maximum position size, and review decisions monthly instead of hourly. Rules protect you from yourself.",
+     "zh": "解决办法不是更聪明，而是更好的规则。投资前写下计划，设定单只股票的最大仓位，每月而不是每小时回顾决策。规则是在保护你，免于被自己害了。"
+    }
+   ],
+   "notes": [
+    "studies show that… 研究表明，客观陈述的经典句式",
+    "not A but B 不是 A 而是 B，写作高频对比结构",
+    "twice as much as 是……的两倍",
+    "protect sb from sth 保护某人使其免于某事"
+   ],
+   "vocab": [
+    {
+     "w": "behavior",
+     "zh": "行为"
+    },
+    {
+     "w": "loss aversion",
+     "zh": "损失厌恶"
+    },
+    {
+     "w": "bias",
+     "zh": "偏差"
+    },
+    {
+     "w": "position",
+     "zh": "仓位"
+    },
+    {
+     "w": "review",
+     "zh": "复盘"
+    }
+   ]
+  },
+  {
+   "id": "read-balance-sheet",
+   "title": "Reading a Balance Sheet 读懂资产负债表",
+   "minutes": 4,
+   "paras": [
+    {
+     "en": "A balance sheet lists what a company owns (assets) and what it owes (liabilities). The difference is shareholders' equity. The two sides must always balance, hence the name.",
+     "zh": "资产负债表列出公司拥有什么（资产）和欠什么（负债），差额就是股东权益。两边必须永远相等，这正是「平衡表」的由来。"
+    },
+    {
+     "en": "Two numbers deserve attention: the debt ratio and cash. A company with heavy debt and little cash is fragile — a downturn can force it to sell assets cheaply or borrow at terrible rates.",
+     "zh": "有两个数字值得关注：资产负债率和现金。负债重、现金少的公司很脆弱——一旦遇到下行周期，它可能被迫贱卖资产或以极差的利率借钱。"
+    },
+    {
+     "en": "Compare a company with its own past and with peers. A rising debt ratio while profits fall is a warning. Cash-rich, low-debt firms can survive bad years and even buy rivals when others cannot.",
+     "zh": "把公司和自己过去比、和同行比。利润下滑的同时负债率上升，就是警报。现金充裕、负债低的公司能熬过坏年份，甚至趁别人不行时收购对手。"
+    }
+   ],
+   "notes": [
+    "what a company owns 名词性从句作宾语",
+    "hence the name 因此得名——书面语常用",
+    "deserve attention 值得关注",
+    "when others cannot 省略式状语从句：在别人不能（buy）的时候"
+   ],
+   "vocab": [
+    {
+     "w": "asset",
+     "zh": "资产"
+    },
+    {
+     "w": "liability",
+     "zh": "负债"
+    },
+    {
+     "w": "equity",
+     "zh": "权益"
+    },
+    {
+     "w": "debt ratio",
+     "zh": "资产负债率"
+    },
+    {
+     "w": "fragile",
+     "zh": "脆弱的"
+    }
+   ]
+  },
+  {
+   "id": "tiny-habits",
+   "title": "Small Habits, Big Results 微习惯的复利",
+   "minutes": 3,
+   "paras": [
+    {
+     "en": "A habit feels invisible while it forms. Two extra pages a day looks trivial, but over a year it becomes a book; ten words a day becomes three thousand words.",
+     "zh": "习惯在形成时是看不见的。每天多读两页书看似微不足道，但一年下来就是一本书；每天十个单词，一年就是三千多个。"
+    },
+    {
+     "en": "The problem is that early progress is too small to feel rewarding, so most people quit before the curve turns upward. The secret is to make the habit so easy that skipping it feels strange.",
+     "zh": "问题在于：早期的进展太小，难以带来成就感，所以大多数人在曲线转向上扬之前就放弃了。秘诀是把习惯做得足够简单，简单到不做反而别扭。"
+    },
+    {
+     "en": "This app applies the same idea. Three small tasks — a few words, one short article, one look at the market — are enough. Done daily, they compound into something you could not have imagined.",
+     "zh": "这个 App 用的就是同一个思路。三项小任务——几个单词、一篇短文、看一眼行情——就够了。每天坚持，它们会复利成你当初想不到的东西。"
+    }
+   ],
+   "notes": [
+    "feels invisible 系动词 feel + 形容词，表示状态",
+    "too small to feel rewarding too…to 结构：太……以致不能",
+    "so easy that… so…that 如此……以至于",
+    "could not have imagined 虚拟语气：当初不可能想到"
+   ],
+   "vocab": [
+    {
+     "w": "invisible",
+     "zh": "看不见的"
+    },
+    {
+     "w": "trivial",
+     "zh": "微不足道的"
+    },
+    {
+     "w": "curve",
+     "zh": "曲线"
+    },
+    {
+     "w": "compound",
+     "zh": "复利增长"
+    },
+    {
+     "w": "imagine",
+     "zh": "想象"
+    }
+   ]
   }
  ]
 }
