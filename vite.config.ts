@@ -4,6 +4,10 @@ import { defineConfig } from 'vite';
 // 入口文件名固定为 assets/index.js，便于 sw.js 精确缓存。
 export default defineConfig({
   base: './',
+  server: {
+    // 某些编辑器/工具用临时目录做原子写入，chokidar 监听会报 EBUSY，直接忽略
+    watch: { ignored: ['**/.*.tmpdir/**', '**/*.tmp'] },
+  },
   build: {
     outDir: 'dist',
     assetsDir: 'assets',

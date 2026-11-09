@@ -237,6 +237,8 @@
       u = {},
       h = null,
       x = {},
+      days = 30,
+      idx = [],
       L = null;
     t.innerHTML = `
     <div class="subnav">
@@ -283,6 +285,7 @@
     }
     function I() {
       g.innerHTML = `
+      <div class="index-strip" id="st-index"></div>
       <div class="card">
         <div class="row-between">
           <h2 class="card-title">\u81EA\u9009\u884C\u60C5 <span class="hint">\u7EA2\u6DA8\u7EFF\u8DCC</span></h2>
@@ -296,7 +299,7 @@
           <button id="st-add" class="btn small">\u6DFB\u52A0</button>
         </div>
       </div>
-      <p class="hint footnote">\u70B9\u51FB\u4EFB\u610F\u4E00\u884C\u5C55\u5F00\u8FD1 30 \u65E5\u8D70\u52BF\uFF1B\u5F53\u65E5\u6210\u529F\u5237\u65B0\u4E00\u6B21\u884C\u60C5\uFF0C\u5373\u5B8C\u6210\u300C\u590D\u76D8\u81EA\u9009\u80A1\u300D\u6253\u5361\u4EFB\u52A1\u3002</p>
+      <p class="hint footnote">\u70B9\u51FB\u4EFB\u610F\u4E00\u884C\u5C55\u5F00\u8D70\u52BF\uFF08\u652F\u6301 30 / 60 / 120 \u65E5\uFF09\uFF1B\u5F53\u65E5\u6210\u529F\u5237\u65B0\u4E00\u6B21\u884C\u60C5\uFF0C\u5373\u5B8C\u6210\u300C\u590D\u76D8\u81EA\u9009\u80A1\u300D\u6253\u5361\u4EFB\u52A1\u3002</p>
     `;
       let r = (o) => g.querySelector(o);
       function b() {
@@ -320,9 +323,11 @@
                     Y = h === $.code,
                     B = x[$.code],
                     ut = Y
-                      ? B && B.length
-                        ? k(B)
-                        : '<p class="hint k-err">K\u7EBF\u83B7\u53D6\u5931\u8D25\uFF0C\u7A0D\u540E\u70B9\u51FB\u91CD\u8BD5</p>'
+                      ? B && B.loading
+                        ? '<p class="hint k-err">K \u7EBF\u52A0\u8F7D\u4E2D\u2026</p>'
+                        : B && B.rows && B.rows.length
+                          ? k(B.rows, $.code, B.days)
+                          : '<p class="hint k-err">K\u7EBF\u83B7\u53D6\u5931\u8D25\uFF0C\u7A0D\u540E\u70B9\u51FB\u91CD\u8BD5</p>'
                       : "";
                   return `
               <div class="quote-row ${Y ? "expanded" : ""}" data-code="${$.code}">
@@ -338,51 +343,93 @@
             ? `\u66F4\u65B0\u4E8E ${new Date(c[0].serverTime).toLocaleTimeString("zh-CN")}${C() ? " \xB7 \u4EA4\u6613\u65F6\u6BB5\u81EA\u52A8\u5237\u65B0" : ""}`
             : "\u6DFB\u52A0\u81EA\u9009\u80A1\u540E\u70B9\u51FB\u5237\u65B0"));
       }
-      function k(o) {
-        let v = o.map((O) => O.close),
-          E = 360,
-          $ = 130,
-          A = 12,
-          J = Math.min(...v),
-          Z = Math.max(...v),
-          Y = Z - J || 1,
-          B = (O) => A + (O * (E - 2 * A)) / Math.max(v.length - 1, 1),
-          ut = (O) => $ - A - ((O - J) / Y) * ($ - 2 * A),
-          Lt = v
-            .map((O, At) => `${At ? "L" : "M"}${B(At).toFixed(1)} ${ut(O).toFixed(1)}`)
-            .join(" "),
-          he = `${Lt} L ${B(v.length - 1).toFixed(1)} ${$ - A} L ${A} ${$ - A} Z`,
-          P = ((v[v.length - 1] - v[0]) / v[0]) * 100,
-          ge = P > 0 ? "up" : P < 0 ? "down" : "flat",
-          tt = P > 0 ? "#e03131" : P < 0 ? "#2f9e44" : "#8a93a6",
-          Dt = "kg" + Math.random().toString(36).slice(2, 8),
-          qt = B(v.length - 1).toFixed(1),
-          ve = [0.25, 0.5, 0.75]
+      function k(o, code, d) {
+        let n = o.length,
+          W = 360,
+          H = 182,
+          padX = 8,
+          top = 6,
+          priceH = 108,
+          volTop = 146,
+          volH = 28,
+          hi = Math.max(...o.map((r) => r.high)),
+          lo = Math.min(...o.map((r) => r.low)),
+          span = hi - lo || 1,
+          step = (W - padX * 2) / n,
+          bw = Math.max(1.6, Math.min(7, step * 0.58)),
+          x = (i) => padX + step * i + step / 2,
+          y = (p) => top + ((hi - p) / span) * priceH,
+          maxV = Math.max(...o.map((r) => r.volume || 0), 1),
+          vy = (v) => volTop + volH - (v / maxV) * volH,
+          candles = o
+            .map((r, i) => {
+              let col = r.close >= r.open ? "var(--up)" : "var(--down)",
+                yo = y(r.open),
+                yc = y(r.close),
+                bt = Math.min(yo, yc),
+                bh = Math.max(1.2, Math.abs(yc - yo));
+              return `<line x1="${x(i).toFixed(1)}" y1="${y(r.high).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(r.low).toFixed(1)}" stroke="${col}" stroke-width="1"/><rect x="${(x(i) - bw / 2).toFixed(1)}" y="${bt.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx=".8" fill="${col}"/>`;
+            })
+            .join(""),
+          vols = o
+            .map((r, i) => {
+              let col = r.close >= r.open ? "var(--up)" : "var(--down)",
+                h = Math.max(0.6, volTop + volH - vy(r.volume || 0));
+              return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy(r.volume || 0).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx=".6" fill="${col}" opacity=".5"/>`;
+            })
+            .join(""),
+          maLine = (m, color) => {
+            let pts = [];
+            for (let i = m - 1; i < n; i++) {
+              let sum = 0;
+              for (let j = i - m + 1; j <= i; j++) sum += o[j].close;
+              pts.push(`${x(i).toFixed(1)} ${y(sum / m).toFixed(1)}`);
+            }
+            return pts.length
+              ? `<path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`
+              : "";
+          },
+          legend = [5, 10, 20]
+            .map((m) => {
+              let from = Math.max(0, n - m),
+                sum = 0;
+              for (let i = from; i < n; i++) sum += o[i].close;
+              return `<span><i style="background:var(--ma${m})"></i>MA${m} ${(sum / (n - from)).toFixed(2)}</span>`;
+            })
+            .join(""),
+          grid = [0.25, 0.5, 0.75]
             .map(
-              (O) => `<line x1="${A}" y1="${($ - A - O * ($ - 2 * A)).toFixed(1)}"
-           x2="${E - A}" y2="${($ - A - O * ($ - 2 * A)).toFixed(1)}"></line>`,
+              (p) =>
+                `<line x1="${padX}" y1="${(top + p * priceH).toFixed(1)}" x2="${W - padX}" y2="${(top + p * priceH).toFixed(1)}"></line>`,
             )
-            .join("");
+            .join(""),
+          pct = ((o[n - 1].close - o[0].close) / o[0].close) * 100,
+          tone = pct > 0 ? "up" : pct < 0 ? "down" : "flat";
         return `
-        <div class="row-between k-meta">
-          <span class="hint">\u8FD1 ${o.length} \u65E5\u6536\u76D8\u4EF7</span>
-          <span class="hint k-range" title="${o[0].date} ~ ${o[o.length - 1].date}">${o[0].date.slice(5)} ~ ${o[o.length - 1].date.slice(5)}</span>
+        <div class="k-tools">
+          ${[30, 60, 120]
+            .map(
+              (v) =>
+                `<button class="k-period ${v === d ? "active" : ""}" data-days="${v}" data-code="${code}">${v} 日</button>`,
+            )
+            .join("")}
         </div>
-        <svg class="kchart" viewBox="0 0 ${E} ${$}" preserveAspectRatio="none" aria-hidden="true">
-          <defs>
-            <linearGradient id="${Dt}" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="${tt}" stop-opacity=".22"/>
-              <stop offset="1" stop-color="${tt}" stop-opacity=".02"/>
-            </linearGradient>
-          </defs>
-          <g class="k-grid">${ve}</g>
-          <path d="${he}" fill="url(#${Dt})"></path>
-          <path d="${Lt}" fill="none" stroke="${tt}" stroke-width="2" stroke-linejoin="round" vector-effect="non-scaling-stroke"></path>
-          <line class="k-lastline" x1="${qt}" y1="${A}" x2="${qt}" y2="${$ - A}" stroke="${tt}"></line>
+        <div class="row-between k-meta">
+          <span class="k-legend">${legend}</span>
+          <span class="hint k-range" title="${o[0].date} ~ ${o[n - 1].date}">${o[0].date.slice(5)} ~ ${o[n - 1].date.slice(5)}</span>
+        </div>
+        <svg class="kchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
+          <g class="k-grid">${grid}</g>
+          ${candles}
+          ${maLine(5, "var(--ma5)")}
+          ${maLine(10, "var(--ma10)")}
+          ${maLine(20, "var(--ma20)")}
+          <text x="${padX}" y="${volTop - 3}" class="k-vol-label">成交量</text>
+          ${vols}
         </svg>
         <div class="row-between k-meta k-meta-bottom">
-          <span class="${ge} k-pct">\u533A\u95F4 ${P > 0 ? "+" : ""}${P.toFixed(2)}%</span>
-          <span class="hint">\u6700\u4F4E ${J.toFixed(2)} \xB7 \u6700\u9AD8 ${Z.toFixed(2)}</span>
+          <span class="${tone} k-pct">区间 ${pct > 0 ? "+" : ""}${pct.toFixed(2)}%</span>
+          <span class="hint">最低 ${lo.toFixed(2)} · 最高 ${hi.toFixed(2)}</span>
         </div>`;
       }
       function S(o, v = 1e4) {
@@ -390,13 +437,13 @@
           $ = setTimeout(() => E.abort(), v);
         return fetch(o, { signal: E.signal }).finally(() => clearTimeout($));
       }
-      async function T(o) {
+      async function T(o, d = days) {
         let v = s.find((E) => E.endsWith(o)) || o;
         try {
-          let E = await S(`/api/kline?code=${encodeURIComponent(v)}&days=30`).then(($) => $.json());
-          x[o] = Array.isArray(E) && E.length ? E : [];
+          let E = await S(`/api/kline?code=${encodeURIComponent(v)}&days=${d}`).then(($) => $.json());
+          x[o] = { days: d, rows: Array.isArray(E) ? E : [] };
         } catch {
-          x[o] = [];
+          x[o] = { days: d, rows: [] };
         }
       }
       async function m() {
@@ -410,6 +457,31 @@
             `\u884C\u60C5\u83B7\u53D6\u5931\u8D25\uFF1A${o.message === "The user aborted a request." ? "\u8BF7\u6C42\u8D85\u65F6" : o.message}\uFF08\u8BF7\u68C0\u67E5\u7F51\u7EDC\uFF09`;
         }
       }
+      async function loadIndex() {
+        try {
+          let v = await (await S("/api/quotes?codes=sh000001,sz399001,sz399006")).json();
+          idx = Array.isArray(v) ? v : [];
+        } catch {
+          idx = [];
+        }
+        renderIdx();
+      }
+      function renderIdx() {
+        let el = r("#st-index");
+        if (!el) return;
+        if (!idx.length) {
+          el.innerHTML = "";
+          return;
+        }
+        el.innerHTML = idx
+          .map(($) => {
+            let cls = $.changePct > 0 ? "up" : $.changePct < 0 ? "down" : "flat",
+              pct = $.changePct == null ? "--" : `${$.changePct > 0 ? "+" : ""}${$.changePct.toFixed(2)}%`,
+              val = $.price == null ? "--" : $.price.toFixed(2);
+            return `<div class="idx-card"><span class="idx-name">${$.name}</span><b class="idx-val ${cls}">${val}</b><span class="idx-pct ${cls}">${pct}</span></div>`;
+          })
+          .join("");
+      }
       (r("#st-refresh").addEventListener("click", m),
         r("#st-list").addEventListener("click", async (o) => {
           if (o.target.closest(".q-del")) {
@@ -422,6 +494,20 @@
               b());
             return;
           }
+          let pd = o.target.closest(".k-period");
+          if (pd) {
+            let d = Number(pd.getAttribute("data-days")) || 30,
+              code = pd.getAttribute("data-code");
+            if (code) {
+              days = d;
+              h = code;
+              x[code] = { days: d, rows: [], loading: true };
+              b();
+              await T(code, d);
+              b();
+            }
+            return;
+          }
           let v = o.target.closest(".quote-row");
           if (!v) return;
           let E = v.getAttribute("data-code");
@@ -430,7 +516,13 @@
               ((h = null), b());
               return;
             }
-            ((h = E), x[E] || (b(), await T(E)), b());
+            h = E;
+            if (!x[E]) {
+              x[E] = { days, rows: [], loading: true };
+              b();
+              await T(E);
+            }
+            b();
           }
         }),
         r("#st-add").addEventListener("click", () => {
@@ -442,8 +534,12 @@
           }
           (s.includes(v) || (s.push(v), y(), m()), (o.value = ""));
         }),
-        (L = m),
-        m());
+        (L = () => {
+          m();
+          loadIndex();
+        }),
+        m(),
+        loadIndex());
     }
     function p() {
       if (a !== null) return i();
@@ -710,6 +806,8 @@
       <button data-view="reading">\u53CC\u8BED\u9605\u8BFB</button>
       <button data-view="quote">\u6BCF\u65E5\u4E00\u53E5</button>
       <button data-view="bank">\u8BCD\u5E93</button>
+      <button data-view="wrong">\u9519\u8BCD\u672C</button>
+      <button data-view="spell">\u542C\u5199</button>
     </div>
     <div id="en-body"></div>
   `;
@@ -719,10 +817,11 @@
       (N.querySelectorAll("button").forEach((i) =>
         i.classList.toggle("active", i.getAttribute("data-view") === w),
       ),
-        w === "words" ? C() : w === "reading" ? M() : w === "bank" ? D() : p());
+        w === "words" ? C() : w === "reading" ? M() : w === "bank" ? D() : w === "wrong" ? Wb() : w === "spell" ? SpellView() : p());
     }
     let q = "",
-      f = null;
+      f = null,
+      spell = null;
     function D() {
       let i = q.trim().toLowerCase(),
         d = i
@@ -813,6 +912,242 @@
           }),
         ));
     }
+    function wbRows() {
+      return Object.keys(l)
+        .map((k) => {
+          let d = n.find((o) => o.w === k),
+            p = l[k] || {};
+          return d && p.wrong ? { d, wrong: p.wrong, box: p.box || 0 } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.wrong - a.wrong || a.d.w.localeCompare(b.d.w));
+    }
+    function Wb() {
+      let rows = wbRows();
+      g.innerHTML = `
+      <div class="card">
+        <div class="row-between">
+          <h2 class="card-title">错词本 <span class="hint">${rows.length} 词</span></h2>
+          ${rows.length ? '<button class="btn small" id="wb-spell">🎧 开始听写</button>' : ""}
+        </div>
+        <p class="hint">背单词或听写时答错的词会按次数累积在这里；答对不会自动移除，可手动清空。</p>
+        ${
+          rows.length
+            ? `<div class="wb-list">${rows
+                .map(
+                  (r) => `
+              <div class="wb-row">
+                <div class="wb-main"><b>${r.d.w}</b><span class="hint">${r.d.zh} · 第 ${r.box} 盒</span></div>
+                <span class="wb-count">错 ${r.wrong} 次</span>
+                <button class="icon-btn" data-say="${r.d.w}" title="发音">🔊</button>
+              </div>`,
+                )
+                .join("")}</div>
+              <button class="btn ghost wb-clear" id="wb-clear">清空错词本</button>`
+            : '<div class="center"><div class="big-emoji">✨</div><p class="hint">还没有错词，继续保持！</p></div>'
+        }
+      </div>`;
+      let sp = g.querySelector("#wb-spell");
+      sp &&
+        sp.addEventListener("click", () => {
+          spellStart(rows.map((r) => r.d.w));
+        });
+      let cl = g.querySelector("#wb-clear");
+      cl &&
+        cl.addEventListener("click", () => {
+          if (!window.confirm("清空错词本记录？（单词复习进度不受影响）")) return;
+          Object.keys(l).forEach((k) => {
+            l[k].wrong = 0;
+          });
+          h();
+          Wb();
+        });
+      g.querySelectorAll("[data-say]").forEach((b) =>
+        b.addEventListener("click", (e) => {
+          e.stopPropagation();
+          z(b.getAttribute("data-say"));
+        }),
+      );
+    }
+    function spellNorm(v) {
+      return String(v || "")
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+    function spellHint(w) {
+      return w
+        .split("")
+        .map((ch, i) => {
+          if (ch === " ") return '<i class="sp-gap">·</i>';
+          if (/[A-Za-z]/.test(ch)) return i === 0 ? ch : "_";
+          return ch;
+        })
+        .join(" ");
+    }
+    function spellShuffle(a) {
+      a = a.slice();
+      for (let i = a.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+    function spellQueue(custom) {
+      let uniq = (a) => [...new Set(a)],
+        wrong = n.filter((o) => l[o.w] && l[o.w].wrong > 0).map((o) => o.w),
+        learned = n.filter((o) => l[o.w]).map((o) => o.w),
+        rest = n.filter((o) => !l[o.w]).map((o) => o.w),
+        base =
+          custom && custom.length
+            ? custom.slice()
+            : uniq([...spellShuffle(wrong), ...spellShuffle(learned), ...spellShuffle(rest)]);
+      base = base.filter((x) => n.some((o) => o.w === x)).slice(0, 10);
+      return base.length ? base : n.slice(0, 10).map((o) => o.w);
+    }
+    function spellStart(custom) {
+      spell = {
+        queue: spellQueue(custom),
+        idx: 0,
+        mode: spell && spell.mode === "audio" ? "audio" : "zh",
+        score: 0,
+        wrong: [],
+        answered: null,
+        last: "",
+      };
+      w = "spell";
+      y();
+    }
+    function spellNext() {
+      if (!spell) return;
+      spell.idx += 1;
+      spell.answered = null;
+      spell.last = "";
+      if (spell.idx >= spell.queue.length) spellDone();
+      else SpellView();
+    }
+    function spellDone() {
+      let total = spell.queue.length,
+        ok = spell.score,
+        bad = spell.wrong,
+        pct = total ? Math.round((ok / total) * 100) : 0;
+      g.innerHTML = `
+      <div class="card center">
+        <div class="big-emoji">${pct >= 80 ? "🎉" : pct >= 50 ? "💪" : "📚"}</div>
+        <h2>听写完成</h2>
+        <div class="stat-row">
+          <span class="chip">得分 ${ok}/${total}</span>
+          <span class="chip">正确率 ${pct}%</span>
+        </div>
+        ${
+          bad.length
+            ? `<p class="hint">需要再练：</p><div class="spell-wrong-list">${bad
+                .map((x) => `<button class="chip" data-say="${x}">${x}</button>`)
+                .join("")}</div>`
+            : '<p class="hint">全部拼对，状态不错！</p>'
+        }
+        <div class="row-gap">
+          <button class="btn primary" id="spell-again">再来一轮</button>
+          <button class="btn" id="spell-wrongbook">查看错词本</button>
+        </div>
+      </div>`;
+      g.querySelector("#spell-again").addEventListener("click", () => spellStart());
+      g.querySelector("#spell-wrongbook").addEventListener("click", () => {
+        w = "wrong";
+        y();
+      });
+      g.querySelectorAll("[data-say]").forEach((b) =>
+        b.addEventListener("click", () => z(b.getAttribute("data-say"))),
+      );
+    }
+    function SpellView() {
+      if (!spell) return spellStart();
+      if (spell.idx >= spell.queue.length) return spellDone();
+      let word = n.find((o) => o.w === spell.queue[spell.idx]),
+        total = spell.queue.length,
+        noTts = !("speechSynthesis" in window),
+        fb = spell.answered,
+        audio = spell.mode === "audio" && !noTts,
+        last = String(spell.last || "")
+          .replace(/&/g, "&amp;")
+          .replace(/"/g, "&quot;")
+          .replace(/</g, "&lt;");
+      g.innerHTML = `
+      <div class="card spell-card">
+        <div class="spell-head">
+          <div class="spell-modes">
+            <button data-mode="zh" class="${spell.mode === "zh" ? "active" : ""}">看中文拼写</button>
+            <button data-mode="audio" class="${spell.mode === "audio" ? "active" : ""}">听发音拼写</button>
+          </div>
+          <span class="tag">${spell.idx + 1} / ${total}</span>
+        </div>
+        <div class="spell-body">
+          <p class="hint">${audio ? "点喇叭听发音，拼出英文单词" : "根据中文意思，拼出英文单词"}</p>
+          <div class="spell-zh">${audio ? "🔊 听发音" : word.zh}</div>
+          <p class="hint">${audio ? "听不清可以点下方「发音」重播" : word.pos}</p>
+          <div class="spell-hint">${spellHint(word.w)}</div>
+          <input id="spell-input" class="spell-input" autocomplete="off" autocapitalize="off" spellcheck="false" value="${fb ? last : ""}" placeholder="${fb ? "" : "输入英文单词，回车提交"}" ${fb ? "disabled" : ""} />
+          <div class="spell-actions">
+            <button class="btn small ghost" id="spell-say">🔊 发音</button>
+            <button class="btn primary" id="spell-submit">${fb ? "下一题" : "提交"}</button>
+          </div>
+          ${
+            fb
+              ? `<div class="spell-fb ${fb === "ok" ? "ok" : "no"}">
+                  ${fb === "ok" ? `✓ 拼写正确：<b>${word.w}</b>` : `✗ 正确答案：<b>${word.w}</b>`}
+                  <span class="hint"> ${word.zh}</span>
+                </div>`
+              : ""
+          }
+        </div>
+      </div>
+      <p class="hint center-text">答对 ${spell.score} 题 · 答错 ${spell.wrong.length} 题</p>`;
+      let input = g.querySelector("#spell-input"),
+        submit = g.querySelector("#spell-submit");
+      function submitNow() {
+        if (spell.answered) return spellNext();
+        let val = input.value;
+        if (!val.trim()) {
+          input.focus();
+          return;
+        }
+        let ok = spellNorm(val) === spellNorm(word.w);
+        spell.last = val;
+        spell.answered = ok ? "ok" : "no";
+        if (ok) spell.score += 1;
+        else {
+          spell.wrong.push(word.w);
+          let p = l[word.w] || { box: 0, due: "" };
+          p.wrong = (p.wrong || 0) + 1;
+          l[word.w] = p;
+          h();
+        }
+        SpellView();
+      }
+      submit.addEventListener("click", submitNow);
+      input &&
+        input.addEventListener("keydown", (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            submitNow();
+          }
+        });
+      g.querySelector("#spell-say").addEventListener("click", () => z(word.w));
+      g.querySelectorAll(".spell-modes button").forEach((b) =>
+        b.addEventListener("click", () => {
+          spell.mode = b.getAttribute("data-mode");
+          if (spell.mode === "audio" && noTts) $t("当前浏览器不支持语音朗读，已显示中文提示");
+          SpellView();
+        }),
+      );
+      if (audio && !fb) {
+        try {
+          z(word.w);
+        } catch {}
+      }
+      if (!fb && input) input.focus();
+    }
     function C() {
       if (a.idx >= a.queue.length) {
         L();
@@ -895,7 +1230,8 @@
         g.querySelector("#right").addEventListener("click", () => m(!0)));
       function m(o) {
         let v = l[i.w] || { box: 0, due: "" };
-        ((l[i.w] = zt(v.box, o)), h(), (a.idx += 1), x(), C());
+        o || (v.wrong = (v.wrong || 0) + 1);
+        ((l[i.w] = Object.assign(zt(v.box, o), { wrong: v.wrong || 0 })), h(), (a.idx += 1), x(), C());
       }
     }
     function M() {
@@ -1011,6 +1347,15 @@ ${i.zh}
       d && ((w = d), d === "reading" && (u = -1), y());
     }),
       document.addEventListener("keydown", (i) => {
+        if (w === "spell" && i.key === "Enter" && spell && spell.answered) {
+          let tag = document.activeElement && document.activeElement.tagName;
+          if (tag !== "INPUT") {
+            i.preventDefault();
+            let b = document.getElementById("spell-submit");
+            b && b.click();
+          }
+          return;
+        }
         if (w !== "words") return;
         let d = document.activeElement && document.activeElement.tagName;
         d === "INPUT" ||
@@ -1514,9 +1859,9 @@ ${i.zh}
       id: "lessons8",
       icon: "\u{1F4C8}",
       title: "\u6295\u8D44\u5165\u95E8",
-      desc: "\u5B66\u5B8C 8 \u8282\u80A1\u7968\u8BFE\u7A0B",
+      desc: "\u5B66\u5B8C 12 \u8282\u80A1\u7968\u8BFE\u7A0B",
       metric: "lessonsDone",
-      target: 8,
+      target: 12,
     },
   ];
   function ne(t) {
@@ -1698,7 +2043,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.2.0";
+  var re = "3.3.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },

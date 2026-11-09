@@ -13,6 +13,18 @@
   <meta name="apple-mobile-web-app-title" content="每日进化" />
   <meta name="mobile-web-app-capable" content="yes" />
   <title>每日进化 · 英语 × 股票</title>
+  <script>
+    // 首屏前先定主题，避免深色模式闪白
+    (function () {
+      try {
+        var m = localStorage.getItem('dl.theme') || 'auto';
+        var dark = m === 'dark' || (m === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', dark ? '#0e1420' : '#3b5bfd');
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -26,6 +38,7 @@
           <span class="streak-badge js-streak">🔥 0 天</span>
         </div>
         <div class="top-actions">
+          <button class="theme-btn js-theme" title="切换主题" aria-label="切换主题">🌙</button>
           <button class="install-btn js-install-btn" title="下载 / 安装到手机">⬇ 下载</button>
           <button class="guide-btn js-guide-btn" title="使用教程">?</button>
         </div>
@@ -41,6 +54,7 @@
       <h1>每日进化</h1>
       <span class="greet js-greet"></span><span class="date-line js-date"></span>
       <span class="streak-badge js-streak">🔥 0 天</span>
+      <button class="theme-btn side-theme js-theme" title="切换主题" aria-label="切换主题">🌙</button>
     </div>
     <button data-tab="today" class="active"><span class="tab-icon">✅</span><span>今日</span></button>
     <button data-tab="stock"><span class="tab-icon">📈</span><span>股票</span></button>
@@ -59,12 +73,15 @@
     <ol class="guide-steps">
       <li><b>📈 看一眼自选行情</b><span>进入「股票」页点「刷新」，红涨绿跌一目了然；当日刷新一次即完成「复盘自选股」打卡。</span></li>
       <li><b>📖 完成今日单词</b><span>「英语 → 背单词」：看卡片 → 显示答案 → 如实选择「记住了 / 又忘了」。系统按遗忘曲线（1/2/4/7/15 天）安排复习，翻面后还有常用搭配和记忆点。</span></li>
+      <li><b>🎧 练一轮听写</b><span>「英语 → 听写」：看中文或听发音拼单词，每轮 10 题；答错的词进错词本，可以随时专项复习。</span></li>
       <li><b>📰 读一篇双语短文</b><span>「英语 → 双语阅读」读今日推荐：段落对照翻译，点词汇可发音，文末有语法讲解，读完标记已读。</span></li>
     </ol>
     <div class="guide-more">
       <p><b>🎯 打卡规则</b>：今日三项全部完成 = 打卡成功，连续天数持续累积。</p>
       <p><b>🏅 查看成长</b>：「统计」页有 8 周打卡日历、词汇分布和成就墙，记录越多，颜色越深。</p>
-      <p><b>🎓 进阶课程</b>：「股票 → 入门教程」有 8 节零基础课（正文 + 要点 + 小测验），每天一节更健康。</p>
+      <p><b>🎓 进阶课程</b>：「股票 → 入门教程」有 12 节零基础课（正文 + 要点 + 小测验），每天一节更健康。</p>
+      <p><b>🎧 听写与错词本</b>：「英语 → 听写」可看中文或听发音拼单词，每轮 10 题；答错的词会自动进「错词本」，按错误次数排序，支持一键听写复习。</p>
+      <p><b>🌙 深色模式</b>：右上角 / 侧栏的主题按钮可在「跟随系统 / 浅色 / 深色」间切换，选择会记住。</p>
       <p><b>🔊 发音</b>：单词、词组、金句、词汇表都可点击喇叭朗读（需要浏览器支持语音）。</p>
       <p><b>💾 数据说明</b>：所有学习记录保存在本机浏览器，无需注册登录；换设备可用下方按钮迁移。</p>
     </div>
