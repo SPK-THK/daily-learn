@@ -8,6 +8,13 @@ const THEME_KEY = 'dl.theme';
 type ThemeMode = 'auto' | 'light' | 'dark';
 const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
+const THEME_ICONS: Record<ThemeMode, string> = {
+  auto: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" stroke="none"/></svg>',
+  light:
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.2 5.2l2.1 2.1M16.7 16.7l2.1 2.1M18.8 5.2l-2.1 2.1M7.3 16.7l-2.1 2.1"/></svg>',
+  dark: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>',
+};
+
 function themeMode(): ThemeMode {
   try {
     const v = localStorage.getItem(THEME_KEY);
@@ -28,12 +35,12 @@ function applyTheme() {
   document.documentElement.dataset.theme = theme;
   document
     .querySelector('meta[name="theme-color"]')
-    ?.setAttribute('content', theme === 'dark' ? '#0e1420' : '#3b5bfd');
-  const icon = mode === 'auto' ? '🖥️' : theme === 'dark' ? '🌙' : '☀️';
+    ?.setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#111111');
+  const icon = THEME_ICONS[mode];
   const label =
     mode === 'auto' ? '主题：跟随系统（点击切换）' : theme === 'dark' ? '主题：深色（点击切换）' : '主题：浅色（点击切换）';
   document.querySelectorAll<HTMLButtonElement>('.js-theme').forEach((b) => {
-    b.textContent = icon;
+    b.innerHTML = icon;
     b.title = label;
     b.setAttribute('aria-label', label);
   });

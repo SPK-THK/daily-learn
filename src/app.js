@@ -378,7 +378,7 @@
               return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy(r.volume || 0).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx=".6" fill="${col}" opacity=".5"/>`;
             })
             .join(""),
-          maLine = (m, color) => {
+          maLine = (m, color, dash = "") => {
             let pts = [];
             for (let i = m - 1; i < n; i++) {
               let sum = 0;
@@ -386,7 +386,7 @@
               pts.push(`${x(i).toFixed(1)} ${y(sum / m).toFixed(1)}`);
             }
             return pts.length
-              ? `<path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>`
+              ? `<path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"${dash ? ` stroke-dasharray="${dash}"` : ""}/>`
               : "";
           },
           legend = [5, 10, 20]
@@ -394,7 +394,7 @@
               let from = Math.max(0, n - m),
                 sum = 0;
               for (let i = from; i < n; i++) sum += o[i].close;
-              return `<span><i style="background:var(--ma${m})"></i>MA${m} ${(sum / (n - from)).toFixed(2)}</span>`;
+              return `<span><i class="m${m}"></i>MA${m} ${(sum / (n - from)).toFixed(2)}</span>`;
             })
             .join(""),
           grid = [0.25, 0.5, 0.75]
@@ -423,7 +423,7 @@
           ${candles}
           ${maLine(5, "var(--ma5)")}
           ${maLine(10, "var(--ma10)")}
-          ${maLine(20, "var(--ma20)")}
+          ${maLine(20, "var(--ma20)", "4 3")}
           <text x="${padX}" y="${volTop - 3}" class="k-vol-label">成交量</text>
           ${vols}
         </svg>
@@ -2043,7 +2043,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.3.0";
+  var re = "3.4.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },

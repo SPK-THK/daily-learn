@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#3b5bfd" />
+  <meta name="theme-color" content="#111111" />
   <meta name="description" content="每日打卡：英语学习、A股行情与学习统计" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
@@ -21,7 +21,7 @@
         var dark = m === 'dark' || (m === 'auto' && matchMedia('(prefers-color-scheme: dark)').matches);
         document.documentElement.dataset.theme = dark ? 'dark' : 'light';
         var meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', dark ? '#0e1420' : '#3b5bfd');
+        if (meta) meta.setAttribute('content', dark ? '#0a0a0a' : '#111111');
       } catch (e) {}
     })();
   </script>
@@ -38,8 +38,8 @@
           <span class="streak-badge js-streak">🔥 0 天</span>
         </div>
         <div class="top-actions">
-          <button class="theme-btn js-theme" title="切换主题" aria-label="切换主题">🌙</button>
-          <button class="install-btn js-install-btn" title="下载 / 安装到手机">⬇ 下载</button>
+          <button class="theme-btn js-theme" title="切换主题" aria-label="切换主题"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" stroke="none"/></svg></button>
+          <button class="install-btn js-install-btn" title="下载 / 安装到手机">↓ 下载</button>
           <button class="guide-btn js-guide-btn" title="使用教程">?</button>
         </div>
       </div>
@@ -54,14 +54,14 @@
       <h1>每日进化</h1>
       <span class="greet js-greet"></span><span class="date-line js-date"></span>
       <span class="streak-badge js-streak">🔥 0 天</span>
-      <button class="theme-btn side-theme js-theme" title="切换主题" aria-label="切换主题">🌙</button>
+      <button class="theme-btn side-theme js-theme" title="切换主题" aria-label="切换主题"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v17"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17Z" fill="currentColor" stroke="none"/></svg></button>
     </div>
-    <button data-tab="today" class="active"><span class="tab-icon">✅</span><span>今日</span></button>
-    <button data-tab="stock"><span class="tab-icon">📈</span><span>股票</span></button>
-    <button data-tab="english"><span class="tab-icon">📖</span><span>英语</span></button>
-    <button data-tab="news"><span class="tab-icon">📰</span><span>资讯</span></button>
-    <button data-tab="stats"><span class="tab-icon">🏅</span><span>统计</span></button>
-    <button class="install-btn side-install js-install-btn" title="下载 / 安装到手机">⬇ 下载 App</button>
+    <button data-tab="today" class="active"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12.4 2.6 2.6L16.4 9.2"/></svg><span>今日</span></button>
+    <button data-tab="stock"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5M4 19h16"/><path d="m7.5 15 3.6-3.6 2.6 2.6L19 8"/></svg><span>股票</span></button>
+    <button data-tab="english"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.6C10 4.9 6.9 4.3 4 4.8v13.4c2.9-.5 6 .1 8 1.8 2-1.7 5.1-2.3 8-1.8V4.8c-2.9-.5-6 .1-8 1.8Z"/><path d="M12 6.6v13.4"/></svg><span>英语</span></button>
+    <button data-tab="news"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4.5" width="16" height="15" rx="2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg><span>资讯</span></button>
+    <button data-tab="stats"><svg class="tab-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20v-9M12 20V5M19 20v-6"/></svg><span>统计</span></button>
+    <button class="install-btn side-install js-install-btn" title="下载 / 安装到手机">↓ 下载 App</button>
     <button class="guide-btn js-guide-btn side-guide" title="使用教程">?</button>
   </nav>
 
