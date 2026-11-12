@@ -241,6 +241,15 @@ export const accountStore = {
     }
     return true;
   },
+  clearPin(id: string): boolean {
+    const list = readAccounts();
+    const idx = list.findIndex((a) => a.id === id);
+    if (idx < 0) return false;
+    delete list[idx].pinHash;
+    delete list[idx].pinSalt;
+    writeAccounts(list);
+    return true;
+  },
   async verifyPin(id: string, pin: string): Promise<boolean> {
     const account = readAccounts().find((a) => a.id === id);
     if (!account || !account.pinHash || !account.pinSalt) return true;

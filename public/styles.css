@@ -1260,3 +1260,20 @@ body.k-full-open { overflow: hidden; }
   .top-actions { gap: 6px; }
   .install-btn { padding: 7px 10px; font-size: 12px; }
 }
+
+.pin-forgot {
+  border: 0; background: none; color: var(--muted); font-family: inherit;
+  font-size: 12px; padding: 2px 0; margin: 2px 0 8px; cursor: pointer;
+  text-decoration: underline; align-self: flex-start;
+}
+@media (max-width: 360px) {
+  .task-text b { font-size: 14px; }
+  .habit-task { gap: 9px; }
+  .habit-task .tag { font-size: 10.5px; padding: 2px 7px; }
+  .task-chevron { font-size: 18px; }
+  .topbar h1 { font-size: 22px; }
+  .top-actions { gap: 5px; }
+  .account-btn, .theme-btn, .guide-btn { width: 30px; height: 30px; }
+  .theme-btn svg { width: 15px; height: 15px; }
+  .install-btn { padding: 6px 8px; font-size: 11.5px; }
+}

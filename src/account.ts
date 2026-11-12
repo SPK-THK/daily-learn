@@ -65,6 +65,7 @@ export function initAccountUI() {
     <p class="hint" id="pin-hint"></p>
     <input id="pin-input" class="account-pin-input" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="4 位数字" />
     <p class="hint pin-err" id="pin-err"></p>
+    <button type="button" class="pin-forgot" id="pin-forgot">忘记 PIN？</button>
     <div class="row-gap">
       <button type="button" class="btn" id="pin-cancel">取消</button>
       <button type="button" class="btn primary" id="pin-ok">确认</button>
@@ -87,6 +88,7 @@ export function initAccountUI() {
   const pinHint = pinDlg.querySelector<HTMLParagraphElement>('#pin-hint')!;
   const pinErr = pinDlg.querySelector<HTMLParagraphElement>('#pin-err')!;
   const pinField = pinDlg.querySelector<HTMLInputElement>('#pin-input')!;
+  const pinForgot = pinDlg.querySelector<HTMLButtonElement>('#pin-forgot')!;
 
   let editingId: string | null = null;
   let pinTarget: string | null = null;
@@ -267,6 +269,15 @@ export function initAccountUI() {
       e.preventDefault();
       void confirmPin();
     }
+  });
+  pinForgot.addEventListener('click', () => {
+    if (!pinTarget) return;
+    const target = accountStore.list().find((a) => a.id === pinTarget);
+    if (!target) return;
+    if (!window.confirm(`重置「${target.name}」的 PIN？学习数据会保留。`)) return;
+    accountStore.clearPin(pinTarget);
+    accountStore.switchTo(pinTarget);
+    location.reload();
   });
 
   render();

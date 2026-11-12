@@ -338,7 +338,7 @@
           <button id="st-add" class="btn small">\u6DFB\u52A0</button>
         </div>
       </div>
-      <p class="hint footnote">\u70B9\u51FB\u4EFB\u610F\u4E00\u884C\u5C55\u5F00\u8D70\u52BF\uFF08\u652F\u6301 30 / 60 / 120 \u65E5\uFF09\uFF1B\u5F53\u65E5\u6210\u529F\u5237\u65B0\u4E00\u6B21\u884C\u60C5\uFF0C\u5373\u5B8C\u6210\u300C\u590D\u76D8\u81EA\u9009\u80A1\u300D\u6253\u5361\u4EFB\u52A1\u3002</p>
+      <p class="hint footnote">点击任意一行展开行情，工具栏可切换周期、均线、图表类型和全屏；当日手动刷新一次行情，即完成「复盘自选股」打卡。</p>
     `;
       let r = (o) => g.querySelector(o);
       function b() {
@@ -2388,7 +2388,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.5.0";
+  var re = "3.5.1";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },

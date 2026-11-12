@@ -1,6 +1,6 @@
 /* 离线缓存：首次打开后，断网/电脑关机也能打开应用；行情请求走网络，不做缓存。
    v3：内容数据已从 HTML 内联改为 ./data/*.json，必须一并缓存，否则断网后学习页空白。 */
-const CACHE = 'daily-learn-3.5.0-r1';
+const CACHE = 'daily-learn-3.5.1-r1';
 const ASSETS = [
   './',
   './index.html',
