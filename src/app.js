@@ -239,6 +239,11 @@
       x = {},
       days = 30,
       idx = [],
+      chartCfg = { type: "candle", ma: { 5: true, 10: true, 20: true }, vol: true },
+      fullCode = null,
+      chartCleanup = null,
+      rerenderQuotes = null,
+      refreshStock = null,
       L = null;
     t.innerHTML = `
     <div class="subnav">
@@ -253,6 +258,18 @@
       localStorage.setItem(gt, JSON.stringify(s));
     }
     localStorage.getItem(gt) === null && y();
+    try {
+      let saved = JSON.parse(localStorage.getItem("dl.stock.chart") || "null");
+      if (saved && typeof saved === "object") {
+        if (saved.type === "line" || saved.type === "candle") chartCfg.type = saved.type;
+        if (saved.ma && typeof saved.ma === "object")
+          [5, 10, 20].forEach((m) => (chartCfg.ma[m] = saved.ma[m] !== false));
+        if (typeof saved.vol === "boolean") chartCfg.vol = saved.vol;
+      }
+    } catch {}
+    function saveChartCfg() {
+      localStorage.setItem("dl.stock.chart", JSON.stringify(chartCfg));
+    }
     function q() {
       try {
         return JSON.parse(localStorage.getItem(Nt) || "{}");
@@ -277,7 +294,29 @@
     setInterval(() => {
       l !== "quotes" || document.hidden || typeof L != "function" || (C() && L());
     }, 6e4);
+    e.addEventListener("dl:show", (ev) => {
+      let id = ev.detail && ev.detail.id;
+      if (id === "stock" && l === "quotes" && refreshStock) {
+        refreshStock();
+      } else if (fullCode) {
+        fullCode = null;
+        document.body.classList.remove("k-full-open");
+        rerenderQuotes && rerenderQuotes();
+      }
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Escape" || !fullCode) return;
+      fullCode = null;
+      document.body.classList.remove("k-full-open");
+      rerenderQuotes && rerenderQuotes();
+    });
     function M() {
+      fullCode = null;
+      document.body.classList.remove("k-full-open");
+      if (chartCleanup) {
+        chartCleanup();
+        chartCleanup = null;
+      }
       (N.querySelectorAll("button").forEach((r) =>
         r.classList.toggle("active", r.getAttribute("data-view") === l),
       ),
@@ -303,6 +342,11 @@
     `;
       let r = (o) => g.querySelector(o);
       function b() {
+        if (chartCleanup) {
+          chartCleanup();
+          chartCleanup = null;
+        }
+        setTimeout(() => h && mountChart(h), 0);
         let o = c.filter(($) => $.changePct > 0).length,
           v = c.filter(($) => $.changePct < 0).length,
           E = c.length - o - v;
@@ -335,7 +379,7 @@
                 <div class="q-price ${A}">${$.price == null ? "\u505C\u724C" : $.price.toFixed(2)}</div>
                 <div class="q-chg"><span class="pill ${A}">${J}</span><span class="hint">${Z}</span></div>
                 <button class="q-del" title="\u5220\u9664" data-del="${$.code}">\xD7</button>
-              </div>${Y ? `<div class="k-card">${ut}</div>` : ""}`;
+              </div>${Y ? `<div class="k-card ${fullCode === $.code ? "k-full" : ""}" data-kcode="${$.code}">${ut}</div>` : ""}`;
                 })
                 .join("")
             : '<p class="hint">\u6682\u65E0\u81EA\u9009\u80A1\uFF0C\u8BF7\u5728\u4E0B\u65B9\u6DFB\u52A0\uFF08\u5982 sh600519\uFF09\u3002</p>'),
@@ -343,94 +387,366 @@
             ? `\u66F4\u65B0\u4E8E ${new Date(c[0].serverTime).toLocaleTimeString("zh-CN")}${C() ? " \xB7 \u4EA4\u6613\u65F6\u6BB5\u81EA\u52A8\u5237\u65B0" : ""}`
             : "\u6DFB\u52A0\u81EA\u9009\u80A1\u540E\u70B9\u51FB\u5237\u65B0"));
       }
+      rerenderQuotes = () => b();
       function k(o, code, d) {
         let n = o.length,
-          W = 360,
-          H = 182,
-          padX = 8,
-          top = 6,
-          priceH = 108,
-          volTop = 146,
-          volH = 28,
-          hi = Math.max(...o.map((r) => r.high)),
-          lo = Math.min(...o.map((r) => r.low)),
-          span = hi - lo || 1,
-          step = (W - padX * 2) / n,
-          bw = Math.max(1.6, Math.min(7, step * 0.58)),
-          x = (i) => padX + step * i + step / 2,
-          y = (p) => top + ((hi - p) / span) * priceH,
-          maxV = Math.max(...o.map((r) => r.volume || 0), 1),
-          vy = (v) => volTop + volH - (v / maxV) * volH,
-          candles = o
-            .map((r, i) => {
-              let col = r.close >= r.open ? "var(--up)" : "var(--down)",
-                yo = y(r.open),
-                yc = y(r.close),
-                bt = Math.min(yo, yc),
-                bh = Math.max(1.2, Math.abs(yc - yo));
-              return `<line x1="${x(i).toFixed(1)}" y1="${y(r.high).toFixed(1)}" x2="${x(i).toFixed(1)}" y2="${y(r.low).toFixed(1)}" stroke="${col}" stroke-width="1"/><rect x="${(x(i) - bw / 2).toFixed(1)}" y="${bt.toFixed(1)}" width="${bw.toFixed(1)}" height="${bh.toFixed(1)}" rx=".8" fill="${col}"/>`;
-            })
-            .join(""),
-          vols = o
-            .map((r, i) => {
-              let col = r.close >= r.open ? "var(--up)" : "var(--down)",
-                h = Math.max(0.6, volTop + volH - vy(r.volume || 0));
-              return `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${vy(r.volume || 0).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" rx=".6" fill="${col}" opacity=".5"/>`;
-            })
-            .join(""),
-          maLine = (m, color, dash = "") => {
-            let pts = [];
-            for (let i = m - 1; i < n; i++) {
-              let sum = 0;
-              for (let j = i - m + 1; j <= i; j++) sum += o[j].close;
-              pts.push(`${x(i).toFixed(1)} ${y(sum / m).toFixed(1)}`);
-            }
-            return pts.length
-              ? `<path d="M${pts.join(" L")}" fill="none" stroke="${color}" stroke-width="1.4" stroke-linejoin="round" vector-effect="non-scaling-stroke"${dash ? ` stroke-dasharray="${dash}"` : ""}/>`
-              : "";
-          },
-          legend = [5, 10, 20]
-            .map((m) => {
-              let from = Math.max(0, n - m),
-                sum = 0;
-              for (let i = from; i < n; i++) sum += o[i].close;
-              return `<span><i class="m${m}"></i>MA${m} ${(sum / (n - from)).toFixed(2)}</span>`;
-            })
-            .join(""),
-          grid = [0.25, 0.5, 0.75]
-            .map(
-              (p) =>
-                `<line x1="${padX}" y1="${(top + p * priceH).toFixed(1)}" x2="${W - padX}" y2="${(top + p * priceH).toFixed(1)}"></line>`,
-            )
-            .join(""),
+          cfg = chartCfg,
           pct = ((o[n - 1].close - o[0].close) / o[0].close) * 100,
-          tone = pct > 0 ? "up" : pct < 0 ? "down" : "flat";
+          tone = pct > 0 ? "up" : pct < 0 ? "down" : "flat",
+          legend = [5, 10, 20]
+            .filter((m) => cfg.ma[m] && n >= m)
+            .map((m) => {
+              let sum = 0;
+              for (let i = n - m; i < n; i++) sum += o[i].close;
+              return `<span><i class="m${m}"></i>MA${m} ${(sum / m).toFixed(2)}</span>`;
+            })
+            .join("");
         return `
-        <div class="k-tools">
-          ${[30, 60, 120]
-            .map(
-              (v) =>
-                `<button class="k-period ${v === d ? "active" : ""}" data-days="${v}" data-code="${code}">${v} 日</button>`,
-            )
-            .join("")}
+        <div class="k-toolbar">
+          <div class="k-group">
+            ${[30, 60, 120]
+              .map(
+                (v) =>
+                  `<button class="k-btn k-days ${v === d ? "active" : ""}" data-days="${v}">${v}日</button>`,
+              )
+              .join("")}
+          </div>
+          <div class="k-group">
+            <button class="k-btn k-type ${cfg.type === "candle" ? "active" : ""}" data-type="candle">蜡烛</button>
+            <button class="k-btn k-type ${cfg.type === "line" ? "active" : ""}" data-type="line">折线</button>
+          </div>
+          <div class="k-group">
+            ${[5, 10, 20]
+              .map(
+                (m) =>
+                  `<button class="k-btn k-ma ${cfg.ma[m] ? "active" : ""}" data-ma="${m}">MA${m}</button>`,
+              )
+              .join("")}
+          </div>
+          <button class="k-btn k-vol ${cfg.vol ? "active" : ""}" data-act="vol">量</button>
+          <button class="k-icon" data-act="full" title="${fullCode === code ? "退出全屏" : "全屏"}">${
+            fullCode === code ? "⤡" : "⤢"
+          }</button>
+          <button class="k-icon" data-act="reload" title="刷新 K 线">↻</button>
         </div>
-        <div class="row-between k-meta">
-          <span class="k-legend">${legend}</span>
-          <span class="hint k-range" title="${o[0].date} ~ ${o[n - 1].date}">${o[0].date.slice(5)} ~ ${o[n - 1].date.slice(5)}</span>
+        <div class="k-legend">${legend}</div>
+        <div class="k-canvas-wrap" data-code="${code}">
+          <canvas class="k-canvas" aria-label="K 线图"></canvas>
+          <div class="k-tip" hidden></div>
         </div>
-        <svg class="kchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true">
-          <g class="k-grid">${grid}</g>
-          ${candles}
-          ${maLine(5, "var(--ma5)")}
-          ${maLine(10, "var(--ma10)")}
-          ${maLine(20, "var(--ma20)", "4 3")}
-          <text x="${padX}" y="${volTop - 3}" class="k-vol-label">成交量</text>
-          ${vols}
-        </svg>
         <div class="row-between k-meta k-meta-bottom">
           <span class="${tone} k-pct">区间 ${pct > 0 ? "+" : ""}${pct.toFixed(2)}%</span>
-          <span class="hint">最低 ${lo.toFixed(2)} · 最高 ${hi.toFixed(2)}</span>
+          <span class="hint">最低 ${Math.min(...o.map((r) => r.low)).toFixed(2)} · 最高 ${Math.max(...o.map((r) => r.high)).toFixed(2)}</span>
         </div>`;
+      }
+
+      function createKChart(wrap, rows, code) {
+        let canvas = wrap.querySelector(".k-canvas"),
+          tip = wrap.querySelector(".k-tip"),
+          ctx = canvas.getContext("2d"),
+          W = 0,
+          H = 0,
+          dpr = 1,
+          hover = -1,
+          geom = null,
+          colors = {},
+          hideTimer = null;
+
+        function css(name, fallback) {
+          let v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+          return v || fallback;
+        }
+        function readColors() {
+          colors = {
+            up: css("--up", "#c62828"),
+            down: css("--down", "#2e7d32"),
+            text: css("--text", "#111111"),
+            muted: css("--muted", "#737373"),
+            line: css("--line", "#e6e6e6"),
+            card: css("--card", "#ffffff"),
+            ma5: css("--ma5", "#111111"),
+            ma10: css("--ma10", "#666666"),
+            ma20: css("--ma20", "#9e9e9e"),
+          };
+        }
+        function fmt(v) {
+          return v == null || !isFinite(v) ? "--" : Number(v).toFixed(2);
+        }
+        function fmtVol(v) {
+          if (v == null || !isFinite(v)) return "--";
+          if (v >= 1e8) return (v / 1e8).toFixed(2) + " 亿";
+          if (v >= 1e4) return (v / 1e4).toFixed(2) + " 万";
+          return String(Math.round(v));
+        }
+        function resize() {
+          let r = wrap.getBoundingClientRect();
+          W = Math.max(260, Math.round(r.width));
+          H = Math.max(190, Math.round(r.height));
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          canvas.width = Math.round(W * dpr);
+          canvas.height = Math.round(H * dpr);
+          canvas.style.width = W + "px";
+          canvas.style.height = H + "px";
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+          draw();
+        }
+        function layout() {
+          let padL = 8,
+            padR = 56,
+            padT = 10,
+            padB = 22,
+            volH = chartCfg.vol ? Math.min(72, Math.max(42, H * 0.2)) : 0,
+            gap = chartCfg.vol ? 14 : 0,
+            priceH = H - padT - padB - volH - gap,
+            plotW = W - padL - padR,
+            hi = Math.max(...rows.map((r) => r.high)),
+            lo = Math.min(...rows.map((r) => r.low));
+          if (!isFinite(hi) || !isFinite(lo) || hi === lo) {
+            hi = lo + 1;
+            lo -= 1;
+          }
+          let pad = (hi - lo) * 0.06;
+          hi += pad;
+          lo -= pad;
+          let volTop = padT + priceH + gap,
+            maxV = Math.max(...rows.map((r) => r.volume || 0), 1),
+            slot = plotW / rows.length;
+          geom = {
+            padL,
+            padR,
+            padT,
+            padB,
+            priceH,
+            volTop,
+            volH,
+            plotW,
+            slot,
+            hi,
+            lo,
+            x: (i) => padL + slot * (i + 0.5),
+            y: (p) => padT + ((hi - p) / (hi - lo)) * priceH,
+            vy: (v) => volTop + volH - (v / maxV) * volH,
+          };
+        }
+        function draw() {
+          readColors();
+          layout();
+          const g = geom;
+          ctx.clearRect(0, 0, W, H);
+          ctx.font = "10px -apple-system, 'Segoe UI', sans-serif";
+          ctx.textBaseline = "middle";
+
+          for (let i = 0; i <= 4; i++) {
+            let yy = g.padT + (g.priceH * i) / 4,
+              p = g.hi - ((g.hi - g.lo) * i) / 4;
+            ctx.strokeStyle = colors.line;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(g.padL, Math.round(yy) + 0.5);
+            ctx.lineTo(W - g.padR, Math.round(yy) + 0.5);
+            ctx.stroke();
+            ctx.fillStyle = colors.muted;
+            ctx.textAlign = "left";
+            ctx.fillText(fmt(p), W - g.padR + 6, yy);
+          }
+
+          let ticks = [
+            ...new Set([
+              0,
+              Math.round((rows.length - 1) * 0.25),
+              Math.round((rows.length - 1) * 0.5),
+              Math.round((rows.length - 1) * 0.75),
+              rows.length - 1,
+            ]),
+          ];
+          ctx.fillStyle = colors.muted;
+          ticks.forEach((i, pos) => {
+            let xx = g.x(i),
+              last = pos === ticks.length - 1;
+            ctx.textAlign = pos === 0 ? "left" : last ? "right" : "center";
+            ctx.fillText(rows[i].date.slice(5), pos === 0 ? g.padL : last ? W - g.padR : xx, H - 8);
+          });
+
+          if (chartCfg.vol) {
+            ctx.fillStyle = colors.muted;
+            ctx.textAlign = "left";
+            ctx.textBaseline = "bottom";
+            ctx.fillText("成交量", g.padL + 2, g.volTop - 2);
+            ctx.textBaseline = "middle";
+            let bw = Math.max(1, Math.min(g.slot * 0.62, 10));
+            for (let i = 0; i < rows.length; i++) {
+              let r = rows[i],
+                yy = g.vy(r.volume || 0);
+              ctx.globalAlpha = 0.55;
+              ctx.fillStyle = r.close >= r.open ? colors.up : colors.down;
+              ctx.fillRect(g.x(i) - bw / 2, yy, bw, g.volTop + g.volH - yy);
+            }
+            ctx.globalAlpha = 1;
+          }
+
+          if (chartCfg.type === "candle") {
+            let bw = Math.max(1, Math.min(g.slot * 0.66, 10));
+            for (let i = 0; i < rows.length; i++) {
+              let r = rows[i],
+                col = r.close >= r.open ? colors.up : colors.down,
+                xx = Math.round(g.x(i)) + 0.5;
+              ctx.strokeStyle = col;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(xx, g.y(r.high));
+              ctx.lineTo(xx, g.y(r.low));
+              ctx.stroke();
+              let yo = g.y(r.open),
+                yc = g.y(r.close),
+                top = Math.min(yo, yc);
+              ctx.fillStyle = col;
+              ctx.fillRect(g.x(i) - bw / 2, top, bw, Math.max(1, Math.abs(yc - yo)));
+            }
+          } else {
+            ctx.strokeStyle = colors.text;
+            ctx.lineWidth = 1.5;
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+            ctx.beginPath();
+            rows.forEach((r, i) => {
+              let xx = g.x(i),
+                yy = g.y(r.close);
+              i ? ctx.lineTo(xx, yy) : ctx.moveTo(xx, yy);
+            });
+            ctx.stroke();
+          }
+
+          [5, 10, 20].forEach((m) => {
+            if (!chartCfg.ma[m] || rows.length < m) return;
+            ctx.strokeStyle = m === 5 ? colors.ma5 : m === 10 ? colors.ma10 : colors.ma20;
+            ctx.lineWidth = 1.2;
+            ctx.lineJoin = "round";
+            ctx.setLineDash(m === 20 ? [4, 3] : []);
+            ctx.beginPath();
+            let started = false;
+            for (let i = m - 1; i < rows.length; i++) {
+              let sum = 0;
+              for (let j = i - m + 1; j <= i; j++) sum += rows[j].close;
+              let xx = g.x(i),
+                yy = g.y(sum / m);
+              started ? ctx.lineTo(xx, yy) : (ctx.moveTo(xx, yy), (started = true));
+            }
+            ctx.stroke();
+            ctx.setLineDash([]);
+          });
+
+          if (hover >= 0 && hover < rows.length) {
+            let xx = Math.round(g.x(hover)) + 0.5,
+              yy = g.y(rows[hover].close);
+            ctx.strokeStyle = colors.muted;
+            ctx.globalAlpha = 0.6;
+            ctx.lineWidth = 1;
+            ctx.setLineDash([3, 3]);
+            ctx.beginPath();
+            ctx.moveTo(xx, g.padT);
+            ctx.lineTo(xx, g.padT + g.priceH);
+            ctx.moveTo(g.padL, Math.round(yy) + 0.5);
+            ctx.lineTo(W - g.padR, Math.round(yy) + 0.5);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.globalAlpha = 1;
+            let label = fmt(rows[hover].close),
+              tw = ctx.measureText(label).width;
+            ctx.fillStyle = colors.card;
+            ctx.fillRect(W - g.padR + 2, yy - 8, tw + 8, 16);
+            ctx.strokeStyle = colors.line;
+            ctx.strokeRect(W - g.padR + 2, yy - 8, tw + 8, 16);
+            ctx.fillStyle = colors.text;
+            ctx.textAlign = "left";
+            ctx.fillText(label, W - g.padR + 6, yy);
+          }
+        }
+        function showTip(i, clientX, clientY) {
+          let r = rows[i];
+          if (!r) return;
+          let prev = i > 0 ? rows[i - 1].close : r.open,
+            chg = prev ? ((r.close - prev) / prev) * 100 : 0,
+            cls = chg > 0 ? "up" : chg < 0 ? "down" : "flat";
+          tip.innerHTML = `<div class="k-tip-head"><b>${r.date}</b><span class="${cls}">${
+            chg > 0 ? "+" : ""
+          }${chg.toFixed(2)}%</span></div><div class="k-tip-grid"><span>开</span><b>${fmt(
+            r.open,
+          )}</b><span>高</span><b>${fmt(r.high)}</b><span>低</span><b>${fmt(
+            r.low,
+          )}</b><span>收</span><b>${fmt(r.close)}</b><span>量</span><b>${fmtVol(r.volume)}</b></div>`;
+          tip.hidden = false;
+          let wr = wrap.getBoundingClientRect(),
+            tw = tip.offsetWidth,
+            th = tip.offsetHeight,
+            x = clientX - wr.left + 14,
+            y = clientY - wr.top + 14;
+          if (x + tw > wr.width - 8) x = clientX - wr.left - tw - 14;
+          if (y + th > wr.height - 8) y = clientY - wr.top - th - 14;
+          tip.style.left = Math.max(8, x) + "px";
+          tip.style.top = Math.max(8, y) + "px";
+        }
+        function hideTip() {
+          if (hideTimer) clearTimeout(hideTimer);
+          tip.hidden = true;
+          hover = -1;
+          draw();
+        }
+        function onMove(ev) {
+          if (!geom) return;
+          let r = canvas.getBoundingClientRect(),
+            mx = ev.clientX - r.left,
+            my = ev.clientY - r.top;
+          if (mx < geom.padL || mx > W - geom.padR || my < geom.padT - 4) return hideTip();
+          let i = Math.floor((mx - geom.padL) / geom.slot);
+          i = Math.max(0, Math.min(rows.length - 1, i));
+          if (i !== hover) {
+            hover = i;
+            draw();
+          }
+          showTip(i, ev.clientX, ev.clientY);
+        }
+        function onDown(ev) {
+          if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
+          onMove(ev);
+        }
+        function onUp(ev) {
+          if (ev.pointerType === "mouse") return;
+          hideTimer = setTimeout(hideTip, 1500);
+        }
+        let onTheme = () => {
+            readColors();
+            draw();
+          },
+          ro = new ResizeObserver(() => resize());
+        ro.observe(wrap);
+        document.addEventListener("dl:theme", onTheme);
+        canvas.addEventListener("pointermove", onMove);
+        canvas.addEventListener("pointerdown", onDown);
+        canvas.addEventListener("pointerup", onUp);
+        canvas.addEventListener("pointerleave", hideTip);
+        resize();
+        return () => {
+          ro.disconnect();
+          document.removeEventListener("dl:theme", onTheme);
+          canvas.removeEventListener("pointermove", onMove);
+          canvas.removeEventListener("pointerdown", onDown);
+          canvas.removeEventListener("pointerup", onUp);
+          canvas.removeEventListener("pointerleave", hideTip);
+          if (hideTimer) clearTimeout(hideTimer);
+        };
+      }
+
+      function mountChart(code) {
+        if (chartCleanup) {
+          chartCleanup();
+          chartCleanup = null;
+        }
+        let card = g.querySelector(`.k-card[data-kcode="${code}"]`),
+          wrap = card && card.querySelector(".k-canvas-wrap"),
+          data = x[code];
+        if (!wrap || !data || !data.rows || !data.rows.length) return;
+        chartCleanup = createKChart(wrap, data.rows, code);
+        document.body.classList.toggle("k-full-open", fullCode === code);
       }
       function S(o, v = 1e4) {
         let E = new AbortController(),
@@ -446,12 +762,12 @@
           x[o] = { days: d, rows: [] };
         }
       }
-      async function m() {
+      async function m(mark = false) {
         r("#st-meta").textContent = "\u5237\u65B0\u4E2D\u2026";
         try {
           let v = await (await S("/api/quotes?codes=" + encodeURIComponent(s.join(",")))).json();
           if (v.error) throw new Error(v.error);
-          ((c = v), b(), D());
+          ((c = v), b(), mark && D());
         } catch (o) {
           r("#st-meta").textContent =
             `\u884C\u60C5\u83B7\u53D6\u5931\u8D25\uFF1A${o.message === "The user aborted a request." ? "\u8BF7\u6C42\u8D85\u65F6" : o.message}\uFF08\u8BF7\u68C0\u67E5\u7F51\u7EDC\uFF09`;
@@ -466,6 +782,10 @@
         }
         renderIdx();
       }
+      refreshStock = () => {
+        m(false);
+        loadIndex();
+      };
       function renderIdx() {
         let el = r("#st-index");
         if (!el) return;
@@ -482,7 +802,7 @@
           })
           .join("");
       }
-      (r("#st-refresh").addEventListener("click", m),
+      (r("#st-refresh").addEventListener("click", () => m(true)),
         r("#st-list").addEventListener("click", async (o) => {
           if (o.target.closest(".q-del")) {
             let $ = o.target.getAttribute("data-del");
@@ -494,16 +814,41 @@
               b());
             return;
           }
-          let pd = o.target.closest(".k-period");
-          if (pd) {
-            let d = Number(pd.getAttribute("data-days")) || 30,
-              code = pd.getAttribute("data-code");
-            if (code) {
+          let kt = o.target.closest(".k-toolbar button");
+          if (kt) {
+            let card = kt.closest(".k-card"),
+              code = card && card.getAttribute("data-kcode");
+            if (!code) return;
+            if (kt.classList.contains("k-days")) {
+              let d = Number(kt.getAttribute("data-days")) || 30;
               days = d;
               h = code;
               x[code] = { days: d, rows: [], loading: true };
               b();
               await T(code, d);
+              b();
+            } else if (kt.classList.contains("k-type")) {
+              chartCfg.type = kt.getAttribute("data-type") === "line" ? "line" : "candle";
+              saveChartCfg();
+              b();
+            } else if (kt.classList.contains("k-ma")) {
+              let m = Number(kt.getAttribute("data-ma"));
+              chartCfg.ma[m] = !chartCfg.ma[m];
+              saveChartCfg();
+              b();
+            } else if (kt.getAttribute("data-act") === "vol") {
+              chartCfg.vol = !chartCfg.vol;
+              saveChartCfg();
+              b();
+            } else if (kt.getAttribute("data-act") === "reload") {
+              let d = x[code] ? x[code].days : days;
+              x[code] = { days: d, rows: [], loading: true };
+              b();
+              await T(code, d);
+              b();
+            } else if (kt.getAttribute("data-act") === "full") {
+              fullCode = fullCode === code ? null : code;
+              document.body.classList.toggle("k-full-open", !!fullCode);
               b();
             }
             return;
@@ -535,10 +880,10 @@
           (s.includes(v) || (s.push(v), y(), m()), (o.value = ""));
         }),
         (L = () => {
-          m();
+          m(false);
           loadIndex();
         }),
-        m(),
+        m(false),
         loadIndex());
     }
     function p() {
@@ -2043,7 +2388,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.4.0";
+  var re = "3.5.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },
