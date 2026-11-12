@@ -239,9 +239,12 @@
       x = {},
       days = 30,
       idx = [],
-      chartCfg = { type: "candle", ma: { 5: true, 10: true, 20: true }, vol: true },
+      chartCfg = { type: "candle", ma: { 5: true, 10: true, 20: true }, vol: true, volMa: true, days: 30 },
+      drawMode = "none",
+      drawings = {},
       fullCode = null,
       chartCleanup = null,
+      chartApi = null,
       rerenderQuotes = null,
       refreshStock = null,
       L = null;
@@ -265,10 +268,31 @@
         if (saved.ma && typeof saved.ma === "object")
           [5, 10, 20].forEach((m) => (chartCfg.ma[m] = saved.ma[m] !== false));
         if (typeof saved.vol === "boolean") chartCfg.vol = saved.vol;
+        if (typeof saved.volMa === "boolean") chartCfg.volMa = saved.volMa;
+        if ([5, 30, 60, 120, 250].includes(saved.days)) {
+          chartCfg.days = saved.days;
+          days = saved.days;
+        }
       }
+    } catch {}
+    try {
+      let savedLines = JSON.parse(localStorage.getItem("dl.stock.drawings") || "{}");
+      if (savedLines && typeof savedLines === "object") drawings = savedLines;
     } catch {}
     function saveChartCfg() {
       localStorage.setItem("dl.stock.chart", JSON.stringify(chartCfg));
+    }
+    function getLines(code) {
+      return Array.isArray(drawings[code]) ? drawings[code].slice() : [];
+    }
+    function setLines(code, list) {
+      drawings[code] = list;
+      localStorage.setItem("dl.stock.drawings", JSON.stringify(drawings));
+    }
+    function shortVol(v) {
+      if (v >= 1e8) return (v / 1e8).toFixed(2) + "亿";
+      if (v >= 1e4) return (v / 1e4).toFixed(2) + "万";
+      return String(Math.round(v));
     }
     function q() {
       try {
@@ -316,6 +340,7 @@
       if (chartCleanup) {
         chartCleanup();
         chartCleanup = null;
+        chartApi = null;
       }
       (N.querySelectorAll("button").forEach((r) =>
         r.classList.toggle("active", r.getAttribute("data-view") === l),
@@ -338,13 +363,14 @@
           <button id="st-add" class="btn small">\u6DFB\u52A0</button>
         </div>
       </div>
-      <p class="hint footnote">点击任意一行展开行情，工具栏可切换周期、均线、图表类型和全屏；当日手动刷新一次行情，即完成「复盘自选股」打卡。</p>
+      <p class="hint footnote">点击任意一行展开行情，工具栏可切换周期、均线、类型、成交量并画趋势线 / 水平线；当日手动刷新一次行情，即完成「复盘自选股」打卡。</p>
     `;
       let r = (o) => g.querySelector(o);
       function b() {
         if (chartCleanup) {
           chartCleanup();
           chartCleanup = null;
+          chartApi = null;
         }
         setTimeout(() => h && mountChart(h), 0);
         let o = c.filter(($) => $.changePct > 0).length,
@@ -391,20 +417,33 @@
       function k(o, code, d) {
         let n = o.length,
           cfg = chartCfg,
+          hasLines = getLines(code).length > 0,
           pct = ((o[n - 1].close - o[0].close) / o[0].close) * 100,
           tone = pct > 0 ? "up" : pct < 0 ? "down" : "flat",
-          legend = [5, 10, 20]
+          maLegend = [5, 10, 20]
             .filter((m) => cfg.ma[m] && n >= m)
             .map((m) => {
               let sum = 0;
               for (let i = n - m; i < n; i++) sum += o[i].close;
               return `<span><i class="m${m}"></i>MA${m} ${(sum / m).toFixed(2)}</span>`;
             })
-            .join("");
+            .join(""),
+          volLegend =
+            cfg.vol && cfg.volMa
+              ? [5, 10]
+                  .filter((m) => n >= m)
+                  .map((m) => {
+                    let sum = 0;
+                    for (let i = n - m; i < n; i++) sum += o[i].volume || 0;
+                    return `<span><i class="v${m}"></i>量MA${m} ${shortVol(sum / m)}</span>`;
+                  })
+                  .join("")
+              : "",
+          legend = maLegend + volLegend;
         return `
         <div class="k-toolbar">
           <div class="k-group">
-            ${[30, 60, 120]
+            ${[5, 30, 60, 120, 250]
               .map(
                 (v) =>
                   `<button class="k-btn k-days ${v === d ? "active" : ""}" data-days="${v}">${v}日</button>`,
@@ -424,6 +463,14 @@
               .join("")}
           </div>
           <button class="k-btn k-vol ${cfg.vol ? "active" : ""}" data-act="vol">量</button>
+          <button class="k-btn k-volma ${cfg.vol && cfg.volMa ? "active" : ""}" data-act="volma" ${
+            cfg.vol ? "" : "disabled"
+          }>量均</button>
+          <div class="k-group">
+            <button class="k-btn k-draw ${drawMode === "trend" ? "active" : ""}" data-draw="trend">趋势</button>
+            <button class="k-btn k-draw ${drawMode === "hline" ? "active" : ""}" data-draw="hline">水平</button>
+            <button class="k-btn" data-act="clear-lines" ${hasLines ? "" : "disabled"}>清除</button>
+          </div>
           <button class="k-icon" data-act="full" title="${fullCode === code ? "退出全屏" : "全屏"}">${
             fullCode === code ? "⤡" : "⤢"
           }</button>
@@ -440,7 +487,7 @@
         </div>`;
       }
 
-      function createKChart(wrap, rows, code) {
+      function createKChart(wrap, rows, code, mode, initialLines, onChange) {
         let canvas = wrap.querySelector(".k-canvas"),
           tip = wrap.querySelector(".k-tip"),
           ctx = canvas.getContext("2d"),
@@ -450,7 +497,11 @@
           hover = -1,
           geom = null,
           colors = {},
-          hideTimer = null;
+          hideTimer = null,
+          drawMode = mode || "none",
+          lines = Array.isArray(initialLines) ? initialLines.slice() : [],
+          drawing = null,
+          draft = null;
 
         function css(name, fallback) {
           let v = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
@@ -582,6 +633,25 @@
               ctx.fillRect(g.x(i) - bw / 2, yy, bw, g.volTop + g.volH - yy);
             }
             ctx.globalAlpha = 1;
+            if (chartCfg.volMa) {
+              [5, 10].forEach((m) => {
+                if (rows.length < m) return;
+                ctx.strokeStyle = m === 5 ? colors.ma10 : colors.ma20;
+                ctx.lineWidth = 1;
+                ctx.setLineDash(m === 10 ? [3, 3] : []);
+                ctx.beginPath();
+                let started = false;
+                for (let i = m - 1; i < rows.length; i++) {
+                  let sum = 0;
+                  for (let j = i - m + 1; j <= i; j++) sum += rows[j].volume || 0;
+                  let yy = g.vy(sum / m),
+                    xx = g.x(i);
+                  started ? ctx.lineTo(xx, yy) : (ctx.moveTo(xx, yy), (started = true));
+                }
+                ctx.stroke();
+                ctx.setLineDash([]);
+              });
+            }
           }
 
           if (chartCfg.type === "candle") {
@@ -635,7 +705,9 @@
             ctx.setLineDash([]);
           });
 
-          if (hover >= 0 && hover < rows.length) {
+          drawUserLines();
+
+          if (drawMode === "none" && hover >= 0 && hover < rows.length) {
             let xx = Math.round(g.x(hover)) + 0.5,
               yy = g.y(rows[hover].close);
             ctx.strokeStyle = colors.muted;
@@ -660,6 +732,89 @@
             ctx.textAlign = "left";
             ctx.fillText(label, W - g.padR + 6, yy);
           }
+        }
+        function dateIndex(date) {
+          return rows.findIndex((r) => r.date === date);
+        }
+        function toPoint(ev) {
+          if (!geom) return null;
+          let r = canvas.getBoundingClientRect(),
+            mx = ev.clientX - r.left,
+            my = ev.clientY - r.top;
+          if (mx < geom.padL || mx > W - geom.padR || my < geom.padT || my > geom.padT + geom.priceH)
+            return null;
+          let i = Math.round((mx - geom.padL) / geom.slot - 0.5);
+          i = Math.max(0, Math.min(rows.length - 1, i));
+          let price = geom.hi - ((my - geom.padT) / geom.priceH) * (geom.hi - geom.lo);
+          return { i, date: rows[i].date, price };
+        }
+        function drawUserLines() {
+          if (!geom) return;
+          const g = geom;
+          ctx.save();
+          ctx.beginPath();
+          ctx.rect(g.padL, g.padT, g.plotW, g.priceH);
+          ctx.clip();
+          const one = (l, isDraft) => {
+            if (!l) return;
+            ctx.strokeStyle = colors.text;
+            ctx.globalAlpha = isDraft ? 0.55 : 0.9;
+            if (l.type === "hline") {
+              let y = g.y(l.price);
+              if (y < g.padT || y > g.padT + g.priceH) return;
+              ctx.lineWidth = 1.2;
+              ctx.setLineDash([5, 4]);
+              ctx.beginPath();
+              ctx.moveTo(g.padL, y);
+              ctx.lineTo(W - g.padR, y);
+              ctx.stroke();
+              ctx.setLineDash([]);
+            } else if (l.type === "trend") {
+              let i1 = dateIndex(l.a.date),
+                i2 = dateIndex(l.b.date);
+              if (i1 < 0 || i2 < 0) return;
+              let x1 = g.x(i1),
+                y1 = g.y(l.a.price),
+                x2 = g.x(i2),
+                y2 = g.y(l.b.price);
+              ctx.lineWidth = 1.5;
+              ctx.beginPath();
+              ctx.moveTo(x1, y1);
+              ctx.lineTo(x2, y2);
+              ctx.stroke();
+              ctx.fillStyle = colors.text;
+              ctx.globalAlpha = 1;
+              [
+                [x1, y1],
+                [x2, y2],
+              ].forEach(([x, y]) => {
+                ctx.beginPath();
+                ctx.arc(x, y, 2.5, 0, Math.PI * 2);
+                ctx.fill();
+              });
+            }
+            ctx.globalAlpha = 1;
+          };
+          lines.forEach((l) => one(l, false));
+          if (draft) one(draft, true);
+          ctx.restore();
+          ctx.font = "10px -apple-system, 'Segoe UI', sans-serif";
+          ctx.textBaseline = "middle";
+          lines.forEach((l) => {
+            if (l.type !== "hline") return;
+            let y = g.y(l.price);
+            if (y < g.padT || y > g.padT + g.priceH) return;
+            let text = fmt(l.price),
+              tw = ctx.measureText(text).width;
+            ctx.fillStyle = colors.card;
+            ctx.fillRect(W - g.padR + 2, y - 8, tw + 8, 16);
+            ctx.strokeStyle = colors.line;
+            ctx.lineWidth = 1;
+            ctx.strokeRect(W - g.padR + 2, y - 8, tw + 8, 16);
+            ctx.fillStyle = colors.text;
+            ctx.textAlign = "left";
+            ctx.fillText(text, W - g.padR + 6, y);
+          });
         }
         function showTip(i, clientX, clientY) {
           let r = rows[i];
@@ -692,7 +847,20 @@
           draw();
         }
         function onMove(ev) {
-          if (!geom) return;
+          if (drawMode === "trend" && drawing) {
+            let p = toPoint(ev);
+            if (p) {
+              drawing.end = p;
+              draft = {
+                type: "trend",
+                a: { date: drawing.start.date, price: drawing.start.price },
+                b: { date: p.date, price: p.price },
+              };
+              draw();
+            }
+            return;
+          }
+          if (drawMode !== "none" || !geom) return;
           let r = canvas.getBoundingClientRect(),
             mx = ev.clientX - r.left,
             my = ev.clientY - r.top;
@@ -706,10 +874,55 @@
           showTip(i, ev.clientX, ev.clientY);
         }
         function onDown(ev) {
+          if (drawMode === "hline") {
+            let p = toPoint(ev);
+            if (!p) return;
+            lines.push({ type: "hline", price: p.price });
+            onChange && onChange(lines.slice());
+            draw();
+            return;
+          }
+          if (drawMode === "trend") {
+            let p = toPoint(ev);
+            if (!p) return;
+            drawing = { start: p, end: p };
+            draft = {
+              type: "trend",
+              a: { date: p.date, price: p.price },
+              b: { date: p.date, price: p.price },
+            };
+            if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
+            draw();
+            return;
+          }
           if (canvas.setPointerCapture) canvas.setPointerCapture(ev.pointerId);
           onMove(ev);
         }
         function onUp(ev) {
+          if (drawMode === "trend" && drawing) {
+            let p = toPoint(ev) || drawing.end;
+            if (p) drawing.end = p;
+            let dx = (drawing.end.i - drawing.start.i) * (geom ? geom.slot : 0),
+              dy = geom ? geom.y(drawing.end.price) - geom.y(drawing.start.price) : 0;
+            if (Math.hypot(dx, dy) > 8) {
+              lines.push({
+                type: "trend",
+                a: { date: drawing.start.date, price: drawing.start.price },
+                b: { date: drawing.end.date, price: drawing.end.price },
+              });
+              onChange && onChange(lines.slice());
+            }
+            drawing = null;
+            draft = null;
+            draw();
+            return;
+          }
+          if (drawMode !== "none") {
+            drawing = null;
+            draft = null;
+            draw();
+            return;
+          }
           if (ev.pointerType === "mouse") return;
           hideTimer = setTimeout(hideTip, 1500);
         }
@@ -724,15 +937,33 @@
         canvas.addEventListener("pointerdown", onDown);
         canvas.addEventListener("pointerup", onUp);
         canvas.addEventListener("pointerleave", hideTip);
+        function setMode(next) {
+          drawMode = next || "none";
+          drawing = null;
+          draft = null;
+          hover = -1;
+          tip.hidden = true;
+          canvas.classList.toggle("drawing", drawMode !== "none");
+          draw();
+        }
+        function setLines(next) {
+          lines = Array.isArray(next) ? next.slice() : [];
+          draw();
+        }
+        canvas.classList.toggle("drawing", drawMode !== "none");
         resize();
-        return () => {
-          ro.disconnect();
-          document.removeEventListener("dl:theme", onTheme);
-          canvas.removeEventListener("pointermove", onMove);
-          canvas.removeEventListener("pointerdown", onDown);
-          canvas.removeEventListener("pointerup", onUp);
-          canvas.removeEventListener("pointerleave", hideTip);
-          if (hideTimer) clearTimeout(hideTimer);
+        return {
+          destroy: () => {
+            ro.disconnect();
+            document.removeEventListener("dl:theme", onTheme);
+            canvas.removeEventListener("pointermove", onMove);
+            canvas.removeEventListener("pointerdown", onDown);
+            canvas.removeEventListener("pointerup", onUp);
+            canvas.removeEventListener("pointerleave", hideTip);
+            if (hideTimer) clearTimeout(hideTimer);
+          },
+          setMode,
+          setLines,
         };
       }
 
@@ -745,7 +976,12 @@
           wrap = card && card.querySelector(".k-canvas-wrap"),
           data = x[code];
         if (!wrap || !data || !data.rows || !data.rows.length) return;
-        chartCleanup = createKChart(wrap, data.rows, code);
+        chartApi = createKChart(wrap, data.rows, code, drawMode, getLines(code), (list) => {
+          setLines(code, list);
+          let btn = g.querySelector(`.k-card[data-kcode="${code}"] [data-act="clear-lines"]`);
+          if (btn) btn.disabled = !list.length;
+        });
+        chartCleanup = chartApi.destroy;
         document.body.classList.toggle("k-full-open", fullCode === code);
       }
       function S(o, v = 1e4) {
@@ -822,6 +1058,8 @@
             if (kt.classList.contains("k-days")) {
               let d = Number(kt.getAttribute("data-days")) || 30;
               days = d;
+              chartCfg.days = d;
+              saveChartCfg();
               h = code;
               x[code] = { days: d, rows: [], loading: true };
               b();
@@ -840,6 +1078,22 @@
               chartCfg.vol = !chartCfg.vol;
               saveChartCfg();
               b();
+            } else if (kt.getAttribute("data-act") === "volma") {
+              chartCfg.volMa = !chartCfg.volMa;
+              saveChartCfg();
+              b();
+            } else if (kt.classList.contains("k-draw")) {
+              let m = kt.getAttribute("data-draw");
+              drawMode = drawMode === m ? "none" : m;
+              document.querySelectorAll(".k-toolbar .k-draw").forEach((el) =>
+                el.classList.toggle("active", el.getAttribute("data-draw") === drawMode),
+              );
+              if (chartApi) chartApi.setMode(drawMode);
+            } else if (kt.getAttribute("data-act") === "clear-lines") {
+              if (!getLines(code).length) return;
+              setLines(code, []);
+              if (chartApi) chartApi.setLines([]);
+              kt.disabled = true;
             } else if (kt.getAttribute("data-act") === "reload") {
               let d = x[code] ? x[code].days : days;
               x[code] = { days: d, rows: [], loading: true };
@@ -2388,7 +2642,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.5.1";
+  var re = "3.6.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },

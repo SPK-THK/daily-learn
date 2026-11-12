@@ -85,7 +85,7 @@
   async function kline(code, days) {
     const c = normCodes([code])[0];
     if (!c) return json([]);
-    const n = Math.min(Math.max(Number(days) || 30, 1), 120);
+    const n = Math.min(Math.max(Number(days) || 30, 1), 300);
     const r = await nativeFetch(
       `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${c},day,,,${n},qfq`,
       { cache: 'no-store' }
