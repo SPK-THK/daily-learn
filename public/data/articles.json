@@ -1,478 +1,572 @@
 {
- "articles": [
-  {
-   "id": "price-move",
-   "title": "Why Do Stock Prices Move? 股价为什么会波动？",
-   "minutes": 3,
-   "paras": [
+  "articles": [
     {
-     "en": "A stock price is simply the price buyers and sellers agree on at a moment. When more people want to buy than to sell, the price goes up. When more people want to sell, it goes down.",
-     "zh": "股价就是买卖双方在某一时刻达成的价格。当想买的人多于想卖的人，价格就上涨；当想卖的人更多，价格就下跌。"
+      "id": "price-move",
+      "title": "Why Do Stock Prices Move? 股价为什么会波动？",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "A stock price is simply the price buyers and sellers agree on at a moment. When more people want to buy than to sell, the price goes up. When more people want to sell, it goes down.",
+          "zh": "股价就是买卖双方在某一时刻达成的价格。当想买的人多于想卖的人，价格就上涨；当想卖的人更多，价格就下跌。"
+        },
+        {
+          "en": "Behind the buying and selling are expectations. If investors believe a company will earn more in the future, they are willing to pay more for its shares today. Bad news about profits can push the price down quickly.",
+          "zh": "买卖的背后是预期。如果投资者相信一家公司未来能赚更多钱，他们今天就愿意为它的股票付更高的价格。而盈利方面的坏消息会让股价迅速下跌。"
+        },
+        {
+          "en": "Emotions matter too. Fear can make a whole market fall at once, and greed can lift prices far above what a business is really worth. Learning to notice these emotions — in the market and in yourself — is the first step of investing.",
+          "zh": "情绪同样重要。恐惧可以让整个市场同时下跌，贪婪可以把价格抬到远超企业真实价值的水平。学会觉察这些情绪——市场中的和你自己的——是投资的第一步。"
+        }
+      ],
+      "notes": [
+        "agree on sth. 固定搭配：就某事达成一致，介词用 on",
+        "be willing to do 愿意做某事——写作口语双料高频",
+        "far above 远高于；反义 far below 远低于",
+        "in the market and in yourself：介词短语并列，emphasis 结构收尾有力"
+      ],
+      "vocab": [
+        {
+          "w": "expectation",
+          "zh": "预期"
+        },
+        {
+          "w": "investor",
+          "zh": "投资者"
+        },
+        {
+          "w": "profit",
+          "zh": "盈利"
+        },
+        {
+          "w": "emotion",
+          "zh": "情绪"
+        },
+        {
+          "w": "worth",
+          "zh": "价值"
+        }
+      ]
     },
     {
-     "en": "Behind the buying and selling are expectations. If investors believe a company will earn more in the future, they are willing to pay more for its shares today. Bad news about profits can push the price down quickly.",
-     "zh": "买卖的背后是预期。如果投资者相信一家公司未来能赚更多钱，他们今天就愿意为它的股票付更高的价格。而盈利方面的坏消息会让股价迅速下跌。"
+      "id": "bull-bear",
+      "title": "Bull and Bear Markets 牛市与熊市",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "A bull market is a long period in which prices keep rising and people feel confident. A bear market is the opposite: prices fall, often by twenty percent or more, and pessimism spreads.",
+          "zh": "牛市是价格持续上涨、人们充满信心的漫长时期。熊市则相反：价格下跌，跌幅常常达到百分之二十以上，悲观情绪蔓延。"
+        },
+        {
+          "en": "No one can predict exactly when a bull becomes a bear. But history shows one thing clearly: markets have always recovered from every bear market so far, though it can take months or years.",
+          "zh": "没有人能精确预测牛市何时变成熊市。但历史清楚地表明一件事：到目前为止，市场总能从每一次熊市中恢复过来，尽管这可能需要数月甚至数年。"
+        },
+        {
+          "en": "For a beginner, the lesson is simple. In a bull market, stay humble and avoid chasing prices. In a bear market, stay patient — cheap prices are the friend of the long-term buyer.",
+          "zh": "对初学者来说，教训很简单。牛市里保持谦逊，不要追涨；熊市里保持耐心——便宜的价格是长期买入者的朋友。"
+        }
+      ],
+      "notes": [
+        "in which prices keep rising：介词 + which 的定语从句，正式书面句式",
+        "so far 到目前为止——现在完成时的标志性时间状语",
+        "avoid doing sth.：avoid 后接动名词，不说 avoid to do",
+        "破折号 — 引出补充解释，比逗号更有强调感"
+      ],
+      "vocab": [
+        {
+          "w": "period",
+          "zh": "时期"
+        },
+        {
+          "w": "confident",
+          "zh": "自信的"
+        },
+        {
+          "w": "pessimism",
+          "zh": "悲观情绪"
+        },
+        {
+          "w": "predict",
+          "zh": "预测"
+        },
+        {
+          "w": "recover",
+          "zh": "恢复"
+        },
+        {
+          "w": "humble",
+          "zh": "谦逊的"
+        }
+      ]
     },
     {
-     "en": "Emotions matter too. Fear can make a whole market fall at once, and greed can lift prices far above what a business is really worth. Learning to notice these emotions — in the market and in yourself — is the first step of investing.",
-     "zh": "情绪同样重要。恐惧可以让整个市场同时下跌，贪婪可以把价格抬到远超企业真实价值的水平。学会觉察这些情绪——市场中的和你自己的——是投资的第一步。"
+      "id": "compound",
+      "title": "Compound Interest: The Eighth Wonder 复利：第八大奇迹",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "Compound interest means your money earns returns, and then those returns earn returns too. A small sum, given enough time, can grow far beyond your intuition.",
+          "zh": "复利是指你的钱产生收益，而这些收益又继续产生收益。一笔小钱，只要时间够长，可以增长到远超直觉的程度。"
+        },
+        {
+          "en": "Suppose you invest 10,000 yuan at an 8% yearly return. In 10 years it becomes about 21,600; in 30 years, about 100,600. The last ten years add more than the first twenty combined.",
+          "zh": "假设你以每年 8% 的收益投资一万元。十年后它变成约 21,600 元；三十年后约 100,600 元。最后十年增加的部分，超过了前二十年的总和。"
+        },
+        {
+          "en": "The same rule applies to learning. Twenty English words a day feels small, but a year of consistency is more than seven thousand words. Time multiplies small daily actions — this is the real logic behind this app.",
+          "zh": "同样的规律也适用于学习。每天二十个单词看起来很少，但坚持一年就是七千多个。时间会放大微小的日常行动——这正是这个 APP 背后的真正逻辑。"
+        }
+      ],
+      "notes": [
+        "given enough time = if given enough time，条件句的省略式（写作加分）",
+        "Suppose (that)… 假设……，引出演算例子，比 if 更正式",
+        "apply to 适用于——the rule applies to learning 规律适用于学习",
+        "combined 作后置定语：the first twenty combined 前两者之和"
+      ],
+      "vocab": [
+        {
+          "w": "return",
+          "zh": "收益"
+        },
+        {
+          "w": "intuition",
+          "zh": "直觉"
+        },
+        {
+          "w": "invest",
+          "zh": "投资"
+        },
+        {
+          "w": "consistency",
+          "zh": "坚持不懈"
+        },
+        {
+          "w": "multiply",
+          "zh": "放大；相乘"
+        }
+      ]
+    },
+    {
+      "id": "pe-ratio",
+      "title": "What Is a P/E Ratio? 市盈率是什么？",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "The P/E ratio, or price-to-earnings ratio, is the price of a stock divided by its earnings per share. In plain words, it tells you how many years it would take to earn back your investment, assuming profits stay the same.",
+          "zh": "市盈率（P/E）等于股价除以每股盈利。用大白话说：假设利润不变，它告诉你需要几年才能赚回你的投资。"
+        },
+        {
+          "en": "A high P/E often means investors expect fast growth. A low P/E may signal a boring but stable business — or a company in trouble. The number alone never tells the whole story.",
+          "zh": "高市盈率往往意味着投资者期待快速增长。低市盈率可能代表一门无聊但稳定的生意——也可能是一家陷入麻烦的公司。单看数字永远讲不出全部真相。"
+        },
+        {
+          "en": "Smart investors compare the P/E with the company's own history and with other companies in the same industry. A ratio means something only in context.",
+          "zh": "聪明的投资者会把市盈率和公司自身的历史比、和同行业的公司比。任何比率只有在对比中才有意义。"
+        }
+      ],
+      "notes": [
+        "price-to-earnings：数字复合形容词用连字符合成，如 a 10-year plan",
+        "assuming profits stay the same = if we assume…，分词引出前提",
+        "signal 作动词=预示/表明，财经新闻高频",
+        "in context 在具体背景下——对比才有意义"
+      ],
+      "vocab": [
+        {
+          "w": "ratio",
+          "zh": "比率"
+        },
+        {
+          "w": "earnings",
+          "zh": "盈利"
+        },
+        {
+          "w": "signal",
+          "zh": "预示；信号"
+        },
+        {
+          "w": "stable",
+          "zh": "稳定的"
+        },
+        {
+          "w": "compare",
+          "zh": "比较"
+        }
+      ]
+    },
+    {
+      "id": "position-size",
+      "title": "Don't Bet the Farm 仓位管理：别押上全部家当",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "Betting the farm means risking everything on one move. In investing, it happens when someone puts most of their money into a single stock, hoping to get rich quickly.",
+          "zh": "『押上农场』就是孤注一掷。在投资中，它发生在一个人把大部分钱押进一只股票、幻想快速暴富的时候。"
+        },
+        {
+          "en": "Professional money managers follow a simple rule: no single position should be large enough to destroy the whole portfolio. If one company fails, the rest can still carry you forward.",
+          "zh": "职业基金经理遵守一条简单规则：任何单一持仓都不应大到足以摧毁整个组合。就算一家公司倒下，其余部分仍能带你继续前行。"
+        },
+        {
+          "en": "The math is cruel: a 50% loss needs a 100% gain just to break even. Protecting your capital is not cowardice — it is the first skill of surviving the market.",
+          "zh": "数学很残酷：亏损 50%，需要盈利 100% 才能回本。保护本金不是怯懦——它是你在市场里活下来的第一项技能。"
+        }
+      ],
+      "notes": [
+        "bet the farm 习语：孤注一掷（把农场都押上）",
+        "large enough to…：enough to do 足以……的经典结构",
+        "break even 固定表达：不赚不亏、打平",
+        "冒号 + 解释：The math is cruel: … 口语演讲皆可用的强调句式"
+      ],
+      "vocab": [
+        {
+          "w": "position",
+          "zh": "仓位；头寸"
+        },
+        {
+          "w": "portfolio",
+          "zh": "投资组合"
+        },
+        {
+          "w": "capital",
+          "zh": "本金；资本"
+        },
+        {
+          "w": "survive",
+          "zh": "存活"
+        },
+        {
+          "w": "risk",
+          "zh": "风险"
+        }
+      ]
+    },
+    {
+      "id": "time-in-market",
+      "title": "Time in the Market vs. Timing the Market 在场比择时更重要",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "Many beginners believe the key to investing is buying at the perfect moment. In reality, missing just a few of the best days can destroy years of returns.",
+          "zh": "许多初学者相信投资的关键是买在完美时机。事实上，仅仅错过少数几个最好的交易日，就可能毁掉好几年的收益。"
+        },
+        {
+          "en": "Markets rise and fall unpredictably. Because the best days often come right after the worst ones, people who try to dodge the drops usually miss the rebounds too. Staying invested keeps you present for both.",
+          "zh": "市场的涨跌无法预测。因为最好的日子常常紧跟最糟的日子，试图躲开下跌的人往往也错过反弹。保持在场，你才能同时经历两者。"
+        },
+        {
+          "en": "The practical lesson is simple: decide how much risk you can live with, invest regular amounts, and stop checking prices every hour. Your advantage is not speed — it is patience.",
+          "zh": "可行的结论很简单：先想清楚自己能承受多大风险，定期投入，然后别再每小时看一次价格。你的优势不是速度，而是耐心。"
+        }
+      ],
+      "notes": [
+        "the key to sth 是……的关键，介词固定用 to",
+        "buy at the perfect moment 完美时机买入；at 表示时点",
+        "right after 就在……之后，强调时间紧邻",
+        "stop doing sth 停止做某事（对比 stop to do 停下来去做）"
+      ],
+      "vocab": [
+        {
+          "w": "invest",
+          "zh": "投资"
+        },
+        {
+          "w": "unpredictably",
+          "zh": "不可预测地"
+        },
+        {
+          "w": "dodge",
+          "zh": "躲避"
+        },
+        {
+          "w": "rebound",
+          "zh": "反弹"
+        },
+        {
+          "w": "patience",
+          "zh": "耐心"
+        }
+      ]
+    },
+    {
+      "id": "index-fund",
+      "title": "Why Index Funds Win 为什么指数基金适合大多数人",
+      "minutes": 4,
+      "paras": [
+        {
+          "en": "An index fund simply holds every stock in an index, in proportion. It does not try to pick winners. The result is low fees, high transparency, and a return that matches the market.",
+          "zh": "指数基金就是按比例持有某个指数里的全部股票，并不试图挑选赢家。结果就是：低费用、高透明，以及接近市场的收益。"
+        },
+        {
+          "en": "Most actively managed funds fail to beat the index over long periods, largely because of costs. Every 1% of annual fees quietly removes a huge share of your final wealth after decades.",
+          "zh": "大多数主动管理基金长期跑不赢指数，很大程度上是因为成本。每年 1% 的费用，几十年后会悄悄拿走你最终财富的一大部分。"
+        },
+        {
+          "en": "For a beginner, a broad index fund is a reasonable core. Understand what the index contains, add stocks you have studied only around that core, and let time do the compounding.",
+          "zh": "对新手来说，宽基指数基金是合理的核心仓位。先搞清楚指数里装了什么，只在你研究透的个股上用一小部分仓位，然后让时间去做复利。"
+        }
+      ],
+      "notes": [
+        "try to do sth 试图做某事",
+        "fail to do sth 未能做某事——否定意味比 don't 更正式",
+        "match 作动词=与……一致/匹配，此处=获得与市场一致的回报",
+        "let sb do sth 让某人做某事：let time do the compounding"
+      ],
+      "vocab": [
+        {
+          "w": "proportion",
+          "zh": "比例"
+        },
+        {
+          "w": "transparency",
+          "zh": "透明"
+        },
+        {
+          "w": "beat",
+          "zh": "跑赢"
+        },
+        {
+          "w": "fee",
+          "zh": "费用"
+        },
+        {
+          "w": "wealth",
+          "zh": "财富"
+        }
+      ]
+    },
+    {
+      "id": "behavior-gap",
+      "title": "The Behavior Gap 行为差距：你最大的对手是自己",
+      "minutes": 4,
+      "paras": [
+        {
+          "en": "Studies show that ordinary investors earn less than the funds they hold. The gap is not caused by bad products; it is caused by behavior — buying high in excitement and selling low in fear.",
+          "zh": "研究显示，普通投资者的实际收益低于他们持有的基金。这个差距不是坏产品造成的，而是行为造成的——兴奋时追高，恐惧时割肉。"
+        },
+        {
+          "en": "Markets are designed to test us. Losses hurt roughly twice as much as equal gains please us, a bias called loss aversion. It pushes us to sell at the worst moment and to hold losers too long.",
+          "zh": "市场的设计就是在考验我们。同样的金额，亏损带来的痛苦大约是盈利带来快乐的两倍——这种偏差叫损失厌恶。它让我们在最糟的时刻卖出，又把亏损的股票拿得太久。"
+        },
+        {
+          "en": "The fix is not more intelligence but better rules. Write down your plan before you invest, set a maximum position size, and review decisions monthly instead of hourly. Rules protect you from yourself.",
+          "zh": "解决办法不是更聪明，而是更好的规则。投资前写下计划，设定单只股票的最大仓位，每月而不是每小时回顾决策。规则是在保护你，免于被自己害了。"
+        }
+      ],
+      "notes": [
+        "studies show that… 研究表明，客观陈述的经典句式",
+        "not A but B 不是 A 而是 B，写作高频对比结构",
+        "twice as much as 是……的两倍",
+        "protect sb from sth 保护某人使其免于某事"
+      ],
+      "vocab": [
+        {
+          "w": "behavior",
+          "zh": "行为"
+        },
+        {
+          "w": "loss aversion",
+          "zh": "损失厌恶"
+        },
+        {
+          "w": "bias",
+          "zh": "偏差"
+        },
+        {
+          "w": "position",
+          "zh": "仓位"
+        },
+        {
+          "w": "review",
+          "zh": "复盘"
+        }
+      ]
+    },
+    {
+      "id": "read-balance-sheet",
+      "title": "Reading a Balance Sheet 读懂资产负债表",
+      "minutes": 4,
+      "paras": [
+        {
+          "en": "A balance sheet lists what a company owns (assets) and what it owes (liabilities). The difference is shareholders' equity. The two sides must always balance, hence the name.",
+          "zh": "资产负债表列出公司拥有什么（资产）和欠什么（负债），差额就是股东权益。两边必须永远相等，这正是「平衡表」的由来。"
+        },
+        {
+          "en": "Two numbers deserve attention: the debt ratio and cash. A company with heavy debt and little cash is fragile — a downturn can force it to sell assets cheaply or borrow at terrible rates.",
+          "zh": "有两个数字值得关注：资产负债率和现金。负债重、现金少的公司很脆弱——一旦遇到下行周期，它可能被迫贱卖资产或以极差的利率借钱。"
+        },
+        {
+          "en": "Compare a company with its own past and with peers. A rising debt ratio while profits fall is a warning. Cash-rich, low-debt firms can survive bad years and even buy rivals when others cannot.",
+          "zh": "把公司和自己过去比、和同行比。利润下滑的同时负债率上升，就是警报。现金充裕、负债低的公司能熬过坏年份，甚至趁别人不行时收购对手。"
+        }
+      ],
+      "notes": [
+        "what a company owns 名词性从句作宾语",
+        "hence the name 因此得名——书面语常用",
+        "deserve attention 值得关注",
+        "when others cannot 省略式状语从句：在别人不能（buy）的时候"
+      ],
+      "vocab": [
+        {
+          "w": "asset",
+          "zh": "资产"
+        },
+        {
+          "w": "liability",
+          "zh": "负债"
+        },
+        {
+          "w": "equity",
+          "zh": "权益"
+        },
+        {
+          "w": "debt ratio",
+          "zh": "资产负债率"
+        },
+        {
+          "w": "fragile",
+          "zh": "脆弱的"
+        }
+      ]
+    },
+    {
+      "id": "tiny-habits",
+      "title": "Small Habits, Big Results 微习惯的复利",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "A habit feels invisible while it forms. Two extra pages a day looks trivial, but over a year it becomes a book; ten words a day becomes three thousand words.",
+          "zh": "习惯在形成时是看不见的。每天多读两页书看似微不足道，但一年下来就是一本书；每天十个单词，一年就是三千多个。"
+        },
+        {
+          "en": "The problem is that early progress is too small to feel rewarding, so most people quit before the curve turns upward. The secret is to make the habit so easy that skipping it feels strange.",
+          "zh": "问题在于：早期的进展太小，难以带来成就感，所以大多数人在曲线转向上扬之前就放弃了。秘诀是把习惯做得足够简单，简单到不做反而别扭。"
+        },
+        {
+          "en": "This app applies the same idea. Three small tasks — a few words, one short article, one look at the market — are enough. Done daily, they compound into something you could not have imagined.",
+          "zh": "这个 App 用的就是同一个思路。三项小任务——几个单词、一篇短文、看一眼行情——就够了。每天坚持，它们会复利成你当初想不到的东西。"
+        }
+      ],
+      "notes": [
+        "feels invisible 系动词 feel + 形容词，表示状态",
+        "too small to feel rewarding too…to 结构：太……以致不能",
+        "so easy that… so…that 如此……以至于",
+        "could not have imagined 虚拟语气：当初不可能想到"
+      ],
+      "vocab": [
+        {
+          "w": "invisible",
+          "zh": "看不见的"
+        },
+        {
+          "w": "trivial",
+          "zh": "微不足道的"
+        },
+        {
+          "w": "curve",
+          "zh": "曲线"
+        },
+        {
+          "w": "compound",
+          "zh": "复利增长"
+        },
+        {
+          "w": "imagine",
+          "zh": "想象"
+        }
+      ]
+    },
+    {
+      "id": "stop-loss",
+      "title": "Why Set a Stop-Loss? 为什么要设止损？",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "A stop-loss is a simple rule: if the price falls to a level you chose in advance, you sell. It sounds mechanical, but it protects you from the hardest moment in investing — deciding what to do while you are losing money.",
+          "zh": "止损是一条简单的规则：如果价格跌到你事先选好的位置，就卖出。听起来很机械，但它保护你度过投资中最难的时刻——在亏钱的状态下做决定。"
+        },
+        {
+          "en": "Without a plan, small losses often grow into big ones. We tell ourselves \"it will come back\", and hope replaces analysis. A stop-loss decided before you buy is calm; a decision made after a 20% drop is emotional.",
+          "zh": "没有计划时，小亏损常常拖成大亏损。我们对自己说\"它会涨回来的\"，希望取代了分析。买入前定下的止损是冷静的；跌了 20% 之后再做的决定是情绪化的。"
+        },
+        {
+          "en": "A stop-loss is not a guarantee. Prices can gap down overnight, and sometimes you sell right before a rebound. But over many trades, limiting each loss keeps you in the game — and staying in the game is how compounding works.",
+          "zh": "止损不是保险箱。价格可能隔夜跳空低开，有时你刚卖它就反弹。但把时间拉长到很多笔交易，限制每次亏损能让你一直留在牌桌上——而复利，正是留给一直在场的人的。"
+        }
+      ],
+      "notes": [
+        "in advance 提前、事先——高频介词短语，写作口语都常用",
+        "protect sb. from sth. 保护某人免受某事伤害，from 后接名词或动名词",
+        "\"it will come back\"：直接引语作宾语，口语中引述内心独白的常见写法",
+        "keep you in the game 让你留在游戏中——比喻用法，game 指市场而非比赛"
+      ],
+      "vocab": [
+        {
+          "w": "stop-loss",
+          "zh": "止损"
+        },
+        {
+          "w": "mechanical",
+          "zh": "机械的"
+        },
+        {
+          "w": "analysis",
+          "zh": "分析"
+        },
+        {
+          "w": "rebound",
+          "zh": "反弹"
+        },
+        {
+          "w": "compounding",
+          "zh": "复利增长"
+        }
+      ]
+    },
+    {
+      "id": "dca",
+      "title": "Dollar-Cost Averaging 定投为什么有效？",
+      "minutes": 3,
+      "paras": [
+        {
+          "en": "Dollar-cost averaging means investing the same amount of money at fixed intervals, no matter what the market is doing. Buy a fixed sum every month, and you automatically buy more shares when prices are low and fewer when prices are high.",
+          "zh": "定投是指按固定的时间间隔投入固定的金额，不管市场当时怎么走。每月买入固定金额，价格低时你自动买到更多份额，价格高时买得更少。"
+        },
+        {
+          "en": "The real power of this method is psychological. Nobody can reliably pick the bottom, and waiting for \"the perfect moment\" often means never buying at all. A fixed schedule removes the decision — and the regret that comes with it.",
+          "zh": "这个方法真正的威力在心理层面。没有人能稳定地抄到底部，而等待\"完美时机\"往往意味着永远没有出手。固定的时间表把\"做决定\"这件事移除了——连同随之而来的后悔。"
+        },
+        {
+          "en": "It is not magic. If you invest in a bad asset, averaging down only spreads the pain. The method works best with broad index funds held for many years: simple rules, long horizon, and the discipline to keep going when headlines are scary.",
+          "zh": "它不是魔法。如果投的是糟糕的资产，越跌越买只是把痛苦摊薄。定投最适合的对象是持有多年、覆盖广泛市场的指数基金：简单的规则、足够长的期限，以及在新闻标题吓人时仍继续执行的纪律。"
+        }
+      ],
+      "notes": [
+        "no matter what… 无论……——引导让步状语从句，等于 whatever",
+        "the same amount at fixed intervals：at 表示\"按……间隔/频率\"，如 at regular intervals",
+        "averaging down 摊低成本——金融固定表达，指向下补仓",
+        "the discipline to keep going：不定式作后置定语修饰 discipline，\"坚持下去的纪律\""
+      ],
+      "vocab": [
+        {
+          "w": "interval",
+          "zh": "间隔"
+        },
+        {
+          "w": "automatically",
+          "zh": "自动地"
+        },
+        {
+          "w": "psychological",
+          "zh": "心理的"
+        },
+        {
+          "w": "regret",
+          "zh": "后悔"
+        },
+        {
+          "w": "horizon",
+          "zh": "期限；视野"
+        }
+      ]
     }
-   ],
-   "notes": [
-    "agree on sth. 固定搭配：就某事达成一致，介词用 on",
-    "be willing to do 愿意做某事——写作口语双料高频",
-    "far above 远高于；反义 far below 远低于",
-    "in the market and in yourself：介词短语并列，emphasis 结构收尾有力"
-   ],
-   "vocab": [
-    {
-     "w": "expectation",
-     "zh": "预期"
-    },
-    {
-     "w": "investor",
-     "zh": "投资者"
-    },
-    {
-     "w": "profit",
-     "zh": "盈利"
-    },
-    {
-     "w": "emotion",
-     "zh": "情绪"
-    },
-    {
-     "w": "worth",
-     "zh": "价值"
-    }
-   ]
-  },
-  {
-   "id": "bull-bear",
-   "title": "Bull and Bear Markets 牛市与熊市",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "A bull market is a long period in which prices keep rising and people feel confident. A bear market is the opposite: prices fall, often by twenty percent or more, and pessimism spreads.",
-     "zh": "牛市是价格持续上涨、人们充满信心的漫长时期。熊市则相反：价格下跌，跌幅常常达到百分之二十以上，悲观情绪蔓延。"
-    },
-    {
-     "en": "No one can predict exactly when a bull becomes a bear. But history shows one thing clearly: markets have always recovered from every bear market so far, though it can take months or years.",
-     "zh": "没有人能精确预测牛市何时变成熊市。但历史清楚地表明一件事：到目前为止，市场总能从每一次熊市中恢复过来，尽管这可能需要数月甚至数年。"
-    },
-    {
-     "en": "For a beginner, the lesson is simple. In a bull market, stay humble and avoid chasing prices. In a bear market, stay patient — cheap prices are the friend of the long-term buyer.",
-     "zh": "对初学者来说，教训很简单。牛市里保持谦逊，不要追涨；熊市里保持耐心——便宜的价格是长期买入者的朋友。"
-    }
-   ],
-   "notes": [
-    "in which prices keep rising：介词 + which 的定语从句，正式书面句式",
-    "so far 到目前为止——现在完成时的标志性时间状语",
-    "avoid doing sth.：avoid 后接动名词，不说 avoid to do",
-    "破折号 — 引出补充解释，比逗号更有强调感"
-   ],
-   "vocab": [
-    {
-     "w": "period",
-     "zh": "时期"
-    },
-    {
-     "w": "confident",
-     "zh": "自信的"
-    },
-    {
-     "w": "pessimism",
-     "zh": "悲观情绪"
-    },
-    {
-     "w": "predict",
-     "zh": "预测"
-    },
-    {
-     "w": "recover",
-     "zh": "恢复"
-    },
-    {
-     "w": "humble",
-     "zh": "谦逊的"
-    }
-   ]
-  },
-  {
-   "id": "compound",
-   "title": "Compound Interest: The Eighth Wonder 复利：第八大奇迹",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "Compound interest means your money earns returns, and then those returns earn returns too. A small sum, given enough time, can grow far beyond your intuition.",
-     "zh": "复利是指你的钱产生收益，而这些收益又继续产生收益。一笔小钱，只要时间够长，可以增长到远超直觉的程度。"
-    },
-    {
-     "en": "Suppose you invest 10,000 yuan at an 8% yearly return. In 10 years it becomes about 21,600; in 30 years, about 100,600. The last ten years add more than the first twenty combined.",
-     "zh": "假设你以每年 8% 的收益投资一万元。十年后它变成约 21,600 元；三十年后约 100,600 元。最后十年增加的部分，超过了前二十年的总和。"
-    },
-    {
-     "en": "The same rule applies to learning. Twenty English words a day feels small, but a year of consistency is more than seven thousand words. Time multiplies small daily actions — this is the real logic behind this app.",
-     "zh": "同样的规律也适用于学习。每天二十个单词看起来很少，但坚持一年就是七千多个。时间会放大微小的日常行动——这正是这个 APP 背后的真正逻辑。"
-    }
-   ],
-   "notes": [
-    "given enough time = if given enough time，条件句的省略式（写作加分）",
-    "Suppose (that)… 假设……，引出演算例子，比 if 更正式",
-    "apply to 适用于——the rule applies to learning 规律适用于学习",
-    "combined 作后置定语：the first twenty combined 前两者之和"
-   ],
-   "vocab": [
-    {
-     "w": "return",
-     "zh": "收益"
-    },
-    {
-     "w": "intuition",
-     "zh": "直觉"
-    },
-    {
-     "w": "invest",
-     "zh": "投资"
-    },
-    {
-     "w": "consistency",
-     "zh": "坚持不懈"
-    },
-    {
-     "w": "multiply",
-     "zh": "放大；相乘"
-    }
-   ]
-  },
-  {
-   "id": "pe-ratio",
-   "title": "What Is a P/E Ratio? 市盈率是什么？",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "The P/E ratio, or price-to-earnings ratio, is the price of a stock divided by its earnings per share. In plain words, it tells you how many years it would take to earn back your investment, assuming profits stay the same.",
-     "zh": "市盈率（P/E）等于股价除以每股盈利。用大白话说：假设利润不变，它告诉你需要几年才能赚回你的投资。"
-    },
-    {
-     "en": "A high P/E often means investors expect fast growth. A low P/E may signal a boring but stable business — or a company in trouble. The number alone never tells the whole story.",
-     "zh": "高市盈率往往意味着投资者期待快速增长。低市盈率可能代表一门无聊但稳定的生意——也可能是一家陷入麻烦的公司。单看数字永远讲不出全部真相。"
-    },
-    {
-     "en": "Smart investors compare the P/E with the company's own history and with other companies in the same industry. A ratio means something only in context.",
-     "zh": "聪明的投资者会把市盈率和公司自身的历史比、和同行业的公司比。任何比率只有在对比中才有意义。"
-    }
-   ],
-   "notes": [
-    "price-to-earnings：数字复合形容词用连字符合成，如 a 10-year plan",
-    "assuming profits stay the same = if we assume…，分词引出前提",
-    "signal 作动词=预示/表明，财经新闻高频",
-    "in context 在具体背景下——对比才有意义"
-   ],
-   "vocab": [
-    {
-     "w": "ratio",
-     "zh": "比率"
-    },
-    {
-     "w": "earnings",
-     "zh": "盈利"
-    },
-    {
-     "w": "signal",
-     "zh": "预示；信号"
-    },
-    {
-     "w": "stable",
-     "zh": "稳定的"
-    },
-    {
-     "w": "compare",
-     "zh": "比较"
-    }
-   ]
-  },
-  {
-   "id": "position-size",
-   "title": "Don't Bet the Farm 仓位管理：别押上全部家当",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "Betting the farm means risking everything on one move. In investing, it happens when someone puts most of their money into a single stock, hoping to get rich quickly.",
-     "zh": "『押上农场』就是孤注一掷。在投资中，它发生在一个人把大部分钱押进一只股票、幻想快速暴富的时候。"
-    },
-    {
-     "en": "Professional money managers follow a simple rule: no single position should be large enough to destroy the whole portfolio. If one company fails, the rest can still carry you forward.",
-     "zh": "职业基金经理遵守一条简单规则：任何单一持仓都不应大到足以摧毁整个组合。就算一家公司倒下，其余部分仍能带你继续前行。"
-    },
-    {
-     "en": "The math is cruel: a 50% loss needs a 100% gain just to break even. Protecting your capital is not cowardice — it is the first skill of surviving the market.",
-     "zh": "数学很残酷：亏损 50%，需要盈利 100% 才能回本。保护本金不是怯懦——它是你在市场里活下来的第一项技能。"
-    }
-   ],
-   "notes": [
-    "bet the farm 习语：孤注一掷（把农场都押上）",
-    "large enough to…：enough to do 足以……的经典结构",
-    "break even 固定表达：不赚不亏、打平",
-    "冒号 + 解释：The math is cruel: … 口语演讲皆可用的强调句式"
-   ],
-   "vocab": [
-    {
-     "w": "position",
-     "zh": "仓位；头寸"
-    },
-    {
-     "w": "portfolio",
-     "zh": "投资组合"
-    },
-    {
-     "w": "capital",
-     "zh": "本金；资本"
-    },
-    {
-     "w": "survive",
-     "zh": "存活"
-    },
-    {
-     "w": "risk",
-     "zh": "风险"
-    }
-   ]
-  },
-  {
-   "id": "time-in-market",
-   "title": "Time in the Market vs. Timing the Market 在场比择时更重要",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "Many beginners believe the key to investing is buying at the perfect moment. In reality, missing just a few of the best days can destroy years of returns.",
-     "zh": "许多初学者相信投资的关键是买在完美时机。事实上，仅仅错过少数几个最好的交易日，就可能毁掉好几年的收益。"
-    },
-    {
-     "en": "Markets rise and fall unpredictably. Because the best days often come right after the worst ones, people who try to dodge the drops usually miss the rebounds too. Staying invested keeps you present for both.",
-     "zh": "市场的涨跌无法预测。因为最好的日子常常紧跟最糟的日子，试图躲开下跌的人往往也错过反弹。保持在场，你才能同时经历两者。"
-    },
-    {
-     "en": "The practical lesson is simple: decide how much risk you can live with, invest regular amounts, and stop checking prices every hour. Your advantage is not speed — it is patience.",
-     "zh": "可行的结论很简单：先想清楚自己能承受多大风险，定期投入，然后别再每小时看一次价格。你的优势不是速度，而是耐心。"
-    }
-   ],
-   "notes": [
-    "the key to sth 是……的关键，介词固定用 to",
-    "buy at the perfect moment 完美时机买入；at 表示时点",
-    "right after 就在……之后，强调时间紧邻",
-    "stop doing sth 停止做某事（对比 stop to do 停下来去做）"
-   ],
-   "vocab": [
-    {
-     "w": "invest",
-     "zh": "投资"
-    },
-    {
-     "w": "unpredictably",
-     "zh": "不可预测地"
-    },
-    {
-     "w": "dodge",
-     "zh": "躲避"
-    },
-    {
-     "w": "rebound",
-     "zh": "反弹"
-    },
-    {
-     "w": "patience",
-     "zh": "耐心"
-    }
-   ]
-  },
-  {
-   "id": "index-fund",
-   "title": "Why Index Funds Win 为什么指数基金适合大多数人",
-   "minutes": 4,
-   "paras": [
-    {
-     "en": "An index fund simply holds every stock in an index, in proportion. It does not try to pick winners. The result is low fees, high transparency, and a return that matches the market.",
-     "zh": "指数基金就是按比例持有某个指数里的全部股票，并不试图挑选赢家。结果就是：低费用、高透明，以及接近市场的收益。"
-    },
-    {
-     "en": "Most actively managed funds fail to beat the index over long periods, largely because of costs. Every 1% of annual fees quietly removes a huge share of your final wealth after decades.",
-     "zh": "大多数主动管理基金长期跑不赢指数，很大程度上是因为成本。每年 1% 的费用，几十年后会悄悄拿走你最终财富的一大部分。"
-    },
-    {
-     "en": "For a beginner, a broad index fund is a reasonable core. Understand what the index contains, add stocks you have studied only around that core, and let time do the compounding.",
-     "zh": "对新手来说，宽基指数基金是合理的核心仓位。先搞清楚指数里装了什么，只在你研究透的个股上用一小部分仓位，然后让时间去做复利。"
-    }
-   ],
-   "notes": [
-    "try to do sth 试图做某事",
-    "fail to do sth 未能做某事——否定意味比 don't 更正式",
-    "match 作动词=与……一致/匹配，此处=获得与市场一致的回报",
-    "let sb do sth 让某人做某事：let time do the compounding"
-   ],
-   "vocab": [
-    {
-     "w": "proportion",
-     "zh": "比例"
-    },
-    {
-     "w": "transparency",
-     "zh": "透明"
-    },
-    {
-     "w": "beat",
-     "zh": "跑赢"
-    },
-    {
-     "w": "fee",
-     "zh": "费用"
-    },
-    {
-     "w": "wealth",
-     "zh": "财富"
-    }
-   ]
-  },
-  {
-   "id": "behavior-gap",
-   "title": "The Behavior Gap 行为差距：你最大的对手是自己",
-   "minutes": 4,
-   "paras": [
-    {
-     "en": "Studies show that ordinary investors earn less than the funds they hold. The gap is not caused by bad products; it is caused by behavior — buying high in excitement and selling low in fear.",
-     "zh": "研究显示，普通投资者的实际收益低于他们持有的基金。这个差距不是坏产品造成的，而是行为造成的——兴奋时追高，恐惧时割肉。"
-    },
-    {
-     "en": "Markets are designed to test us. Losses hurt roughly twice as much as equal gains please us, a bias called loss aversion. It pushes us to sell at the worst moment and to hold losers too long.",
-     "zh": "市场的设计就是在考验我们。同样的金额，亏损带来的痛苦大约是盈利带来快乐的两倍——这种偏差叫损失厌恶。它让我们在最糟的时刻卖出，又把亏损的股票拿得太久。"
-    },
-    {
-     "en": "The fix is not more intelligence but better rules. Write down your plan before you invest, set a maximum position size, and review decisions monthly instead of hourly. Rules protect you from yourself.",
-     "zh": "解决办法不是更聪明，而是更好的规则。投资前写下计划，设定单只股票的最大仓位，每月而不是每小时回顾决策。规则是在保护你，免于被自己害了。"
-    }
-   ],
-   "notes": [
-    "studies show that… 研究表明，客观陈述的经典句式",
-    "not A but B 不是 A 而是 B，写作高频对比结构",
-    "twice as much as 是……的两倍",
-    "protect sb from sth 保护某人使其免于某事"
-   ],
-   "vocab": [
-    {
-     "w": "behavior",
-     "zh": "行为"
-    },
-    {
-     "w": "loss aversion",
-     "zh": "损失厌恶"
-    },
-    {
-     "w": "bias",
-     "zh": "偏差"
-    },
-    {
-     "w": "position",
-     "zh": "仓位"
-    },
-    {
-     "w": "review",
-     "zh": "复盘"
-    }
-   ]
-  },
-  {
-   "id": "read-balance-sheet",
-   "title": "Reading a Balance Sheet 读懂资产负债表",
-   "minutes": 4,
-   "paras": [
-    {
-     "en": "A balance sheet lists what a company owns (assets) and what it owes (liabilities). The difference is shareholders' equity. The two sides must always balance, hence the name.",
-     "zh": "资产负债表列出公司拥有什么（资产）和欠什么（负债），差额就是股东权益。两边必须永远相等，这正是「平衡表」的由来。"
-    },
-    {
-     "en": "Two numbers deserve attention: the debt ratio and cash. A company with heavy debt and little cash is fragile — a downturn can force it to sell assets cheaply or borrow at terrible rates.",
-     "zh": "有两个数字值得关注：资产负债率和现金。负债重、现金少的公司很脆弱——一旦遇到下行周期，它可能被迫贱卖资产或以极差的利率借钱。"
-    },
-    {
-     "en": "Compare a company with its own past and with peers. A rising debt ratio while profits fall is a warning. Cash-rich, low-debt firms can survive bad years and even buy rivals when others cannot.",
-     "zh": "把公司和自己过去比、和同行比。利润下滑的同时负债率上升，就是警报。现金充裕、负债低的公司能熬过坏年份，甚至趁别人不行时收购对手。"
-    }
-   ],
-   "notes": [
-    "what a company owns 名词性从句作宾语",
-    "hence the name 因此得名——书面语常用",
-    "deserve attention 值得关注",
-    "when others cannot 省略式状语从句：在别人不能（buy）的时候"
-   ],
-   "vocab": [
-    {
-     "w": "asset",
-     "zh": "资产"
-    },
-    {
-     "w": "liability",
-     "zh": "负债"
-    },
-    {
-     "w": "equity",
-     "zh": "权益"
-    },
-    {
-     "w": "debt ratio",
-     "zh": "资产负债率"
-    },
-    {
-     "w": "fragile",
-     "zh": "脆弱的"
-    }
-   ]
-  },
-  {
-   "id": "tiny-habits",
-   "title": "Small Habits, Big Results 微习惯的复利",
-   "minutes": 3,
-   "paras": [
-    {
-     "en": "A habit feels invisible while it forms. Two extra pages a day looks trivial, but over a year it becomes a book; ten words a day becomes three thousand words.",
-     "zh": "习惯在形成时是看不见的。每天多读两页书看似微不足道，但一年下来就是一本书；每天十个单词，一年就是三千多个。"
-    },
-    {
-     "en": "The problem is that early progress is too small to feel rewarding, so most people quit before the curve turns upward. The secret is to make the habit so easy that skipping it feels strange.",
-     "zh": "问题在于：早期的进展太小，难以带来成就感，所以大多数人在曲线转向上扬之前就放弃了。秘诀是把习惯做得足够简单，简单到不做反而别扭。"
-    },
-    {
-     "en": "This app applies the same idea. Three small tasks — a few words, one short article, one look at the market — are enough. Done daily, they compound into something you could not have imagined.",
-     "zh": "这个 App 用的就是同一个思路。三项小任务——几个单词、一篇短文、看一眼行情——就够了。每天坚持，它们会复利成你当初想不到的东西。"
-    }
-   ],
-   "notes": [
-    "feels invisible 系动词 feel + 形容词，表示状态",
-    "too small to feel rewarding too…to 结构：太……以致不能",
-    "so easy that… so…that 如此……以至于",
-    "could not have imagined 虚拟语气：当初不可能想到"
-   ],
-   "vocab": [
-    {
-     "w": "invisible",
-     "zh": "看不见的"
-    },
-    {
-     "w": "trivial",
-     "zh": "微不足道的"
-    },
-    {
-     "w": "curve",
-     "zh": "曲线"
-    },
-    {
-     "w": "compound",
-     "zh": "复利增长"
-    },
-    {
-     "w": "imagine",
-     "zh": "想象"
-    }
-   ]
-  }
- ]
+  ]
 }

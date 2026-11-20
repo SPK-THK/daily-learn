@@ -183,6 +183,7 @@ export const accountStore = {
     const list = readAccounts();
     if (!list.some((a) => a.id === id)) return false;
     setActiveRaw(id);
+    activeId = id;
     return true;
   },
   async create(input: AccountInput): Promise<Account> {
@@ -237,7 +238,8 @@ export const accountStore = {
     list = list.filter((a) => a.id !== id);
     writeAccounts(list);
     if (activeId === id) {
-      setActiveRaw(list[0].id);
+      activeId = list[0].id;
+      setActiveRaw(activeId);
     }
     return true;
   },

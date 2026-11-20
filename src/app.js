@@ -81,6 +81,10 @@
       l(),
       e.addEventListener("dl:task", () => {
         (c(), l(), a());
+      }),
+      // 回到今日页时重新同步（应用跨天挂着也能刷新任务与连续天数）
+      e.addEventListener("dl:show", (ev) => {
+        ev.detail && ev.detail.id === "today" && (c(), l(), a());
       }));
     function c() {
       let u = Tt(),
@@ -108,6 +112,13 @@
         N = L.filter((f) => f.done).length,
         y = 226,
         q = y * (1 - h.length / _.length);
+      let due = 0;
+      try {
+        let p = at(localStorage.getItem("dl.english.progress"));
+        due = Object.values(p).filter(
+          (v) => v && typeof v.due == "string" && /^\d{4}-\d{2}-\d{2}$/.test(v.due) && v.due <= u,
+        ).length;
+      } catch {}
       t.innerHTML = `
       <div class="card streak-card">
         <div class="streak-row">
@@ -137,7 +148,7 @@
             return `
             <div class="habit-task ${D ? "done" : ""}" ${D ? "" : `data-goto="${f.tab}" role="button" tabindex="0"`}>
               <span class="dot ${D ? "done" : ""}">${D ? "\u2713" : ""}</span>
-              <div class="task-text"><b>${f.icon} ${f.label}</b><span class="hint">${f.how}</span></div>
+              <div class="task-text"><b>${f.icon} ${f.label}</b><span class="hint">${f.id === "english_words" && due && !D ? `${f.how} · 今日待复习 ${due} 词` : f.how}</span></div>
               <span class="tag ${D ? "done" : ""}">${D ? "\u5DF2\u5B8C\u6210" : "\u5F85\u5B8C\u6210"}</span>
               ${D ? "" : '<span class="task-chevron" aria-hidden="true">\u203A</span>'}
             </div>`;
@@ -316,7 +327,11 @@
       return k >= 9 * 60 + 15 && k <= 15 * 60 + 5;
     }
     setInterval(() => {
-      l !== "quotes" || document.hidden || typeof L != "function" || (C() && L());
+      l !== "quotes" ||
+        document.hidden ||
+        t.classList.contains("hidden") ||
+        typeof L != "function" ||
+        (C() && L());
     }, 6e4);
     e.addEventListener("dl:show", (ev) => {
       let id = ev.detail && ev.detail.id;
@@ -359,7 +374,7 @@
         <div id="st-summary" class="chip-row"></div>
         <div id="st-list" class="quote-list"></div>
         <div class="add-row">
-          <input id="st-code" placeholder="\u52A0\u81EA\u9009\uFF1Ash600519 / sz300750" autocomplete="off" />
+          <input id="st-code" placeholder="\u52A0\u81EA\u9009\uFF1Ash600519 / 600519" autocomplete="off" />
           <button id="st-add" class="btn small">\u6DFB\u52A0</button>
         </div>
       </div>
@@ -1006,7 +1021,7 @@
           ((c = v), b(), mark && D());
         } catch (o) {
           r("#st-meta").textContent =
-            `\u884C\u60C5\u83B7\u53D6\u5931\u8D25\uFF1A${o.message === "The user aborted a request." ? "\u8BF7\u6C42\u8D85\u65F6" : o.message}\uFF08\u8BF7\u68C0\u67E5\u7F51\u7EDC\uFF09`;
+            `\u884C\u60C5\u83B7\u53D6\u5931\u8D25\uFF1A${o.name === "AbortError" || o.message === "The user aborted a request." ? "\u8BF7\u6C42\u8D85\u65F6" : o.message}\uFF08\u8BF7\u68C0\u67E5\u7F51\u7EDC\uFF09`;
         }
       }
       async function loadIndex() {
@@ -1022,6 +1037,21 @@
         m(false);
         loadIndex();
       };
+      function addCode() {
+        let o = r("#st-code"),
+          v = o.value.trim().toLowerCase().replace(/[\s.]/g, "");
+        let mm = /^(\d{6})(sh|sz)?$/.exec(v);
+        // 裸 6 位代码自动补前缀：6/5/9 开头归沪市，其余归深市
+        if (mm) v = (mm[2] || (/^[659]/.test(mm[1]) ? "sh" : "sz")) + mm[1];
+        if (!ht.test(v)) {
+          o.value = "";
+          o.placeholder = "格式：sh600519 / 600519 / 000858.sz";
+          return;
+        }
+        if (s.includes(v)) $t("已在自选中：" + v);
+        else (s.push(v), y(), m());
+        o.value = "";
+      }
       function renderIdx() {
         let el = r("#st-index");
         if (!el) return;
@@ -1124,14 +1154,9 @@
             b();
           }
         }),
-        r("#st-add").addEventListener("click", () => {
-          let o = r("#st-code"),
-            v = o.value.trim().toLowerCase();
-          if (!ht.test(v)) {
-            ((o.value = ""), (o.placeholder = "\u683C\u5F0F\uFF1Ash600519 \u6216 sz300750"));
-            return;
-          }
-          (s.includes(v) || (s.push(v), y(), m()), (o.value = ""));
+        r("#st-add").addEventListener("click", () => addCode()),
+        r("#st-code").addEventListener("keydown", (o) => {
+          o.key === "Enter" && (o.preventDefault(), addCode());
         }),
         (L = () => {
           m(false);
@@ -1945,7 +1970,13 @@ ${i.zh}
       let d = i.target.getAttribute("data-view");
       d && ((w = d), d === "reading" && (u = -1), y());
     }),
+      // 跨天后回到英语页：重建当日单词队列
+      e.addEventListener("dl:show", (i) => {
+        i.detail && i.detail.id === "english" && a.date !== F() && ((a = Bt(l, n, F(), ye)), x(), y());
+      }),
       document.addEventListener("keydown", (i) => {
+        // 只在英语页可见时响应快捷键，避免在其他 Tab 误触发打分/翻面
+        if (t.classList.contains("hidden")) return;
         if (w === "spell" && i.key === "Enter" && spell && spell.answered) {
           let tag = document.activeElement && document.activeElement.tagName;
           if (tag !== "INPUT") {
@@ -2484,8 +2515,17 @@ ${i.zh}
         w = X(localStorage.getItem("dl.english.progress")),
         u = X(localStorage.getItem("dl.stock.lessonsDone")),
         h = s.filter((L) => u[L.id]).length,
+        // 注意：Object.keys(localStorage) 拿到的是账号隔离前的原始键，
+        // 必须走被拦截的 key()/length 才能看到当前账号的 dl.* 键名。
         x = te(
-          Object.keys(localStorage).filter((L) => L.startsWith(it) && localStorage.getItem(L)),
+          (() => {
+            let ks = [];
+            for (let i = 0; i < localStorage.length; i++) {
+              let k = localStorage.key(i);
+              k && k.startsWith(it) && localStorage.getItem(k) && ks.push(k);
+            }
+            return ks;
+          })(),
         );
       return ee(
         {
@@ -2642,7 +2682,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.6.0";
+  var re = "3.7.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },
@@ -2664,13 +2704,23 @@ ${i.zh}
   <span class="footer-tag">\u6BCF\u5929\u4E00\u70B9\u70B9\uFF0C\u957F\u671F\u4E3B\u4E49</span>
   <span class="footer-version">v${re}</span>`;
   le.appendChild(xt);
+  var curTab = null;
   function Et(t) {
+    curTab = t;
     (St.forEach((e) => V[e.id].classList.toggle("hidden", e.id !== t)),
       document
         .querySelectorAll(".tabbar button[data-tab]")
         .forEach((e) => e.classList.toggle("active", e.getAttribute("data-tab") === t)),
       dt.dispatchEvent(new CustomEvent("dl:show", { detail: { id: t } })));
+    // 记住当前 Tab：刷新 / 重新打开后回到上次的页面
+    try {
+      history.replaceState(null, "", "#" + t);
+    } catch {}
   }
+  window.addEventListener("hashchange", () => {
+    let id = location.hash.slice(1);
+    V[id] && id !== curTab && Et(id);
+  });
   document
     .querySelectorAll(".tabbar button[data-tab]")
     .forEach((t) => t.addEventListener("click", () => Et(t.getAttribute("data-tab"))));
@@ -2687,7 +2737,7 @@ ${i.zh}
       .then(() => t.init(V[t.id], dt))
       .catch(Ce(t));
   });
-  Et("today");
+  Et(V[location.hash.slice(1)] ? location.hash.slice(1) : "today");
   var lt = new Date(),
     Me = `${lt.getMonth() + 1}\u6708${lt.getDate()}\u65E5 \u5468${"\u65E5\u4E00\u4E8C\u4E09\u56DB\u4E94\u516D"[lt.getDay()]}`;
   document.querySelectorAll(".js-date").forEach((t) => {

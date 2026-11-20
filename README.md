@@ -35,6 +35,9 @@ daily-learn/
 │   ├── news.json           # 财经快讯快照（Actions 每小时更新）
 │   ├── english/audio/      # 每日一句音频
 │   └── icons/
+├── scripts/
+│   ├── fetch-news.mjs      # Actions 抓取财经快讯
+│   └── validate-data.mjs   # 内容数据校验（build 前自动执行）
 └── .github/workflows/
     ├── deploy.yml          # 构建并发布到 GitHub Pages
     └── news.yml            # 每小时抓财经快讯
@@ -45,7 +48,9 @@ daily-learn/
 ```bash
 npm install
 npm run dev        # http://localhost:5173
-npm run build      # 产物在 dist/
+npm run validate   # 校验 public/data/*.json 结构与重复项
+npm run check      # 数据校验 + TypeScript 类型检查
+npm run build      # 校验 + 类型检查 + 构建，产物在 dist/
 npm run preview    # 预览构建产物
 ```
 
@@ -106,6 +111,7 @@ npm run preview    # 预览构建产物
 
 ## 更新日志
 
+- **v3.7.0**：修复英语快捷键在其他 Tab 误触发打分/翻面；修复行情请求 10 秒超时不生效（shim 透传 AbortSignal）与超时报错文案；修复统计页「读完文章」恒为 0（账号隔离后键名枚举错误）；修复应用跨天挂着时今日任务与单词队列不刷新；修复账号切换/删除后内存状态未同步；K 线过滤缺开高低的脏数据。体验：自选股支持裸 6 位代码自动补 sh/sz 前缀、回车提交；当前 Tab 写入 URL hash，刷新后保留；今日任务显示待复习词数；股票页不在前台时不再自动拉行情。内容扩充至 180 词 / 12 篇短文 / 24 条金句；新增 `scripts/validate-data.mjs` 数据校验并接入 build
 - **v3.6.0**：K 线新增 5 日与 250 日周期、成交量均线（量 MA5/10）、趋势线与水平线画线（按股票保存，可一键清除），工具栏同步扩展
 - **v3.5.1**：教程补充 K 线工具栏与账号说明；新增忘记 PIN 的重置入口（保留学习数据）；优化 320px 窄屏排版
 - **v3.5.0**：K 线重做为 Canvas 渲染（精确蜡烛/影线/成交量、价格与日期刻度、十字光标浮层），新增周期/均线/形态/成交量/全屏工具栏；新增本机多账号（头像、可选 PIN、数据隔离、旧数据自动迁移）；修复股票页启动时自动完成「复盘自选股」打卡

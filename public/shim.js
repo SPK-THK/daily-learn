@@ -52,11 +52,11 @@
     ),
   ];
 
-  async function quotes(codes) {
+  async function quotes(codes, signal) {
     const list = normCodes(codes);
     if (!list.length) return json([]);
     try {
-      const r = await nativeFetch('https://qt.gtimg.cn/q=' + list.join(','), { cache: 'no-store' });
+      const r = await nativeFetch('https://qt.gtimg.cn/q=' + list.join(','), { cache: 'no-store', signal });
       const out = parseTencent(await r.arrayBuffer());
       if (!out.length) throw new Error('腾讯行情为空');
       return json(out);
@@ -64,7 +64,7 @@
       const secids = list.map((c) => (c.slice(0, 2) === 'sh' ? '1.' : '0.') + c.slice(2)).join(',');
       const r = await nativeFetch(
         `https://push2.eastmoney.com/api/qt/ulist.np/get?secids=${secids}&fields=f2,f3,f4,f12,f14,f18&fltt=2`,
-        { cache: 'no-store' }
+        { cache: 'no-store', signal }
       );
       const j = await r.json();
       const diff = (j.data && j.data.diff) || [];
@@ -82,13 +82,13 @@
     }
   }
 
-  async function kline(code, days) {
+  async function kline(code, days, signal) {
     const c = normCodes([code])[0];
     if (!c) return json([]);
     const n = Math.min(Math.max(Number(days) || 30, 1), 300);
     const r = await nativeFetch(
       `https://web.ifzq.gtimg.cn/appstock/app/fqkline/get?param=${c},day,,,${n},qfq`,
-      { cache: 'no-store' }
+      { cache: 'no-store', signal }
     );
     const j = await r.json();
     const byCode = (j.data && Object.values(j.data)[0]) || {};
@@ -103,29 +103,31 @@
         low: num(x[4]),
         volume: num(x[5]),
       }))
-      .filter((x) => x.close != null);
+      .filter((x) => x.close != null && x.open != null && x.high != null && x.low != null);
     return json(out.slice(-n));
   }
 
   window.fetch = (input, init) => {
     const url = typeof input === 'string' ? input : (input && input.url) || '';
+    // 透传 AbortSignal，保证业务侧的请求超时能真正生效
+    const signal = init && init.signal;
     if (Object.prototype.hasOwnProperty.call(DATA_MAP, url)) {
-      return nativeFetch(DATA_MAP[url], { cache: 'no-store' });
+      return nativeFetch(DATA_MAP[url], { cache: 'no-store', signal });
     }
     if (url.startsWith('/api/news/article')) return Promise.reject(new Error('离线快照不含全文'));
     if (url.startsWith('/api/news')) {
-      return nativeFetch('./news.json', { cache: 'no-store' }).then((r) => {
+      return nativeFetch('./news.json', { cache: 'no-store', signal }).then((r) => {
         if (!r.ok) throw new Error('新闻快照不可用');
         return r;
       });
     }
     if (url.startsWith('/api/quotes')) {
       const u = new URL(url, location.href);
-      return quotes((u.searchParams.get('codes') || '').split(','));
+      return quotes((u.searchParams.get('codes') || '').split(','), signal);
     }
     if (url.startsWith('/api/kline')) {
       const u = new URL(url, location.href);
-      return kline(u.searchParams.get('code') || '', u.searchParams.get('days'));
+      return kline(u.searchParams.get('code') || '', u.searchParams.get('days'), signal);
     }
     return nativeFetch(input, init);
   };

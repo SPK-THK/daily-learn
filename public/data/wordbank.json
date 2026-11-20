@@ -1,1952 +1,2342 @@
 [
- {
-  "w": "bull market",
-  "pos": "n.",
-  "zh": "牛市",
-  "ex": "A bull market lifts almost all stocks.",
-  "exZh": "牛市几乎会推高所有股票。",
-  "tag": "财经",
-  "phrases": [
-   "enter a bull market 进入牛市",
-   "bull market rally 牛市上扬"
-  ],
-  "tip": "bull=公牛，牛角自下而上顶 → 涨；对比 bear（熊掌自上而下拍）→ 熊市。"
- },
- {
-  "w": "bear market",
-  "pos": "n.",
-  "zh": "熊市",
-  "ex": "Patience matters most in a bear market.",
-  "exZh": "熊市里耐心最重要。",
-  "tag": "财经",
-  "phrases": [
-   "a prolonged bear market 漫长的熊市",
-   "bear market bottom 熊市底部"
-  ],
-  "tip": "通常指数从高点跌 20% 即进入技术性熊市。"
- },
- {
-  "w": "share",
-  "pos": "n.",
-  "zh": "股份；股票",
-  "ex": "She owns shares of two banks.",
-  "exZh": "她持有两家银行的股票。",
-  "tag": "财经",
-  "phrases": [
-   "own / hold shares 持有股份",
-   "share price 股价"
-  ],
-  "tip": "英式常说 share，美式常说 stock；shareholder=股东。"
- },
- {
-  "w": "dividend",
-  "pos": "n.",
-  "zh": "股息；分红",
-  "ex": "This company pays a dividend every year.",
-  "exZh": "这家公司每年都分红。",
-  "tag": "财经",
-  "phrases": [
-   "pay a dividend 派息",
-   "dividend yield 股息率"
-  ],
-  "tip": "搭配介词 on：a dividend on the shares 这批股票的分红。"
- },
- {
-  "w": "portfolio",
-  "pos": "n.",
-  "zh": "投资组合",
-  "ex": "Spread your risk across a balanced portfolio.",
-  "exZh": "把风险分散到均衡的投资组合中。",
-  "tag": "财经",
-  "phrases": [
-   "build a portfolio 构建组合",
-   "portfolio management 组合管理"
-  ],
-  "tip": "本义是『公文包』，金融里指你持有的全部资产清单。"
- },
- {
-  "w": "investor",
-  "pos": "n.",
-  "zh": "投资者",
-  "ex": "Long-term investors think in years, not days.",
-  "exZh": "长期投资者以年而非天来思考。",
-  "tag": "财经",
-  "phrases": [
-   "retail investor 散户",
-   "institutional investor 机构投资者"
-  ],
-  "tip": "invest（投资）+ -or（人）； investing 是动名词形态。"
- },
- {
-  "w": "profit",
-  "pos": "n.",
-  "zh": "利润",
-  "ex": "Profit grew 15% last quarter.",
-  "exZh": "上季度利润增长了 15%。",
-  "tag": "财经",
-  "phrases": [
-   "net profit 净利润",
-   "profit margin 利润率"
-  ],
-  "tip": "近义辨析：profit=利润，revenue=收入（未扣成本）。"
- },
- {
-  "w": "revenue",
-  "pos": "n.",
-  "zh": "营业收入",
-  "ex": "Revenue rose but costs rose faster.",
-  "exZh": "营收上升了，但成本涨得更快。",
-  "tag": "财经",
-  "phrases": [
-   "annual revenue 年营收",
-   "revenue growth 营收增长"
-  ],
-  "tip": "看财报先看 revenue 是否增长——收入是利润的源头。"
- },
- {
-  "w": "loan",
-  "pos": "n.",
-  "zh": "贷款",
-  "ex": "The bank approved his loan.",
-  "exZh": "银行批准了他的贷款。",
-  "tag": "财经",
-  "phrases": [
-   "take out a loan 贷款",
-   "loan interest 贷款利息"
-  ],
-  "tip": "approve a loan=批准贷款；repay a loan=偿还贷款。"
- },
- {
-  "w": "interest rate",
-  "pos": "n.",
-  "zh": "利率",
-  "ex": "The central bank cut the interest rate.",
-  "exZh": "央行下调了利率。",
-  "tag": "财经",
-  "phrases": [
-   "raise / cut rates 加息/降息",
-   "benchmark interest rate 基准利率"
-  ],
-  "tip": "利率是资金的『价格』：加息钱变贵→利空成长股。"
- },
- {
-  "w": "inflation",
-  "pos": "n.",
-  "zh": "通货膨胀",
-  "ex": "Inflation eats into quiet savings.",
-  "exZh": "通货膨胀会侵蚀储蓄的实际价值。",
-  "tag": "财经",
-  "phrases": [
-   "high inflation 高通胀",
-   "inflation rate 通胀率"
-  ],
-  "tip": "inflate 本义『充气』→ 物价像气球一样膨胀。"
- },
- {
-  "w": "bond",
-  "pos": "n.",
-  "zh": "债券",
-  "ex": "Bonds are usually steadier than stocks.",
-  "exZh": "债券通常比股票更平稳。",
-  "tag": "财经",
-  "phrases": [
-   "government bonds 国债",
-   "corporate bonds 公司债"
-  ],
-  "tip": "bond 也有『纽带』义：债券是债权关系，股票是所有权。"
- },
- {
-  "w": "fund",
-  "pos": "n.",
-  "zh": "基金",
-  "ex": "An index fund follows the whole market.",
-  "exZh": "指数基金跟踪整个市场。",
-  "tag": "财经",
-  "phrases": [
-   "index fund 指数基金",
-   "mutual fund 共同基金"
-  ],
-  "tip": "动词用法：be funded by 由…出资。"
- },
- {
-  "w": "IPO",
-  "pos": "n.",
-  "zh": "首次公开募股",
-  "ex": "The company plans an IPO next year.",
-  "exZh": "该公司计划明年上市。",
-  "tag": "财经",
-  "phrases": [
-   "launch an IPO 启动上市",
-   "IPO pricing IPO 定价"
-  ],
-  "tip": "= Initial Public Offering，initial=最初的，public=公开的。"
- },
- {
-  "w": "volatility",
-  "pos": "n.",
-  "zh": "波动性",
-  "ex": "High volatility scares new investors.",
-  "exZh": "高波动性会让新投资者害怕。",
-  "tag": "财经",
-  "phrases": [
-   "market volatility 市场波动",
-   "low-volatility stocks 低波动股票"
-  ],
-  "tip": "volatile（易变的）的名词形；adj. volatile market 波动的市场。"
- },
- {
-  "w": "rally",
-  "pos": "n./v.",
-  "zh": "回升；大涨",
-  "ex": "Shares rallied after the report.",
-  "exZh": "财报发布后股价大涨。",
-  "tag": "财经",
-  "phrases": [
-   "a rally in tech stocks 科技股反弹",
-   "rally from lows 自低点回升"
-  ],
-  "tip": "本义『集结』→ 价格重新集结向上。"
- },
- {
-  "w": "plunge",
-  "pos": "v./n.",
-  "zh": "暴跌",
-  "ex": "The stock plunged 9% in one day.",
-  "exZh": "该股一天内暴跌 9%。",
-  "tag": "财经",
-  "phrases": [
-   "plunge below 跌破",
-   "a plunge in prices 价格暴跌"
-  ],
-  "tip": "本义『跳入/骤降』，程度重于 fall、drop。"
- },
- {
-  "w": "surge",
-  "pos": "v./n.",
-  "zh": "激增",
-  "ex": "Orders surged during the holiday.",
-  "exZh": "假期期间订单激增。",
-  "tag": "财经",
-  "phrases": [
-   "surge to a record 飙升至纪录",
-   "a surge in demand 需求激增"
-  ],
-  "tip": "新闻高频词：a surge in + 事物 表示『…的激增』。"
- },
- {
-  "w": "hedge",
-  "pos": "v./n.",
-  "zh": "对冲",
-  "ex": "Gold is often used to hedge risk.",
-  "exZh": "黄金常被用来对冲风险。",
-  "tag": "财经",
-  "phrases": [
-   "hedge against inflation 对冲通胀",
-   "hedge fund 对冲基金"
-  ],
-  "tip": "hedge 本义『篱笆』→ 给资产围上防护栏。"
- },
- {
-  "w": "bubble",
-  "pos": "n.",
-  "zh": "泡沫",
-  "ex": "Every bubble bursts in the end.",
-  "exZh": "所有泡沫最终都会破裂。",
-  "tag": "财经",
-  "phrases": [
-   "a housing bubble 房地产泡沫",
-   "the bubble bursts 泡沫破裂"
-  ],
-  "tip": "burst the bubble=戳破泡沫；郁金香泡沫是经典案例。"
- },
- {
-  "w": "crash",
-  "pos": "n./v.",
-  "zh": "崩盘；暴跌",
-  "ex": "The 2008 crash changed finance.",
-  "exZh": "2008 年的崩盘改变了金融业。",
-  "tag": "财经",
-  "phrases": [
-   "the market crash 市场崩盘",
-   "crash by 30% 暴跌三成"
-  ],
-  "tip": "本义『撞车』→ 市场像车祸一样骤然崩坏。"
- },
- {
-  "w": "valuation",
-  "pos": "n.",
-  "zh": "估值",
-  "ex": "The valuation looks too high for me.",
-  "exZh": "这个估值在我看来太高了。",
-  "tag": "财经",
-  "phrases": [
-   "rich valuation 偏高的估值",
-   "valuation metrics 估值指标"
-  ],
-  "tip": "-ation 名词后缀；value（估值）→ valuation（估值结果）。"
- },
- {
-  "w": "earnings",
-  "pos": "n.",
-  "zh": "盈利；财报",
-  "ex": "Earnings season moves many stocks.",
-  "exZh": "财报季会牵动许多股票。",
-  "tag": "财经",
-  "phrases": [
-   "earnings report 财报",
-   "earnings per share 每股收益(EPS)"
-  ],
-  "tip": "earnings season = 财报季，每年四次，股价常剧烈波动。"
- },
- {
-  "w": "stake",
-  "pos": "n.",
-  "zh": "股权；股份",
-  "ex": "They bought a 5% stake in the firm.",
-  "exZh": "他们收购了该公司 5% 的股权。",
-  "tag": "财经",
-  "phrases": [
-   "acquire a stake 收购股权",
-   "a controlling stake 控股股权"
-  ],
-  "tip": "新闻常见：buy a stake in… 收购…的股份。"
- },
- {
-  "w": "acquire",
-  "pos": "v.",
-  "zh": "收购",
-  "ex": "It acquired a smaller rival last year.",
-  "exZh": "它去年收购了一家较小的竞争对手。",
-  "tag": "财经",
-  "phrases": [
-   "acquire a company 收购公司",
-   "acquired skills 习得的技能"
-  ],
-  "tip": "名词 acquisition（并购）；日常义『习得』：language acquisition 语言习得。"
- },
- {
-  "w": "merger",
-  "pos": "n.",
-  "zh": "合并",
-  "ex": "The merger created the largest bank.",
-  "exZh": "这次合并造就了最大的银行。",
-  "tag": "财经",
-  "phrases": [
-   "a merger between A and B A 与 B 的合并",
-   "merger deal 合并交易"
-  ],
-  "tip": "merger（合并）与 acquisition（收购）合称 M&A 并购。"
- },
- {
-  "w": "fluctuate",
-  "pos": "v.",
-  "zh": "波动",
-  "ex": "Prices fluctuate with the news cycle.",
-  "exZh": "价格随新闻周期波动。",
-  "tag": "财经",
-  "phrases": [
-   "fluctuate between A and B 在 A、B 之间波动",
-   "wildly fluctuate 剧烈波动"
-  ],
-  "tip": "名词 fluctuation；描述价格、汇率、体温都可用。"
- },
- {
-  "w": "yield",
-  "pos": "n.",
-  "zh": "收益率",
-  "ex": "The bond yields 3% a year.",
-  "exZh": "该债券年收益率为 3%。",
-  "tag": "财经",
-  "phrases": [
-   "bond yield 债券收益率",
-   "yield curve 收益率曲线"
-  ],
-  "tip": "一词两性：动词『产出』，名词『产出率』；注意与 yean 无关。"
- },
- {
-  "w": "capital",
-  "pos": "n.",
-  "zh": "资本",
-  "ex": "Never invest capital you cannot afford to lose.",
-  "exZh": "永远不要投入你输不起的资本。",
-  "tag": "财经",
-  "phrases": [
-   "raise capital 融资",
-   "capital gain 资本利得"
-  ],
-  "tip": "capital 也是『首都/大写字母』——本义『头』，钱是生意之『头』。"
- },
- {
-  "w": "asset",
-  "pos": "n.",
-  "zh": "资产",
-  "ex": "Time is your youngest asset.",
-  "exZh": "时间是你最年轻的资产。",
-  "tag": "财经",
-  "phrases": [
-   "fixed assets 固定资产",
-   "asset allocation 资产配置"
-  ],
-  "tip": "反义词 liability（负债）；asset 也形容『有用之人/物』。"
- },
- {
-  "w": "equity",
-  "pos": "n.",
-  "zh": "股权；权益",
-  "ex": "Home equity is not the same as cash.",
-  "exZh": "房屋权益不等于现金。",
-  "tag": "财经",
-  "phrases": [
-   "private equity 私募股权",
-   "equity market 股票市场"
-  ],
-  "tip": "会计恒等式：Assets = Liabilities + Equity。"
- },
- {
-  "w": "recession",
-  "pos": "n.",
-  "zh": "经济衰退",
-  "ex": "A recession lowers profits everywhere.",
-  "exZh": "经济衰退会压低各行各业的利润。",
-  "tag": "财经",
-  "phrases": [
-   "enter a recession 进入衰退",
-   "recession-proof 抗衰退的"
-  ],
-  "tip": "通行定义：GDP 连续两个季度负增长。"
- },
- {
-  "w": "stimulus",
-  "pos": "n.",
-  "zh": "刺激（政策）",
-  "ex": "New stimulus lifted the market.",
-  "exZh": "新的刺激政策提振了市场。",
-  "tag": "财经",
-  "phrases": [
-   "fiscal stimulus 财政刺激",
-   "stimulus package 刺激计划"
-  ],
-  "tip": "stimulate（刺激）的名词形；新闻常简称 stimulus。"
- },
- {
-  "w": "index",
-  "pos": "n.",
-  "zh": "指数",
-  "ex": "The index hit a new high.",
-  "exZh": "指数创出新高。",
-  "tag": "财经",
-  "phrases": [
-   "stock index 股票指数",
-   "index fund 指数基金"
-  ],
-  "tip": "复数不规则：indexes/indices 均可。"
- },
- {
-  "w": "margin",
-  "pos": "n.",
-  "zh": "利润率；保证金",
-  "ex": "Thin margins make firms fragile.",
-  "exZh": "微薄的利润率让公司脆弱。",
-  "tag": "财经",
-  "phrases": [
-   "profit margin 利润率",
-   "on margin 融资（保证金）交易"
-  ],
-  "tip": "本义『边缘』→ 利润是收入扣完成本后『边缘』剩下的部分。"
- },
- {
-  "w": "broker",
-  "pos": "n.",
-  "zh": "券商；经纪人",
-  "ex": "Open an account with a broker first.",
-  "exZh": "先在券商处开户。",
-  "tag": "财经",
-  "phrases": [
-   "securities broker 券商",
-   "brokerage account 券商账户"
-  ],
-  "tip": "broker 撮合交易收佣金；动词 broker=居间促成（broker a deal）。"
- },
- {
-  "w": "discipline",
-  "pos": "n.",
-  "zh": "自律；纪律",
-  "ex": "Discipline beats prediction.",
-  "exZh": "自律胜过预测。",
-  "tag": "成长",
-  "phrases": [
-   "keep discipline 保持纪律",
-   "self-discipline 自律"
-  ],
-  "tip": "投资与学习共通的底层能力：规则一旦定下，情绪不许改。"
- },
- {
-  "w": "compound",
-  "pos": "v./adj.",
-  "zh": "复利；复合的",
-  "ex": "Small gains compound into big results.",
-  "exZh": "小收获复利成大成果。",
-  "tag": "财经",
-  "phrases": [
-   "compound interest 复利",
-   "compound annual growth rate 复合年增长率(CAGR)"
-  ],
-  "tip": "爱因斯坦（传）称复利为『世界第八大奇迹』——时间是其燃料。"
- },
- {
-  "w": "patience",
-  "pos": "n.",
-  "zh": "耐心",
-  "ex": "The market rewards patience.",
-  "exZh": "市场奖励耐心。",
-  "tag": "成长",
-  "phrases": [
-   "exercise patience 保持耐心",
-   "run out of patience 失去耐心"
-  ],
-  "tip": "形容词 patient 一词两义：耐心的 / 病人。"
- },
- {
-  "w": "habit",
-  "pos": "n.",
-  "zh": "习惯",
-  "ex": "A daily habit beats a yearly sprint.",
-  "exZh": "每日的习惯胜过一年一次的冲刺。",
-  "tag": "成长",
-  "phrases": [
-   "build a habit 养成习惯",
-   "break a bad habit 戒除坏习惯"
-  ],
-  "tip": "搭配 of：the habit of reviewing 每日复盘的习惯。"
- },
- {
-  "w": "review",
-  "pos": "v./n.",
-  "zh": "复习；复盘",
-  "ex": "Review your trades every week.",
-  "exZh": "每周复盘你的交易。",
-  "tag": "成长",
-  "phrases": [
-   "review notes 复习笔记",
-   "annual review 年度复盘"
-  ],
-  "tip": "re-（ again）+ view（看）→ 再看一遍。学习与交易通用。"
- },
- {
-  "w": "knowledge",
-  "pos": "n.",
-  "zh": "知识",
-  "ex": "Knowledge compounds like capital.",
-  "exZh": "知识像资本一样复利增长。",
-  "tag": "成长",
-  "phrases": [
-   "a knowledge of… …方面的知识",
-   "to my knowledge 据我所知"
-  ],
-  "tip": "不可数名词，不加 a 时泛指；a knowledge of 指『某一门』知识。"
- },
- {
-  "w": "strategy",
-  "pos": "n.",
-  "zh": "策略",
-  "ex": "Write your strategy down before buying.",
-  "exZh": "买入前先把策略写下来。",
-  "tag": "成长",
-  "phrases": [
-   "investment strategy 投资策略",
-   "exit strategy 退出策略"
-  ],
-  "tip": "源自希腊语 strategos『将军』——策略是全局的打法。"
- },
- {
-  "w": "target",
-  "pos": "n.",
-  "zh": "目标",
-  "ex": "Set a target price before you buy.",
-  "exZh": "买入前先设定目标价。",
-  "tag": "成长",
-  "phrases": [
-   "target price 目标价",
-   "meet a target 达成目标"
-  ],
-  "tip": "也可作动词：target customers 瞄准客户群。"
- },
- {
-  "w": "achieve",
-  "pos": "v.",
-  "zh": "实现；达成",
-  "ex": "You achieve more with small daily steps.",
-  "exZh": "每天一小步，反而达成更多。",
-  "tag": "成长",
-  "phrases": [
-   "achieve a goal 达成目标",
-   "achieve success 获得成功"
-  ],
-  "tip": "名词 achievement；注意发音 /əˈtʃiːv/。"
- },
- {
-  "w": "improve",
-  "pos": "v.",
-  "zh": "改善；提升",
-  "ex": "Improve 1% a day for a year.",
-  "exZh": "每天进步 1%，坚持一年。",
-  "tag": "成长",
-  "phrases": [
-   "improve skills 提升技能",
-   "improved performance 改善的业绩"
-  ],
-  "tip": "im-（进入）+ prove（利）→ 变得更有利；名词 improvement。"
- },
- {
-  "w": "focus",
-  "pos": "n./v.",
-  "zh": "专注",
-  "ex": "Focus on a few good companies.",
-  "exZh": "专注于少数好公司。",
-  "tag": "成长",
-  "phrases": [
-   "focus on 专注于",
-   "lose focus 失去专注"
-  ],
-  "tip": "复数形式 focuses；摄影术语『对焦』同词。"
- },
- {
-  "w": "efficient",
-  "pos": "adj.",
-  "zh": "高效的",
-  "ex": "Spaced review is an efficient way to memorize.",
-  "exZh": "间隔复习是高效的记忆方式。",
-  "tag": "成长",
-  "phrases": [
-   "efficient use of time 高效利用时间",
-   "energy efficiency 能效"
-  ],
-  "tip": "efficient=效率高（省投入），effective=有效果（达目的）。"
- },
- {
-  "w": "essential",
-  "pos": "adj.",
-  "zh": "必不可少的",
-  "ex": "Cash flow is essential to a business.",
-  "exZh": "现金流对企业至关重要。",
-  "tag": "成长",
-  "phrases": [
-   "essential to/for 对…必不可少",
-   "essentials 必需品"
-  ],
-  "tip": "essence（本质）的形容词——缺了就不行的东西。"
- },
- {
-  "w": "estimate",
-  "pos": "v./n.",
-  "zh": "估计",
-  "ex": "Analysts estimate 20% growth.",
-  "exZh": "分析师估计增长 20%。",
-  "tag": "成长",
-  "phrases": [
-   "estimate at/about 估计为…",
-   "a rough estimate 粗略估计"
-  ],
-  "tip": "名词读 /ˈestɪmət/，动词读 /ˈestɪmeɪt/——重音移动。"
- },
- {
-  "w": "evaluate",
-  "pos": "v.",
-  "zh": "评估",
-  "ex": "Evaluate a company, not a ticker.",
-  "exZh": "评估的是公司，不是代码。",
-  "tag": "成长",
-  "phrases": [
-   "evaluate performance 评估表现",
-   "evaluate risks 评估风险"
-  ],
-  "tip": "e-（出）+ value（价值）→ 算出价值。"
- },
- {
-  "w": "evidence",
-  "pos": "n.",
-  "zh": "证据",
-  "ex": "Buy on evidence, not on rumors.",
-  "exZh": "依据证据买入，而不是传闻。",
-  "tag": "成长",
-  "phrases": [
-   "solid evidence 确凿的证据",
-   "evidence-based 有据可依的"
-  ],
-  "tip": "不可数；in evidence=显而易见。"
- },
- {
-  "w": "expand",
-  "pos": "v.",
-  "zh": "扩张",
-  "ex": "The chain plans to expand overseas.",
-  "exZh": "这家连锁计划向海外扩张。",
-  "tag": "成长",
-  "phrases": [
-   "expand the business 拓展业务",
-   "expand into new markets 进入新市场"
-  ],
-  "tip": "ex-（向外）+ pand（展开）→ 越摊越大。"
- },
- {
-  "w": "gradual",
-  "pos": "adj.",
-  "zh": "逐渐的",
-  "ex": "Progress is gradual, then sudden.",
-  "exZh": "进步是渐进的，然后突然显现。",
-  "tag": "成长",
-  "phrases": [
-   "gradual improvement 渐进改善",
-   "a gradual rise 逐步上升"
-  ],
-  "tip": "副词 gradually；复利曲线前期就是 gradual 的。"
- },
- {
-  "w": "individual",
-  "pos": "n./adj.",
-  "zh": "个人（的）",
-  "ex": "Individual investors can be patient.",
-  "exZh": "个人投资者可以很有耐心。",
-  "tag": "成长",
-  "phrases": [
-   "individual investors 个人投资者",
-   "on an individual basis 按个别情况"
-  ],
-  "tip": "in-（不）+ divid（分）→ 不可再分的最小单位=个人。"
- },
- {
-  "w": "influence",
-  "pos": "n./v.",
-  "zh": "影响",
-  "ex": "News can influence prices for days.",
-  "exZh": "新闻会影响价格好几天。",
-  "tag": "成长",
-  "phrases": [
-   "have an influence on 对…有影响",
-   "a lasting influence 深远的影响"
-  ],
-  "tip": "搭配介词 on；动词 influence=to affect。"
- },
- {
-  "w": "maintain",
-  "pos": "v.",
-  "zh": "维持",
-  "ex": "The firm maintains a high dividend.",
-  "exZh": "这家公司维持着高股息。",
-  "tag": "成长",
-  "phrases": [
-   "maintain growth 保持增长",
-   "maintain order 维持秩序"
-  ],
-  "tip": "main（手）+ tain（握）→ 握在手里不放。"
- },
- {
-  "w": "moderate",
-  "pos": "adj.",
-  "zh": "适度的",
-  "ex": "A moderate return is enough.",
-  "exZh": "适度的回报就够了。",
-  "tag": "成长",
-  "phrases": [
-   "moderate growth 温和增长",
-   "a moderate pace 适度的节奏"
-  ],
-  "tip": "形容词读 /ˈmɒdərət/，动词读 /ˈmɒdəreɪt/（缓和）。"
- },
- {
-  "w": "obtain",
-  "pos": "v.",
-  "zh": "获得",
-  "ex": "You obtain skills through repetition.",
-  "exZh": "技能通过重复获得。",
-  "tag": "成长",
-  "phrases": [
-   "obtain permission 获得许可",
-   "obtain data 获取数据"
-  ],
-  "tip": "正式用词，比 get 书面；obtainable=可获得的。"
- },
- {
-  "w": "potential",
-  "pos": "n./adj.",
-  "zh": "潜力",
-  "ex": "Look for firms with growth potential.",
-  "exZh": "寻找有增长潜力的公司。",
-  "tag": "成长",
-  "phrases": [
-   "growth potential 增长潜力",
-   "potential risks 潜在风险"
-  ],
-  "tip": "作形容词=潜在的（potential customer 潜在客户）。"
- },
- {
-  "w": "principle",
-  "pos": "n.",
-  "zh": "原则",
-  "ex": "Value investing has one core principle.",
-  "exZh": "价值投资有一条核心原则。",
-  "tag": "成长",
-  "phrases": [
-   "basic principles 基本原则",
-   "stick to one's principles 坚守原则"
-  ],
-  "tip": "易混词：principal=本金/主要的；principle=原则。"
- },
- {
-  "w": "priority",
-  "pos": "n.",
-  "zh": "优先事项",
-  "ex": "Learning is a daily priority.",
-  "exZh": "学习是每日的优先事项。",
-  "tag": "成长",
-  "phrases": [
-   "top priority 头等大事",
-   "give priority to 优先考虑"
-  ],
-  "tip": "复数 priorities；prioritize=按优先级排序。"
- },
- {
-  "w": "purchase",
-  "pos": "v./n.",
-  "zh": "购买",
-  "ex": "Record every purchase you make.",
-  "exZh": "记下你的每一笔支出。",
-  "tag": "成长",
-  "phrases": [
-   "purchase power 购买力",
-   "make a purchase 购物"
-  ],
-  "tip": "正式用词（合同、财报常用），口语多用 buy。"
- },
- {
-  "w": "range",
-  "pos": "n.",
-  "zh": "范围；区间",
-  "ex": "The stock traded in a narrow range.",
-  "exZh": "该股在窄幅区间内震荡。",
-  "tag": "财经",
-  "phrases": [
-   "trading range 交易区间",
-   "a wide range of 广泛的"
-  ],
-  "tip": "K 线里 high-low range=振幅的素材。"
- },
- {
-  "w": "require",
-  "pos": "v.",
-  "zh": "需要；要求",
-  "ex": "Investing requires reading, not luck.",
-  "exZh": "投资需要阅读，而不是运气。",
-  "tag": "成长",
-  "phrases": [
-   "require effort 需要努力",
-   "be required to 必须做…"
-  ],
-  "tip": "requirement=要求；注意 requite（报答）是另一个词。"
- },
- {
-  "w": "resource",
-  "pos": "n.",
-  "zh": "资源",
-  "ex": "Attention is your scarcest resource.",
-  "exZh": "注意力是你最稀缺的资源。",
-  "tag": "成长",
-  "phrases": [
-   "natural resources 自然资源",
-   "human resources 人力资源(HR)"
-  ],
-  "tip": "re-（再）+ source（源泉）→ 可再取用的源泉。"
- },
- {
-  "w": "significant",
-  "pos": "adj.",
-  "zh": "重要的；显著的",
-  "ex": "A significant drop is not a reason to panic.",
-  "exZh": "显著下跌不是恐慌的理由。",
-  "tag": "成长",
-  "phrases": [
-   "significant growth 显著增长",
-   "a significant number 相当多的"
-  ],
-  "tip": "sign（标记）→ 值得做标记的=显著的；名词 significance。"
- },
- {
-  "w": "tendency",
-  "pos": "n.",
-  "zh": "倾向",
-  "ex": "Markets have a tendency to overshoot.",
-  "exZh": "市场总有涨跌过头的倾向。",
-  "tag": "成长",
-  "phrases": [
-   "a tendency to do 做…的倾向",
-   "natural tendency 天性倾向"
-  ],
-  "tip": "tend to do（倾向于）的名词形。"
- },
- {
-  "w": "consistent",
-  "pos": "adj.",
-  "zh": "始终如一的",
-  "ex": "Be consistent for one year first.",
-  "exZh": "先坚持一年不动摇。",
-  "tag": "成长",
-  "phrases": [
-   "consistent effort 持续的努力",
-   "consistent results 稳定的结果"
-  ],
-  "tip": "con-（共同）+ sist（站）→ 始终站在同一立场。"
- },
- {
-  "w": "budget",
-  "pos": "n.",
-  "zh": "预算",
-  "ex": "Keep a monthly budget simple.",
-  "exZh": "让每月预算保持简单。",
-  "tag": "财经",
-  "phrases": [
-   "budget deficit 预算赤字",
-   "on a budget 预算有限"
-  ],
-  "tip": "可作动词：budget for travel 为旅行做预算。"
- },
- {
-  "w": "savings",
-  "pos": "n.",
-  "zh": "储蓄",
-  "ex": "Pay your savings first, then spend.",
-  "exZh": "先存钱，再消费。",
-  "tag": "财经",
-  "phrases": [
-   "savings account 储蓄账户",
-   "savings rate 储蓄率"
-  ],
-  "tip": "习惯用复数；『先支付给自己』是理财第一原则。"
- },
- {
-  "w": "expense",
-  "pos": "n.",
-  "zh": "支出；费用",
-  "ex": "Cut one small expense each week.",
-  "exZh": "每周砍掉一笔小开支。",
-  "tag": "财经",
-  "phrases": [
-   "daily expenses 日常开支",
-   "at the expense of 以…为代价"
-  ],
-  "tip": "at the expense of health=以健康为代价，写作高频。"
- },
- {
-  "w": "salary",
-  "pos": "n.",
-  "zh": "薪水",
-  "ex": "Save a fixed slice of every salary.",
-  "exZh": "从每份薪水中固定存下一块。",
-  "tag": "财经",
-  "phrases": [
-   "monthly salary 月薪",
-   "salary raise 加薪"
-  ],
-  "tip": "salary=固定年薪（白领），wage=按周/时计（时薪）。"
- },
- {
-  "w": "currency",
-  "pos": "n.",
-  "zh": "货币",
-  "ex": "Currency moves affect exporters.",
-  "exZh": "汇率波动影响出口企业。",
-  "tag": "财经",
-  "phrases": [
-   "foreign currency 外汇",
-   "currency exchange 货币兑换"
-  ],
-  "tip": "current（流动的）→ 货币是流动的财富。"
- },
- {
-  "w": "payment",
-  "pos": "n.",
-  "zh": "支付；付款",
-  "ex": "Mobile payment is everywhere now.",
-  "exZh": "如今移动支付随处可见。",
-  "tag": "财经",
-  "phrases": [
-   "mobile payment 移动支付",
-   "monthly payments 月供"
-  ],
-  "tip": "down payment=首付，买房高频词。"
- },
- {
-  "w": "account",
-  "pos": "n.",
-  "zh": "账户",
-  "ex": "Check your account weekly, not hourly.",
-  "exZh": "每周而不是每小时查看账户。",
-  "tag": "财经",
-  "phrases": [
-   "bank account 银行账户",
-   "take into account 考虑到"
-  ],
-  "tip": "account for 占比/解释：Exports account for 30%. 出口占三成。"
- },
- {
-  "w": "deposit",
-  "pos": "n./v.",
-  "zh": "存款；存入",
-  "ex": "Deposit a little on payday.",
-  "exZh": "发薪日存一点钱。",
-  "tag": "财经",
-  "phrases": [
-   "bank deposit 银行存款",
-   "a 10% deposit 一成首付/押金"
-  ],
-  "tip": "反义词 withdraw（取款）；deposit 还有『押金/定金』义。"
- },
- {
-  "w": "market cap",
-  "pos": "n.",
-  "zh": "市值",
-  "ex": "Its market cap passed one trillion yuan.",
-  "exZh": "它的市值突破了一万亿元。",
-  "tag": "财经",
-  "phrases": [
-   "market capitalization 总市值",
-   "large-cap stocks 大盘股"
-  ],
-  "tip": "= 市价 × 总股本；cap 是 capitalization 的缩写，不是『帽子』。"
- },
- {
-  "w": "sentiment",
-  "pos": "n.",
-  "zh": "市场情绪",
-  "ex": "Market sentiment turned bullish overnight.",
-  "exZh": "市场情绪一夜之间转多。",
-  "tag": "财经",
-  "phrases": [
-   "investor sentiment 投资者情绪",
-   "sentiment index 情绪指数"
-  ],
-  "tip": "sentiment 指群体情绪倾向；新闻常说 sentiment turned…（情绪转向）。"
- },
- {
-  "w": "liquidity",
-  "pos": "n.",
-  "zh": "流动性",
-  "ex": "Cash gives you liquidity in a crash.",
-  "exZh": "现金让你在崩盘时有流动性。",
-  "tag": "财经",
-  "phrases": [
-   "market liquidity 市场流动性",
-   "a liquidity crisis 流动性危机"
-  ],
-  "tip": "liquid（流动的/易变现的）的名词；资产能多快变成现金就是流动性。"
- },
- {
-  "w": "blue chip",
-  "pos": "n.",
-  "zh": "蓝筹股",
-  "ex": "Blue chips usually pay steady dividends.",
-  "exZh": "蓝筹股通常派发稳定的股息。",
-  "tag": "财经",
-  "phrases": [
-   "blue-chip stocks 蓝筹股",
-   "a blue-chip company 稳健的大公司"
-  ],
-  "tip": "扑克里的蓝色筹码面值最高 → 市值大、经营稳的公司。"
- },
- {
-  "w": "growth stock",
-  "pos": "n.",
-  "zh": "成长股",
-  "ex": "Growth stocks trade at high P/E ratios.",
-  "exZh": "成长股的市盈率通常很高。",
-  "tag": "财经",
-  "phrases": [
-   "a growth stock portfolio 成长股组合",
-   "growth-stock investing 成长股投资"
-  ],
-  "tip": "成长股赌的是未来的高增速，代价是当下估值贵、波动大。"
- },
- {
-  "w": "value investing",
-  "pos": "n.",
-  "zh": "价值投资",
-  "ex": "Value investing looks for price below worth.",
-  "exZh": "价值投资寻找价格低于价值的机会。",
-  "tag": "财经",
-  "phrases": [
-   "a value-investing approach 价值投资方法",
-   "the father of value investing 价值投资之父"
-  ],
-  "tip": "核心公式：价格 < 价值才买；安全边际正是两者之差。"
- },
- {
-  "w": "EPS",
-  "pos": "n.",
-  "zh": "每股收益",
-  "ex": "EPS tells you profit per share.",
-  "exZh": "EPS 告诉你每股赚了多少钱。",
-  "tag": "财经",
-  "phrases": [
-   "diluted EPS 摊薄每股收益",
-   "EPS growth 每股收益增长"
-  ],
-  "tip": "= 净利润 ÷ 总股本；PE = 股价 ÷ EPS，两个指标经常一起看。"
- },
- {
-  "w": "ROE",
-  "pos": "n.",
-  "zh": "净资产收益率",
-  "ex": "A high ROE means the firm uses equity well.",
-  "exZh": "高 ROE 说明公司把股东的钱用得很高效。",
-  "tag": "财经",
-  "phrases": [
-   "ROE above 15% 净资产收益率高于 15%",
-   "return on equity 净资产收益率（全称）"
-  ],
-  "tip": "巴菲特最看重的指标之一：长期 ROE 稳定在 15%+ 的公司很少见。"
- },
- {
-  "w": "cash flow",
-  "pos": "n.",
-  "zh": "现金流",
-  "ex": "Positive cash flow keeps a company alive.",
-  "exZh": "正向现金流让公司活下去。",
-  "tag": "财经",
-  "phrases": [
-   "operating cash flow 经营性现金流",
-   "free cash flow 自由现金流"
-  ],
-  "tip": "利润是观点，现金是事实——现金流断了，利润再好也没用。"
- },
- {
-  "w": "balance sheet",
-  "pos": "n.",
-  "zh": "资产负债表",
-  "ex": "The balance sheet shows assets and debts.",
-  "exZh": "资产负债表显示资产和负债。",
-  "tag": "财经",
-  "phrases": [
-   "a strong balance sheet 稳健的资产负债表",
-   "off-balance-sheet 表外的"
-  ],
-  "tip": "资产 = 负债 + 股东权益，这张表永远左右平衡，所以叫 balance。"
- },
- {
-  "w": "income statement",
-  "pos": "n.",
-  "zh": "利润表",
-  "ex": "The income statement covers one period.",
-  "exZh": "利润表对应一个时间段。",
-  "tag": "财经",
-  "phrases": [
-   "quarterly income statement 季度利润表",
-   "read the income statement 读利润表"
-  ],
-  "tip": "与资产负债表不同：利润表是「一段时间的流水」，资产负债表是「某一刻的快照」。"
- },
- {
-  "w": "depreciation",
-  "pos": "n.",
-  "zh": "折旧",
-  "ex": "Depreciation spreads the cost of equipment over years.",
-  "exZh": "折旧把设备成本分摊到多年。",
-  "tag": "财经",
-  "phrases": [
-   "depreciation expense 折旧费用",
-   "accelerated depreciation 加速折旧"
-  ],
-  "tip": "厂房机器会变旧，会计上用折旧把这份损耗逐年计入成本。"
- },
- {
-  "w": "leverage",
-  "pos": "n.",
-  "zh": "杠杆",
-  "ex": "Leverage magnifies both gains and losses.",
-  "exZh": "杠杆放大收益，也放大亏损。",
-  "tag": "财经",
-  "phrases": [
-   "use leverage 使用杠杆",
-   "highly leveraged 高杠杆的"
-  ],
-  "tip": "借钱投资就是加杠杆；它让「等得起」变成「等不起」，是爆仓的常见原因。"
- },
- {
-  "w": "margin call",
-  "pos": "n.",
-  "zh": "追加保证金通知",
-  "ex": "A sharp drop can trigger a margin call.",
-  "exZh": "暴跌可能触发追加保证金通知。",
-  "tag": "财经",
-  "phrases": [
-   "receive a margin call 收到追保通知",
-   "meet a margin call 补足保证金"
-  ],
-  "tip": "融资买入后若维持担保比例跌破线，券商会要求你补钱，否则强平。"
- },
- {
-  "w": "short selling",
-  "pos": "n.",
-  "zh": "卖空",
-  "ex": "Short selling profits when prices fall.",
-  "exZh": "卖空在价格下跌时赚钱。",
-  "tag": "财经",
-  "phrases": [
-   "short selling a stock 卖空一只股票",
-   "a short-selling ban 卖空禁令"
-  ],
-  "tip": "先借股票卖出、跌了再买回还券；亏损理论上无上限，风险极高。"
- },
- {
-  "w": "ETF",
-  "pos": "n.",
-  "zh": "交易型开放式指数基金",
-  "ex": "An ETF trades like a stock all day.",
-  "exZh": "ETF 像股票一样全天交易。",
-  "tag": "财经",
-  "phrases": [
-   "buy an ETF 买 ETF",
-   "broad-market ETF 宽基 ETF"
-  ],
-  "tip": "交易所交易基金：一篮子股票打包，费率低、买卖像股票一样方便。"
- },
- {
-  "w": "mutual fund",
-  "pos": "n.",
-  "zh": "共同基金",
-  "ex": "A mutual fund pools money from many investors.",
-  "exZh": "共同基金汇集众多投资者的钱。",
-  "tag": "财经",
-  "phrases": [
-   "invest in a mutual fund 投资共同基金",
-   "actively managed fund 主动管理基金"
-  ],
-  "tip": "场外基金，按净值申赎，一天只有一个成交价。"
- },
- {
-  "w": "hedge fund",
-  "pos": "n.",
-  "zh": "对冲基金",
-  "ex": "Hedge funds often use complex strategies.",
-  "exZh": "对冲基金常用复杂策略。",
-  "tag": "财经",
-  "phrases": [
-   "a hedge fund manager 对冲基金经理",
-   "hedge fund fees 对冲基金费用"
-  ],
-  "tip": "私募性质、收费高（常见 2% 管理费 + 20% 业绩提成）。"
- },
- {
-  "w": "private equity",
-  "pos": "n.",
-  "zh": "私募股权",
-  "ex": "Private equity buys companies to improve them.",
-  "exZh": "私募股权买入公司后加以改造。",
-  "tag": "财经",
-  "phrases": [
-   "private-equity firm 私募股权机构",
-   "PE fund 私募股权基金"
-  ],
-  "tip": "注意与「市盈率 PE」区分，同名不同义——看上下文。"
- },
- {
-  "w": "venture capital",
-  "pos": "n.",
-  "zh": "风险投资",
-  "ex": "Venture capital backs early startups.",
-  "exZh": "风险投资支持早期初创公司。",
-  "tag": "财经",
-  "phrases": [
-   "raise venture capital 融风险投资",
-   "a VC-backed startup 风投支持的初创"
-  ],
-  "tip": "高风险高回报，投十家可能九家归零，靠一家翻盘。"
- },
- {
-  "w": "startup",
-  "pos": "n.",
-  "zh": "初创公司",
-  "ex": "Most startups fail within five years.",
-  "exZh": "多数初创公司活不过五年。",
-  "tag": "财经",
-  "phrases": [
-   "launch a startup 创办初创公司",
-   "startup culture 创业文化"
-  ],
-  "tip": "强调「高增长 + 不确定性」，不是所有新公司都算 startup。"
- },
- {
-  "w": "monopoly",
-  "pos": "n.",
-  "zh": "垄断",
-  "ex": "A monopoly can set prices freely.",
-  "exZh": "垄断者可以自由定价。",
-  "tag": "财经",
-  "phrases": [
-   "a near-monopoly 近乎垄断",
-   "break a monopoly 打破垄断"
-  ],
-  "tip": "反垄断监管（antitrust）针对的就是它；护城河最宽的一种。"
- },
- {
-  "w": "competitor",
-  "pos": "n.",
-  "zh": "竞争对手",
-  "ex": "Know your company's competitors.",
-  "exZh": "了解你投资公司的竞争对手。",
-  "tag": "财经",
-  "phrases": [
-   "a fierce competitor 强劲对手",
-   "competitive advantage 竞争优势"
-  ],
-  "tip": "竞争格局比公司自己更重要：好行业里的平庸公司也能赚钱。"
- },
- {
-  "w": "supply",
-  "pos": "n.",
-  "zh": "供给",
-  "ex": "When supply rises, prices fall.",
-  "exZh": "供给增加，价格下跌。",
-  "tag": "财经",
-  "phrases": [
-   "supply and demand 供需",
-   "supply chain 供应链"
-  ],
-  "tip": "经济学第一课：价格由供需共同决定，单看一边永远看不懂。"
- },
- {
-  "w": "demand",
-  "pos": "n.",
-  "zh": "需求",
-  "ex": "Strong demand pushed prices up.",
-  "exZh": "强劲需求推高了价格。",
-  "tag": "财经",
-  "phrases": [
-   "meet demand 满足需求",
-   "demand curve 需求曲线"
-  ],
-  "tip": "demand 也可作动词：consumers demand quality 消费者要求品质。"
- },
- {
-  "w": "tariff",
-  "pos": "n.",
-  "zh": "关税",
-  "ex": "New tariffs raised import costs.",
-  "exZh": "新关税抬高了进口成本。",
-  "tag": "财经",
-  "phrases": [
-   "impose tariffs 加征关税",
-   "tariff barriers 关税壁垒"
-  ],
-  "tip": "贸易战的核心工具；对出口企业是利空，对本土同行可能是利好。"
- },
- {
-  "w": "subsidy",
-  "pos": "n.",
-  "zh": "补贴",
-  "ex": "The industry depends on government subsidies.",
-  "exZh": "该行业依赖政府补贴。",
-  "tag": "财经",
-  "phrases": [
-   "government subsidy 政府补贴",
-   "subsidize farmers 补贴农民"
-  ],
-  "tip": "补贴退坡（phase out）常是股价下跌的导火索，看政策要看趋势。"
- },
- {
-  "w": "central bank",
-  "pos": "n.",
-  "zh": "中央银行",
-  "ex": "The central bank controls money supply.",
-  "exZh": "央行控制货币供应。",
-  "tag": "财经",
-  "phrases": [
-   "the People's Bank of China 中国人民银行",
-   "central bank policy 央行政策"
-  ],
-  "tip": "中国的央行是人民银行，美国的对应机构是美联储（Fed）。"
- },
- {
-  "w": "monetary policy",
-  "pos": "n.",
-  "zh": "货币政策",
-  "ex": "Monetary policy affects interest rates.",
-  "exZh": "货币政策影响利率。",
-  "tag": "财经",
-  "phrases": [
-   "tighten monetary policy 收紧货币",
-   "loose monetary policy 宽松货币"
-  ],
-  "tip": "央行调节货币的松紧；宽松利好股市，收紧则相反。"
- },
- {
-  "w": "fiscal policy",
-  "pos": "n.",
-  "zh": "财政政策",
-  "ex": "Fiscal policy is set by the government.",
-  "exZh": "财政政策由政府制定。",
-  "tag": "财经",
-  "phrases": [
-   "expansionary fiscal policy 扩张性财政政策",
-   "fiscal deficit 财政赤字"
-  ],
-  "tip": "与货币政策分工：财政管「政府花多少钱」，货币管「钱有多贵」。"
- },
- {
-  "w": "GDP",
-  "pos": "n.",
-  "zh": "国内生产总值",
-  "ex": "GDP measures a country's output.",
-  "exZh": "GDP 衡量一国的产出。",
-  "tag": "财经",
-  "phrases": [
-   "GDP growth 经济增长",
-   "GDP per capita 人均 GDP"
-  ],
-  "tip": "连续两个季度负增长，通常被定义为衰退（recession）。"
- },
- {
-  "w": "CPI",
-  "pos": "n.",
-  "zh": "消费者物价指数",
-  "ex": "CPI tracks the cost of living.",
-  "exZh": "CPI 追踪生活成本。",
-  "tag": "财经",
-  "phrases": [
-   "CPI rose 2% 物价上涨 2%",
-   "core CPI 核心 CPI"
-  ],
-  "tip": "衡量通胀的常用指标；CPI 高企时，央行倾向加息。"
- },
- {
-  "w": "unemployment",
-  "pos": "n.",
-  "zh": "失业率",
-  "ex": "Rising unemployment worries markets.",
-  "exZh": "失业率上升令市场担忧。",
-  "tag": "财经",
-  "phrases": [
-   "the unemployment rate 失业率",
-   "youth unemployment 青年失业"
-  ],
-  "tip": "经济过热的降温信号，也可能预示消费走弱。"
- },
- {
-  "w": "consumption",
-  "pos": "n.",
-  "zh": "消费",
-  "ex": "Consumption drives two-thirds of the economy.",
-  "exZh": "消费拉动经济的三分之二。",
-  "tag": "财经",
-  "phrases": [
-   "household consumption 居民消费",
-   "consumption upgrade 消费升级"
-  ],
-  "tip": "中国经济的「三驾马车」：消费、投资、出口。"
- },
- {
-  "w": "export",
-  "pos": "n./v.",
-  "zh": "出口",
-  "ex": "Exports rose 8% last quarter.",
-  "exZh": "上季度出口增长 8%。",
-  "tag": "财经",
-  "phrases": [
-   "export growth 出口增长",
-   "export-oriented 出口导向的"
-  ],
-  "tip": "反义 import（进口）；汇率贬值通常利好出口。"
- },
- {
-  "w": "emerging market",
-  "pos": "n.",
-  "zh": "新兴市场",
-  "ex": "Emerging markets grow fast but swing hard.",
-  "exZh": "新兴市场增长快但波动大。",
-  "tag": "财经",
-  "phrases": [
-   "emerging-market stocks 新兴市场股票",
-   "EM currencies 新兴市场货币"
-  ],
-  "tip": "相对发达市场（developed market）；A 股常被归入新兴市场。"
- },
- {
-  "w": "commodity",
-  "pos": "n.",
-  "zh": "大宗商品",
-  "ex": "Commodity prices track global demand.",
-  "exZh": "大宗商品价格反映全球需求。",
-  "tag": "财经",
-  "phrases": [
-   "commodity prices 大宗商品价格",
-   "commodity futures 商品期货"
-  ],
-  "tip": "原油、铜、大豆这类同质化商品；周期属性强。"
- },
- {
-  "w": "real estate",
-  "pos": "n.",
-  "zh": "房地产",
-  "ex": "Real estate is a long-cycle asset.",
-  "exZh": "房地产是长周期资产。",
-  "tag": "财经",
-  "phrases": [
-   "real estate market 房地产市场",
-   "real estate investment 房地产投资"
-  ],
-  "tip": "买房看三件事：地段、地段、地段——本质是稀缺性。"
- },
- {
-  "w": "mortgage",
-  "pos": "n.",
-  "zh": "抵押贷款",
-  "ex": "A 30-year mortgage spreads the cost.",
-  "exZh": "30 年房贷把成本摊开。",
-  "tag": "财经",
-  "phrases": [
-   "mortgage rate 房贷利率",
-   "pay off a mortgage 还清房贷"
-  ],
-  "tip": "房贷利率下行，月供减少，对购房者和地产股都是利好。"
- },
- {
-  "w": "insurance",
-  "pos": "n.",
-  "zh": "保险",
-  "ex": "Insurance transfers risk for a premium.",
-  "exZh": "保险用保费转移风险。",
-  "tag": "财经",
-  "phrases": [
-   "buy insurance 买保险",
-   "insurance premium 保费"
-  ],
-  "tip": "保险的本质是「用小确定的钱，对冲大不确定的损失」。"
- },
- {
-  "w": "pension",
-  "pos": "n.",
-  "zh": "养老金",
-  "ex": "Pension funds invest for decades.",
-  "exZh": "养老基金做几十年的长期投资。",
-  "tag": "财经",
-  "phrases": [
-   "pension fund 养老基金",
-   "pension plan 养老金计划"
-  ],
-  "tip": "长期资金的典型代表，也是 A 股重要的机构投资者。"
- },
- {
-  "w": "tax",
-  "pos": "n.",
-  "zh": "税",
-  "ex": "Capital gains may be taxed.",
-  "exZh": "资本利得可能要缴税。",
-  "tag": "财经",
-  "phrases": [
-   "income tax 所得税",
-   "tax rate 税率"
-  ],
-  "tip": "A 股目前对个人股票买卖差价暂不征资本利得税，但分红要按持股时间计税。"
- },
- {
-  "w": "audit",
-  "pos": "n./v.",
-  "zh": "审计",
-  "ex": "The audit found no major issues.",
-  "exZh": "审计未发现重大问题。",
-  "tag": "财经",
-  "phrases": [
-   "annual audit 年度审计",
-   "audit report 审计报告"
-  ],
-  "tip": "看财报先看审计意见：非标意见（保留意见等）是重要警报。"
- },
- {
-  "w": "fraud",
-  "pos": "n.",
-  "zh": "欺诈",
-  "ex": "The company collapsed after the fraud surfaced.",
-  "exZh": "欺诈曝光后公司崩塌。",
-  "tag": "财经",
-  "phrases": [
-   "accounting fraud 财务造假",
-   "commit fraud 实施欺诈"
-  ],
-  "tip": "造假是永久损失风险的头号来源，一旦确认，股价往往归零。"
- },
- {
-  "w": "shareholder",
-  "pos": "n.",
-  "zh": "股东",
-  "ex": "Shareholders elect the board.",
-  "exZh": "股东选举董事会。",
-  "tag": "财经",
-  "phrases": [
-   "major shareholder 大股东",
-   "shareholder meeting 股东大会"
-  ],
-  "tip": "= stockholder；股东是所有者，债权人是债主，两者权利不同。"
- },
- {
-  "w": "board",
-  "pos": "n.",
-  "zh": "董事会",
-  "ex": "The board approved the merger.",
-  "exZh": "董事会批准了这次合并。",
-  "tag": "财经",
-  "phrases": [
-   "board of directors 董事会",
-   "board member 董事"
-  ],
-  "tip": "board 也指「板/甲板」；board of directors 才是董事会。"
- },
- {
-  "w": "regulation",
-  "pos": "n.",
-  "zh": "监管",
-  "ex": "New regulation tightened lending rules.",
-  "exZh": "新监管收紧了放贷规则。",
-  "tag": "财经",
-  "phrases": [
-   "government regulation 政府监管",
-   "regulatory risk 监管风险"
-  ],
-  "tip": "政策市里，监管方向常常比公司基本面更先影响股价。"
- },
- {
-  "w": "default",
-  "pos": "n./v.",
-  "zh": "违约",
-  "ex": "A default can wipe out bondholders.",
-  "exZh": "违约会让债券持有人血本无归。",
-  "tag": "财经",
-  "phrases": [
-   "default on a loan 贷款违约",
-   "sovereign default 主权违约"
-  ],
-  "tip": "债券投资的第一风险；评级下调（downgrade）往往提前预警。"
- },
- {
-  "w": "bankruptcy",
-  "pos": "n.",
-  "zh": "破产",
-  "ex": "Bankruptcy can erase shareholder value.",
-  "exZh": "破产可能让股东价值归零。",
-  "tag": "财经",
-  "phrases": [
-   "file for bankruptcy 申请破产",
-   "go bankrupt 破产"
-  ],
-  "tip": "破产清算时，债权人先于股东受偿——股东常是最后拿钱的人。"
- },
- {
-  "w": "credit",
-  "pos": "n.",
-  "zh": "信贷；信用",
-  "ex": "Cheap credit fuels booms.",
-  "exZh": "廉价信贷催生繁荣。",
-  "tag": "财经",
-  "phrases": [
-   "credit rating 信用评级",
-   "credit crunch 信贷紧缩"
-  ],
-  "tip": "credit card 信用卡；on credit 赊账。"
- },
- {
-  "w": "principal",
-  "pos": "n.",
-  "zh": "本金",
-  "ex": "You repay principal plus interest.",
-  "exZh": "你要还本金加利息。",
-  "tag": "财经",
-  "phrases": [
-   "repay the principal 偿还本金",
-   "principal and interest 本息"
-  ],
-  "tip": "易混词：principle 是「原则」，principal 是「本金/主要的」。"
- },
- {
-  "w": "yield curve",
-  "pos": "n.",
-  "zh": "收益率曲线",
-  "ex": "An inverted yield curve often precedes recession.",
-  "exZh": "收益率曲线倒挂常预示衰退。",
-  "tag": "财经",
-  "phrases": [
-   "yield curve inversion 收益率曲线倒挂",
-   "a steep yield curve 陡峭的收益率曲线"
-  ],
-  "tip": "短期利率高于长期 = 倒挂，历史上是衰退的先行指标。"
- },
- {
-  "w": "diversification",
-  "pos": "n.",
-  "zh": "分散投资",
-  "ex": "Diversification reduces single-stock risk.",
-  "exZh": "分散投资降低单只股票的风险。",
-  "tag": "财经",
-  "phrases": [
-   "portfolio diversification 组合分散",
-   "diversify risk 分散风险"
-  ],
-  "tip": "分散的是「个股风险」，不是「市场风险」——大盘暴跌时全都跌。"
- },
- {
-  "w": "motivation",
-  "pos": "n.",
-  "zh": "动力；积极性",
-  "ex": "Motivation fades; systems last.",
-  "exZh": "动力会消退，系统才持久。",
-  "tag": "成长",
-  "phrases": [
-   "lose motivation 失去动力",
-   "intrinsic motivation 内在动力"
-  ],
-  "tip": "依赖 motivation 的人容易半途而废，靠 system 的人能坚持。"
- },
- {
-  "w": "procrastination",
-  "pos": "n.",
-  "zh": "拖延",
-  "ex": "Procrastination is a fear problem, not a time problem.",
-  "exZh": "拖延是恐惧问题，不是时间问题。",
-  "tag": "成长",
-  "phrases": [
-   "beat procrastination 克服拖延",
-   "chronic procrastination 长期拖延"
-  ],
-  "tip": "对抗拖延最有效的方法：把任务缩小到「两分钟能开始」。"
- },
- {
-  "w": "resilience",
-  "pos": "n.",
-  "zh": "韧性；复原力",
-  "ex": "Resilience matters more than talent.",
-  "exZh": "韧性比天赋更重要。",
-  "tag": "成长",
-  "phrases": [
-   "build resilience 培养韧性",
-   "emotional resilience 情绪韧性"
-  ],
-  "tip": "市场会反复考验你，能不能在亏损后继续按纪律执行，靠的就是它。"
- },
- {
-  "w": "curiosity",
-  "pos": "n.",
-  "zh": "好奇心",
-  "ex": "Curiosity drives lifelong learning.",
-  "exZh": "好奇心驱动终身学习。",
-  "tag": "成长",
-  "phrases": [
-   "intellectual curiosity 求知欲",
-   "out of curiosity 出于好奇"
-  ],
-  "tip": "投资里最值钱的能力是「愿意搞懂」，而不是「猜得准」。"
- },
- {
-  "w": "mindfulness",
-  "pos": "n.",
-  "zh": "正念；觉察",
-  "ex": "Mindfulness helps you notice your emotions.",
-  "exZh": "正念帮你觉察自己的情绪。",
-  "tag": "成长",
-  "phrases": [
-   "practice mindfulness 练习正念",
-   "mindful investing 觉察式投资"
-  ],
-  "tip": "不评判地观察当下——专治「一跌就慌、一涨就追」。"
- },
- {
-  "w": "reflection",
-  "pos": "n.",
-  "zh": "反思",
-  "ex": "Weekly reflection beats daily busyness.",
-  "exZh": "每周反思胜过每天瞎忙。",
-  "tag": "成长",
-  "phrases": [
-   "self-reflection 自我反思",
-   "on reflection 回想之后"
-  ],
-  "tip": "复盘的本质是 reflection：不是记流水账，而是找规律。"
- },
- {
-  "w": "milestone",
-  "pos": "n.",
-  "zh": "里程碑",
-  "ex": "Celebrate small milestones.",
-  "exZh": "庆祝小里程碑。",
-  "tag": "成长",
-  "phrases": [
-   "reach a milestone 达成里程碑",
-   "a major milestone 重要节点"
-  ],
-  "tip": "把大目标切成 milestone，才能获得持续的正反馈。"
- },
- {
-  "w": "deadline",
-  "pos": "n.",
-  "zh": "截止日期",
-  "ex": "A deadline forces decisions.",
-  "exZh": "截止日期逼你做决定。",
-  "tag": "成长",
-  "phrases": [
-   "meet a deadline 赶上截止日",
-   "miss a deadline 错过截止日"
-  ],
-  "tip": "帕金森定律：工作会膨胀到填满你给它的全部时间。"
- },
- {
-  "w": "momentum",
-  "pos": "n.",
-  "zh": "势头；动量",
-  "ex": "Momentum keeps a habit alive.",
-  "exZh": "势头让习惯保持运转。",
-  "tag": "成长",
-  "phrases": [
-   "gain momentum 势头上扬",
-   "lose momentum 失去势头"
-  ],
-  "tip": "习惯建立初期最怕中断，「不断链」比「做得多」更重要。"
- },
- {
-  "w": "distraction",
-  "pos": "n.",
-  "zh": "分心",
-  "ex": "Distraction is the enemy of deep work.",
-  "exZh": "分心是深度工作的敌人。",
-  "tag": "成长",
-  "phrases": [
-   "avoid distraction 避免分心",
-   "constant distraction 持续分心"
-  ],
-  "tip": "手机是最大来源；把手机放到另一个房间，效率立刻翻倍。"
- },
- {
-  "w": "feedback",
-  "pos": "n.",
-  "zh": "反馈",
-  "ex": "Fast feedback accelerates learning.",
-  "exZh": "快速反馈加速学习。",
-  "tag": "成长",
-  "phrases": [
-   "give feedback 给予反馈",
-   "feedback loop 反馈循环"
-  ],
-  "tip": "没有反馈的练习只是重复；有反馈的重复才叫刻意练习。"
- },
- {
-  "w": "mentor",
-  "pos": "n.",
-  "zh": "导师",
-  "ex": "A good mentor shortens the learning curve.",
-  "exZh": "好导师缩短学习曲线。",
-  "tag": "成长",
-  "phrases": [
-   "find a mentor 找导师",
-   "mentor and mentee 导师与学员"
-  ],
-  "tip": "找导师不一定要认识对方——读他的书、看他的访谈也是。"
- },
- {
-  "w": "collaboration",
-  "pos": "n.",
-  "zh": "协作",
-  "ex": "Collaboration beats solo genius.",
-  "exZh": "协作胜过单打独斗。",
-  "tag": "成长",
-  "phrases": [
-   "team collaboration 团队协作",
-   "cross-team collaboration 跨团队协作"
-  ],
-  "tip": "一个人走得快，一群人走得远——前提是目标一致。"
- },
- {
-  "w": "negotiation",
-  "pos": "n.",
-  "zh": "谈判",
-  "ex": "Negotiation is about interests, not positions.",
-  "exZh": "谈判谈的是利益，不是立场。",
-  "tag": "成长",
-  "phrases": [
-   "salary negotiation 薪资谈判",
-   "negotiate a deal 谈成一笔交易"
-  ],
-  "tip": "核心技巧：先问「对方真正要什么」，而不是「我要什么」。"
- },
- {
-  "w": "leadership",
-  "pos": "n.",
-  "zh": "领导力",
-  "ex": "Leadership is influence, not authority.",
-  "exZh": "领导力是影响力，不是权力。",
-  "tag": "成长",
-  "phrases": [
-   "show leadership 展现领导力",
-   "leadership skills 领导力技能"
-  ],
-  "tip": "没有头衔也能有领导力——带动别人一起把事做成就是。"
- },
- {
-  "w": "empathy",
-  "pos": "n.",
-  "zh": "共情；同理心",
-  "ex": "Empathy starts with listening.",
-  "exZh": "共情从倾听开始。",
-  "tag": "成长",
-  "phrases": [
-   "show empathy 表达共情",
-   "empathy map 共情地图"
-  ],
-  "tip": "区分 empathy（感受对方）与 sympathy（同情对方）。"
- },
- {
-  "w": "integrity",
-  "pos": "n.",
-  "zh": "正直；诚信",
-  "ex": "Integrity is doing the right thing unseen.",
-  "exZh": "正直是没人看见时也做对的事。",
-  "tag": "成长",
-  "phrases": [
-   "personal integrity 个人操守",
-   "act with integrity 行事正直"
-  ],
-  "tip": "投资里，管理层诚信比增长数字更重要——造假的公司一律回避。"
- },
- {
-  "w": "accountability",
-  "pos": "n.",
-  "zh": "问责；责任担当",
-  "ex": "Accountability turns plans into results.",
-  "exZh": "问责把计划变成结果。",
-  "tag": "成长",
-  "phrases": [
-   "take accountability 承担责任",
-   "a culture of accountability 担责文化"
-  ],
-  "tip": "与 responsibility 区别：responsibility 是「该做」，accountability 是「必须交结果」。"
- },
- {
-  "w": "initiative",
-  "pos": "n.",
-  "zh": "主动性",
-  "ex": "Great people show initiative.",
-  "exZh": "优秀的人主动出击。",
-  "tag": "成长",
-  "phrases": [
-   "take the initiative 主动出手",
-   "on your own initiative 自作主张地"
-  ],
-  "tip": "等指令的人永远只能执行，主动补位的人才会被看见。"
- },
- {
-  "w": "adaptability",
-  "pos": "n.",
-  "zh": "适应力",
-  "ex": "Adaptability survives change.",
-  "exZh": "适应力让你在变化中活下来。",
-  "tag": "成长",
-  "phrases": [
-   "adapt to change 适应变化",
-   "adaptability skills 适应能力"
-  ],
-  "tip": "达尔文式的真理：活下来的不是最强的，而是最能适应的。"
- }
+  {
+    "w": "bull market",
+    "pos": "n.",
+    "zh": "牛市",
+    "ex": "A bull market lifts almost all stocks.",
+    "exZh": "牛市几乎会推高所有股票。",
+    "tag": "财经",
+    "phrases": [
+      "enter a bull market 进入牛市",
+      "bull market rally 牛市上扬"
+    ],
+    "tip": "bull=公牛，牛角自下而上顶 → 涨；对比 bear（熊掌自上而下拍）→ 熊市。"
+  },
+  {
+    "w": "bear market",
+    "pos": "n.",
+    "zh": "熊市",
+    "ex": "Patience matters most in a bear market.",
+    "exZh": "熊市里耐心最重要。",
+    "tag": "财经",
+    "phrases": [
+      "a prolonged bear market 漫长的熊市",
+      "bear market bottom 熊市底部"
+    ],
+    "tip": "通常指数从高点跌 20% 即进入技术性熊市。"
+  },
+  {
+    "w": "share",
+    "pos": "n.",
+    "zh": "股份；股票",
+    "ex": "She owns shares of two banks.",
+    "exZh": "她持有两家银行的股票。",
+    "tag": "财经",
+    "phrases": [
+      "own / hold shares 持有股份",
+      "share price 股价"
+    ],
+    "tip": "英式常说 share，美式常说 stock；shareholder=股东。"
+  },
+  {
+    "w": "dividend",
+    "pos": "n.",
+    "zh": "股息；分红",
+    "ex": "This company pays a dividend every year.",
+    "exZh": "这家公司每年都分红。",
+    "tag": "财经",
+    "phrases": [
+      "pay a dividend 派息",
+      "dividend yield 股息率"
+    ],
+    "tip": "搭配介词 on：a dividend on the shares 这批股票的分红。"
+  },
+  {
+    "w": "portfolio",
+    "pos": "n.",
+    "zh": "投资组合",
+    "ex": "Spread your risk across a balanced portfolio.",
+    "exZh": "把风险分散到均衡的投资组合中。",
+    "tag": "财经",
+    "phrases": [
+      "build a portfolio 构建组合",
+      "portfolio management 组合管理"
+    ],
+    "tip": "本义是『公文包』，金融里指你持有的全部资产清单。"
+  },
+  {
+    "w": "investor",
+    "pos": "n.",
+    "zh": "投资者",
+    "ex": "Long-term investors think in years, not days.",
+    "exZh": "长期投资者以年而非天来思考。",
+    "tag": "财经",
+    "phrases": [
+      "retail investor 散户",
+      "institutional investor 机构投资者"
+    ],
+    "tip": "invest（投资）+ -or（人）； investing 是动名词形态。"
+  },
+  {
+    "w": "profit",
+    "pos": "n.",
+    "zh": "利润",
+    "ex": "Profit grew 15% last quarter.",
+    "exZh": "上季度利润增长了 15%。",
+    "tag": "财经",
+    "phrases": [
+      "net profit 净利润",
+      "profit margin 利润率"
+    ],
+    "tip": "近义辨析：profit=利润，revenue=收入（未扣成本）。"
+  },
+  {
+    "w": "revenue",
+    "pos": "n.",
+    "zh": "营业收入",
+    "ex": "Revenue rose but costs rose faster.",
+    "exZh": "营收上升了，但成本涨得更快。",
+    "tag": "财经",
+    "phrases": [
+      "annual revenue 年营收",
+      "revenue growth 营收增长"
+    ],
+    "tip": "看财报先看 revenue 是否增长——收入是利润的源头。"
+  },
+  {
+    "w": "loan",
+    "pos": "n.",
+    "zh": "贷款",
+    "ex": "The bank approved his loan.",
+    "exZh": "银行批准了他的贷款。",
+    "tag": "财经",
+    "phrases": [
+      "take out a loan 贷款",
+      "loan interest 贷款利息"
+    ],
+    "tip": "approve a loan=批准贷款；repay a loan=偿还贷款。"
+  },
+  {
+    "w": "interest rate",
+    "pos": "n.",
+    "zh": "利率",
+    "ex": "The central bank cut the interest rate.",
+    "exZh": "央行下调了利率。",
+    "tag": "财经",
+    "phrases": [
+      "raise / cut rates 加息/降息",
+      "benchmark interest rate 基准利率"
+    ],
+    "tip": "利率是资金的『价格』：加息钱变贵→利空成长股。"
+  },
+  {
+    "w": "inflation",
+    "pos": "n.",
+    "zh": "通货膨胀",
+    "ex": "Inflation eats into quiet savings.",
+    "exZh": "通货膨胀会侵蚀储蓄的实际价值。",
+    "tag": "财经",
+    "phrases": [
+      "high inflation 高通胀",
+      "inflation rate 通胀率"
+    ],
+    "tip": "inflate 本义『充气』→ 物价像气球一样膨胀。"
+  },
+  {
+    "w": "bond",
+    "pos": "n.",
+    "zh": "债券",
+    "ex": "Bonds are usually steadier than stocks.",
+    "exZh": "债券通常比股票更平稳。",
+    "tag": "财经",
+    "phrases": [
+      "government bonds 国债",
+      "corporate bonds 公司债"
+    ],
+    "tip": "bond 也有『纽带』义：债券是债权关系，股票是所有权。"
+  },
+  {
+    "w": "fund",
+    "pos": "n.",
+    "zh": "基金",
+    "ex": "An index fund follows the whole market.",
+    "exZh": "指数基金跟踪整个市场。",
+    "tag": "财经",
+    "phrases": [
+      "index fund 指数基金",
+      "mutual fund 共同基金"
+    ],
+    "tip": "动词用法：be funded by 由…出资。"
+  },
+  {
+    "w": "IPO",
+    "pos": "n.",
+    "zh": "首次公开募股",
+    "ex": "The company plans an IPO next year.",
+    "exZh": "该公司计划明年上市。",
+    "tag": "财经",
+    "phrases": [
+      "launch an IPO 启动上市",
+      "IPO pricing IPO 定价"
+    ],
+    "tip": "= Initial Public Offering，initial=最初的，public=公开的。"
+  },
+  {
+    "w": "volatility",
+    "pos": "n.",
+    "zh": "波动性",
+    "ex": "High volatility scares new investors.",
+    "exZh": "高波动性会让新投资者害怕。",
+    "tag": "财经",
+    "phrases": [
+      "market volatility 市场波动",
+      "low-volatility stocks 低波动股票"
+    ],
+    "tip": "volatile（易变的）的名词形；adj. volatile market 波动的市场。"
+  },
+  {
+    "w": "rally",
+    "pos": "n./v.",
+    "zh": "回升；大涨",
+    "ex": "Shares rallied after the report.",
+    "exZh": "财报发布后股价大涨。",
+    "tag": "财经",
+    "phrases": [
+      "a rally in tech stocks 科技股反弹",
+      "rally from lows 自低点回升"
+    ],
+    "tip": "本义『集结』→ 价格重新集结向上。"
+  },
+  {
+    "w": "plunge",
+    "pos": "v./n.",
+    "zh": "暴跌",
+    "ex": "The stock plunged 9% in one day.",
+    "exZh": "该股一天内暴跌 9%。",
+    "tag": "财经",
+    "phrases": [
+      "plunge below 跌破",
+      "a plunge in prices 价格暴跌"
+    ],
+    "tip": "本义『跳入/骤降』，程度重于 fall、drop。"
+  },
+  {
+    "w": "surge",
+    "pos": "v./n.",
+    "zh": "激增",
+    "ex": "Orders surged during the holiday.",
+    "exZh": "假期期间订单激增。",
+    "tag": "财经",
+    "phrases": [
+      "surge to a record 飙升至纪录",
+      "a surge in demand 需求激增"
+    ],
+    "tip": "新闻高频词：a surge in + 事物 表示『…的激增』。"
+  },
+  {
+    "w": "hedge",
+    "pos": "v./n.",
+    "zh": "对冲",
+    "ex": "Gold is often used to hedge risk.",
+    "exZh": "黄金常被用来对冲风险。",
+    "tag": "财经",
+    "phrases": [
+      "hedge against inflation 对冲通胀",
+      "hedge fund 对冲基金"
+    ],
+    "tip": "hedge 本义『篱笆』→ 给资产围上防护栏。"
+  },
+  {
+    "w": "bubble",
+    "pos": "n.",
+    "zh": "泡沫",
+    "ex": "Every bubble bursts in the end.",
+    "exZh": "所有泡沫最终都会破裂。",
+    "tag": "财经",
+    "phrases": [
+      "a housing bubble 房地产泡沫",
+      "the bubble bursts 泡沫破裂"
+    ],
+    "tip": "burst the bubble=戳破泡沫；郁金香泡沫是经典案例。"
+  },
+  {
+    "w": "crash",
+    "pos": "n./v.",
+    "zh": "崩盘；暴跌",
+    "ex": "The 2008 crash changed finance.",
+    "exZh": "2008 年的崩盘改变了金融业。",
+    "tag": "财经",
+    "phrases": [
+      "the market crash 市场崩盘",
+      "crash by 30% 暴跌三成"
+    ],
+    "tip": "本义『撞车』→ 市场像车祸一样骤然崩坏。"
+  },
+  {
+    "w": "valuation",
+    "pos": "n.",
+    "zh": "估值",
+    "ex": "The valuation looks too high for me.",
+    "exZh": "这个估值在我看来太高了。",
+    "tag": "财经",
+    "phrases": [
+      "rich valuation 偏高的估值",
+      "valuation metrics 估值指标"
+    ],
+    "tip": "-ation 名词后缀；value（估值）→ valuation（估值结果）。"
+  },
+  {
+    "w": "earnings",
+    "pos": "n.",
+    "zh": "盈利；财报",
+    "ex": "Earnings season moves many stocks.",
+    "exZh": "财报季会牵动许多股票。",
+    "tag": "财经",
+    "phrases": [
+      "earnings report 财报",
+      "earnings per share 每股收益(EPS)"
+    ],
+    "tip": "earnings season = 财报季，每年四次，股价常剧烈波动。"
+  },
+  {
+    "w": "stake",
+    "pos": "n.",
+    "zh": "股权；股份",
+    "ex": "They bought a 5% stake in the firm.",
+    "exZh": "他们收购了该公司 5% 的股权。",
+    "tag": "财经",
+    "phrases": [
+      "acquire a stake 收购股权",
+      "a controlling stake 控股股权"
+    ],
+    "tip": "新闻常见：buy a stake in… 收购…的股份。"
+  },
+  {
+    "w": "acquire",
+    "pos": "v.",
+    "zh": "收购",
+    "ex": "It acquired a smaller rival last year.",
+    "exZh": "它去年收购了一家较小的竞争对手。",
+    "tag": "财经",
+    "phrases": [
+      "acquire a company 收购公司",
+      "acquired skills 习得的技能"
+    ],
+    "tip": "名词 acquisition（并购）；日常义『习得』：language acquisition 语言习得。"
+  },
+  {
+    "w": "merger",
+    "pos": "n.",
+    "zh": "合并",
+    "ex": "The merger created the largest bank.",
+    "exZh": "这次合并造就了最大的银行。",
+    "tag": "财经",
+    "phrases": [
+      "a merger between A and B A 与 B 的合并",
+      "merger deal 合并交易"
+    ],
+    "tip": "merger（合并）与 acquisition（收购）合称 M&A 并购。"
+  },
+  {
+    "w": "fluctuate",
+    "pos": "v.",
+    "zh": "波动",
+    "ex": "Prices fluctuate with the news cycle.",
+    "exZh": "价格随新闻周期波动。",
+    "tag": "财经",
+    "phrases": [
+      "fluctuate between A and B 在 A、B 之间波动",
+      "wildly fluctuate 剧烈波动"
+    ],
+    "tip": "名词 fluctuation；描述价格、汇率、体温都可用。"
+  },
+  {
+    "w": "yield",
+    "pos": "n.",
+    "zh": "收益率",
+    "ex": "The bond yields 3% a year.",
+    "exZh": "该债券年收益率为 3%。",
+    "tag": "财经",
+    "phrases": [
+      "bond yield 债券收益率",
+      "yield curve 收益率曲线"
+    ],
+    "tip": "一词两性：动词『产出』，名词『产出率』；注意与 yean 无关。"
+  },
+  {
+    "w": "capital",
+    "pos": "n.",
+    "zh": "资本",
+    "ex": "Never invest capital you cannot afford to lose.",
+    "exZh": "永远不要投入你输不起的资本。",
+    "tag": "财经",
+    "phrases": [
+      "raise capital 融资",
+      "capital gain 资本利得"
+    ],
+    "tip": "capital 也是『首都/大写字母』——本义『头』，钱是生意之『头』。"
+  },
+  {
+    "w": "asset",
+    "pos": "n.",
+    "zh": "资产",
+    "ex": "Time is your youngest asset.",
+    "exZh": "时间是你最年轻的资产。",
+    "tag": "财经",
+    "phrases": [
+      "fixed assets 固定资产",
+      "asset allocation 资产配置"
+    ],
+    "tip": "反义词 liability（负债）；asset 也形容『有用之人/物』。"
+  },
+  {
+    "w": "equity",
+    "pos": "n.",
+    "zh": "股权；权益",
+    "ex": "Home equity is not the same as cash.",
+    "exZh": "房屋权益不等于现金。",
+    "tag": "财经",
+    "phrases": [
+      "private equity 私募股权",
+      "equity market 股票市场"
+    ],
+    "tip": "会计恒等式：Assets = Liabilities + Equity。"
+  },
+  {
+    "w": "recession",
+    "pos": "n.",
+    "zh": "经济衰退",
+    "ex": "A recession lowers profits everywhere.",
+    "exZh": "经济衰退会压低各行各业的利润。",
+    "tag": "财经",
+    "phrases": [
+      "enter a recession 进入衰退",
+      "recession-proof 抗衰退的"
+    ],
+    "tip": "通行定义：GDP 连续两个季度负增长。"
+  },
+  {
+    "w": "stimulus",
+    "pos": "n.",
+    "zh": "刺激（政策）",
+    "ex": "New stimulus lifted the market.",
+    "exZh": "新的刺激政策提振了市场。",
+    "tag": "财经",
+    "phrases": [
+      "fiscal stimulus 财政刺激",
+      "stimulus package 刺激计划"
+    ],
+    "tip": "stimulate（刺激）的名词形；新闻常简称 stimulus。"
+  },
+  {
+    "w": "index",
+    "pos": "n.",
+    "zh": "指数",
+    "ex": "The index hit a new high.",
+    "exZh": "指数创出新高。",
+    "tag": "财经",
+    "phrases": [
+      "stock index 股票指数",
+      "index fund 指数基金"
+    ],
+    "tip": "复数不规则：indexes/indices 均可。"
+  },
+  {
+    "w": "margin",
+    "pos": "n.",
+    "zh": "利润率；保证金",
+    "ex": "Thin margins make firms fragile.",
+    "exZh": "微薄的利润率让公司脆弱。",
+    "tag": "财经",
+    "phrases": [
+      "profit margin 利润率",
+      "on margin 融资（保证金）交易"
+    ],
+    "tip": "本义『边缘』→ 利润是收入扣完成本后『边缘』剩下的部分。"
+  },
+  {
+    "w": "broker",
+    "pos": "n.",
+    "zh": "券商；经纪人",
+    "ex": "Open an account with a broker first.",
+    "exZh": "先在券商处开户。",
+    "tag": "财经",
+    "phrases": [
+      "securities broker 券商",
+      "brokerage account 券商账户"
+    ],
+    "tip": "broker 撮合交易收佣金；动词 broker=居间促成（broker a deal）。"
+  },
+  {
+    "w": "discipline",
+    "pos": "n.",
+    "zh": "自律；纪律",
+    "ex": "Discipline beats prediction.",
+    "exZh": "自律胜过预测。",
+    "tag": "成长",
+    "phrases": [
+      "keep discipline 保持纪律",
+      "self-discipline 自律"
+    ],
+    "tip": "投资与学习共通的底层能力：规则一旦定下，情绪不许改。"
+  },
+  {
+    "w": "compound",
+    "pos": "v./adj.",
+    "zh": "复利；复合的",
+    "ex": "Small gains compound into big results.",
+    "exZh": "小收获复利成大成果。",
+    "tag": "财经",
+    "phrases": [
+      "compound interest 复利",
+      "compound annual growth rate 复合年增长率(CAGR)"
+    ],
+    "tip": "爱因斯坦（传）称复利为『世界第八大奇迹』——时间是其燃料。"
+  },
+  {
+    "w": "patience",
+    "pos": "n.",
+    "zh": "耐心",
+    "ex": "The market rewards patience.",
+    "exZh": "市场奖励耐心。",
+    "tag": "成长",
+    "phrases": [
+      "exercise patience 保持耐心",
+      "run out of patience 失去耐心"
+    ],
+    "tip": "形容词 patient 一词两义：耐心的 / 病人。"
+  },
+  {
+    "w": "habit",
+    "pos": "n.",
+    "zh": "习惯",
+    "ex": "A daily habit beats a yearly sprint.",
+    "exZh": "每日的习惯胜过一年一次的冲刺。",
+    "tag": "成长",
+    "phrases": [
+      "build a habit 养成习惯",
+      "break a bad habit 戒除坏习惯"
+    ],
+    "tip": "搭配 of：the habit of reviewing 每日复盘的习惯。"
+  },
+  {
+    "w": "review",
+    "pos": "v./n.",
+    "zh": "复习；复盘",
+    "ex": "Review your trades every week.",
+    "exZh": "每周复盘你的交易。",
+    "tag": "成长",
+    "phrases": [
+      "review notes 复习笔记",
+      "annual review 年度复盘"
+    ],
+    "tip": "re-（ again）+ view（看）→ 再看一遍。学习与交易通用。"
+  },
+  {
+    "w": "knowledge",
+    "pos": "n.",
+    "zh": "知识",
+    "ex": "Knowledge compounds like capital.",
+    "exZh": "知识像资本一样复利增长。",
+    "tag": "成长",
+    "phrases": [
+      "a knowledge of… …方面的知识",
+      "to my knowledge 据我所知"
+    ],
+    "tip": "不可数名词，不加 a 时泛指；a knowledge of 指『某一门』知识。"
+  },
+  {
+    "w": "strategy",
+    "pos": "n.",
+    "zh": "策略",
+    "ex": "Write your strategy down before buying.",
+    "exZh": "买入前先把策略写下来。",
+    "tag": "成长",
+    "phrases": [
+      "investment strategy 投资策略",
+      "exit strategy 退出策略"
+    ],
+    "tip": "源自希腊语 strategos『将军』——策略是全局的打法。"
+  },
+  {
+    "w": "target",
+    "pos": "n.",
+    "zh": "目标",
+    "ex": "Set a target price before you buy.",
+    "exZh": "买入前先设定目标价。",
+    "tag": "成长",
+    "phrases": [
+      "target price 目标价",
+      "meet a target 达成目标"
+    ],
+    "tip": "也可作动词：target customers 瞄准客户群。"
+  },
+  {
+    "w": "achieve",
+    "pos": "v.",
+    "zh": "实现；达成",
+    "ex": "You achieve more with small daily steps.",
+    "exZh": "每天一小步，反而达成更多。",
+    "tag": "成长",
+    "phrases": [
+      "achieve a goal 达成目标",
+      "achieve success 获得成功"
+    ],
+    "tip": "名词 achievement；注意发音 /əˈtʃiːv/。"
+  },
+  {
+    "w": "improve",
+    "pos": "v.",
+    "zh": "改善；提升",
+    "ex": "Improve 1% a day for a year.",
+    "exZh": "每天进步 1%，坚持一年。",
+    "tag": "成长",
+    "phrases": [
+      "improve skills 提升技能",
+      "improved performance 改善的业绩"
+    ],
+    "tip": "im-（进入）+ prove（利）→ 变得更有利；名词 improvement。"
+  },
+  {
+    "w": "focus",
+    "pos": "n./v.",
+    "zh": "专注",
+    "ex": "Focus on a few good companies.",
+    "exZh": "专注于少数好公司。",
+    "tag": "成长",
+    "phrases": [
+      "focus on 专注于",
+      "lose focus 失去专注"
+    ],
+    "tip": "复数形式 focuses；摄影术语『对焦』同词。"
+  },
+  {
+    "w": "efficient",
+    "pos": "adj.",
+    "zh": "高效的",
+    "ex": "Spaced review is an efficient way to memorize.",
+    "exZh": "间隔复习是高效的记忆方式。",
+    "tag": "成长",
+    "phrases": [
+      "efficient use of time 高效利用时间",
+      "energy efficiency 能效"
+    ],
+    "tip": "efficient=效率高（省投入），effective=有效果（达目的）。"
+  },
+  {
+    "w": "essential",
+    "pos": "adj.",
+    "zh": "必不可少的",
+    "ex": "Cash flow is essential to a business.",
+    "exZh": "现金流对企业至关重要。",
+    "tag": "成长",
+    "phrases": [
+      "essential to/for 对…必不可少",
+      "essentials 必需品"
+    ],
+    "tip": "essence（本质）的形容词——缺了就不行的东西。"
+  },
+  {
+    "w": "estimate",
+    "pos": "v./n.",
+    "zh": "估计",
+    "ex": "Analysts estimate 20% growth.",
+    "exZh": "分析师估计增长 20%。",
+    "tag": "成长",
+    "phrases": [
+      "estimate at/about 估计为…",
+      "a rough estimate 粗略估计"
+    ],
+    "tip": "名词读 /ˈestɪmət/，动词读 /ˈestɪmeɪt/——重音移动。"
+  },
+  {
+    "w": "evaluate",
+    "pos": "v.",
+    "zh": "评估",
+    "ex": "Evaluate a company, not a ticker.",
+    "exZh": "评估的是公司，不是代码。",
+    "tag": "成长",
+    "phrases": [
+      "evaluate performance 评估表现",
+      "evaluate risks 评估风险"
+    ],
+    "tip": "e-（出）+ value（价值）→ 算出价值。"
+  },
+  {
+    "w": "evidence",
+    "pos": "n.",
+    "zh": "证据",
+    "ex": "Buy on evidence, not on rumors.",
+    "exZh": "依据证据买入，而不是传闻。",
+    "tag": "成长",
+    "phrases": [
+      "solid evidence 确凿的证据",
+      "evidence-based 有据可依的"
+    ],
+    "tip": "不可数；in evidence=显而易见。"
+  },
+  {
+    "w": "expand",
+    "pos": "v.",
+    "zh": "扩张",
+    "ex": "The chain plans to expand overseas.",
+    "exZh": "这家连锁计划向海外扩张。",
+    "tag": "成长",
+    "phrases": [
+      "expand the business 拓展业务",
+      "expand into new markets 进入新市场"
+    ],
+    "tip": "ex-（向外）+ pand（展开）→ 越摊越大。"
+  },
+  {
+    "w": "gradual",
+    "pos": "adj.",
+    "zh": "逐渐的",
+    "ex": "Progress is gradual, then sudden.",
+    "exZh": "进步是渐进的，然后突然显现。",
+    "tag": "成长",
+    "phrases": [
+      "gradual improvement 渐进改善",
+      "a gradual rise 逐步上升"
+    ],
+    "tip": "副词 gradually；复利曲线前期就是 gradual 的。"
+  },
+  {
+    "w": "individual",
+    "pos": "n./adj.",
+    "zh": "个人（的）",
+    "ex": "Individual investors can be patient.",
+    "exZh": "个人投资者可以很有耐心。",
+    "tag": "成长",
+    "phrases": [
+      "individual investors 个人投资者",
+      "on an individual basis 按个别情况"
+    ],
+    "tip": "in-（不）+ divid（分）→ 不可再分的最小单位=个人。"
+  },
+  {
+    "w": "influence",
+    "pos": "n./v.",
+    "zh": "影响",
+    "ex": "News can influence prices for days.",
+    "exZh": "新闻会影响价格好几天。",
+    "tag": "成长",
+    "phrases": [
+      "have an influence on 对…有影响",
+      "a lasting influence 深远的影响"
+    ],
+    "tip": "搭配介词 on；动词 influence=to affect。"
+  },
+  {
+    "w": "maintain",
+    "pos": "v.",
+    "zh": "维持",
+    "ex": "The firm maintains a high dividend.",
+    "exZh": "这家公司维持着高股息。",
+    "tag": "成长",
+    "phrases": [
+      "maintain growth 保持增长",
+      "maintain order 维持秩序"
+    ],
+    "tip": "main（手）+ tain（握）→ 握在手里不放。"
+  },
+  {
+    "w": "moderate",
+    "pos": "adj.",
+    "zh": "适度的",
+    "ex": "A moderate return is enough.",
+    "exZh": "适度的回报就够了。",
+    "tag": "成长",
+    "phrases": [
+      "moderate growth 温和增长",
+      "a moderate pace 适度的节奏"
+    ],
+    "tip": "形容词读 /ˈmɒdərət/，动词读 /ˈmɒdəreɪt/（缓和）。"
+  },
+  {
+    "w": "obtain",
+    "pos": "v.",
+    "zh": "获得",
+    "ex": "You obtain skills through repetition.",
+    "exZh": "技能通过重复获得。",
+    "tag": "成长",
+    "phrases": [
+      "obtain permission 获得许可",
+      "obtain data 获取数据"
+    ],
+    "tip": "正式用词，比 get 书面；obtainable=可获得的。"
+  },
+  {
+    "w": "potential",
+    "pos": "n./adj.",
+    "zh": "潜力",
+    "ex": "Look for firms with growth potential.",
+    "exZh": "寻找有增长潜力的公司。",
+    "tag": "成长",
+    "phrases": [
+      "growth potential 增长潜力",
+      "potential risks 潜在风险"
+    ],
+    "tip": "作形容词=潜在的（potential customer 潜在客户）。"
+  },
+  {
+    "w": "principle",
+    "pos": "n.",
+    "zh": "原则",
+    "ex": "Value investing has one core principle.",
+    "exZh": "价值投资有一条核心原则。",
+    "tag": "成长",
+    "phrases": [
+      "basic principles 基本原则",
+      "stick to one's principles 坚守原则"
+    ],
+    "tip": "易混词：principal=本金/主要的；principle=原则。"
+  },
+  {
+    "w": "priority",
+    "pos": "n.",
+    "zh": "优先事项",
+    "ex": "Learning is a daily priority.",
+    "exZh": "学习是每日的优先事项。",
+    "tag": "成长",
+    "phrases": [
+      "top priority 头等大事",
+      "give priority to 优先考虑"
+    ],
+    "tip": "复数 priorities；prioritize=按优先级排序。"
+  },
+  {
+    "w": "purchase",
+    "pos": "v./n.",
+    "zh": "购买",
+    "ex": "Record every purchase you make.",
+    "exZh": "记下你的每一笔支出。",
+    "tag": "成长",
+    "phrases": [
+      "purchase power 购买力",
+      "make a purchase 购物"
+    ],
+    "tip": "正式用词（合同、财报常用），口语多用 buy。"
+  },
+  {
+    "w": "range",
+    "pos": "n.",
+    "zh": "范围；区间",
+    "ex": "The stock traded in a narrow range.",
+    "exZh": "该股在窄幅区间内震荡。",
+    "tag": "财经",
+    "phrases": [
+      "trading range 交易区间",
+      "a wide range of 广泛的"
+    ],
+    "tip": "K 线里 high-low range=振幅的素材。"
+  },
+  {
+    "w": "require",
+    "pos": "v.",
+    "zh": "需要；要求",
+    "ex": "Investing requires reading, not luck.",
+    "exZh": "投资需要阅读，而不是运气。",
+    "tag": "成长",
+    "phrases": [
+      "require effort 需要努力",
+      "be required to 必须做…"
+    ],
+    "tip": "requirement=要求；注意 requite（报答）是另一个词。"
+  },
+  {
+    "w": "resource",
+    "pos": "n.",
+    "zh": "资源",
+    "ex": "Attention is your scarcest resource.",
+    "exZh": "注意力是你最稀缺的资源。",
+    "tag": "成长",
+    "phrases": [
+      "natural resources 自然资源",
+      "human resources 人力资源(HR)"
+    ],
+    "tip": "re-（再）+ source（源泉）→ 可再取用的源泉。"
+  },
+  {
+    "w": "significant",
+    "pos": "adj.",
+    "zh": "重要的；显著的",
+    "ex": "A significant drop is not a reason to panic.",
+    "exZh": "显著下跌不是恐慌的理由。",
+    "tag": "成长",
+    "phrases": [
+      "significant growth 显著增长",
+      "a significant number 相当多的"
+    ],
+    "tip": "sign（标记）→ 值得做标记的=显著的；名词 significance。"
+  },
+  {
+    "w": "tendency",
+    "pos": "n.",
+    "zh": "倾向",
+    "ex": "Markets have a tendency to overshoot.",
+    "exZh": "市场总有涨跌过头的倾向。",
+    "tag": "成长",
+    "phrases": [
+      "a tendency to do 做…的倾向",
+      "natural tendency 天性倾向"
+    ],
+    "tip": "tend to do（倾向于）的名词形。"
+  },
+  {
+    "w": "consistent",
+    "pos": "adj.",
+    "zh": "始终如一的",
+    "ex": "Be consistent for one year first.",
+    "exZh": "先坚持一年不动摇。",
+    "tag": "成长",
+    "phrases": [
+      "consistent effort 持续的努力",
+      "consistent results 稳定的结果"
+    ],
+    "tip": "con-（共同）+ sist（站）→ 始终站在同一立场。"
+  },
+  {
+    "w": "budget",
+    "pos": "n.",
+    "zh": "预算",
+    "ex": "Keep a monthly budget simple.",
+    "exZh": "让每月预算保持简单。",
+    "tag": "财经",
+    "phrases": [
+      "budget deficit 预算赤字",
+      "on a budget 预算有限"
+    ],
+    "tip": "可作动词：budget for travel 为旅行做预算。"
+  },
+  {
+    "w": "savings",
+    "pos": "n.",
+    "zh": "储蓄",
+    "ex": "Pay your savings first, then spend.",
+    "exZh": "先存钱，再消费。",
+    "tag": "财经",
+    "phrases": [
+      "savings account 储蓄账户",
+      "savings rate 储蓄率"
+    ],
+    "tip": "习惯用复数；『先支付给自己』是理财第一原则。"
+  },
+  {
+    "w": "expense",
+    "pos": "n.",
+    "zh": "支出；费用",
+    "ex": "Cut one small expense each week.",
+    "exZh": "每周砍掉一笔小开支。",
+    "tag": "财经",
+    "phrases": [
+      "daily expenses 日常开支",
+      "at the expense of 以…为代价"
+    ],
+    "tip": "at the expense of health=以健康为代价，写作高频。"
+  },
+  {
+    "w": "salary",
+    "pos": "n.",
+    "zh": "薪水",
+    "ex": "Save a fixed slice of every salary.",
+    "exZh": "从每份薪水中固定存下一块。",
+    "tag": "财经",
+    "phrases": [
+      "monthly salary 月薪",
+      "salary raise 加薪"
+    ],
+    "tip": "salary=固定年薪（白领），wage=按周/时计（时薪）。"
+  },
+  {
+    "w": "currency",
+    "pos": "n.",
+    "zh": "货币",
+    "ex": "Currency moves affect exporters.",
+    "exZh": "汇率波动影响出口企业。",
+    "tag": "财经",
+    "phrases": [
+      "foreign currency 外汇",
+      "currency exchange 货币兑换"
+    ],
+    "tip": "current（流动的）→ 货币是流动的财富。"
+  },
+  {
+    "w": "payment",
+    "pos": "n.",
+    "zh": "支付；付款",
+    "ex": "Mobile payment is everywhere now.",
+    "exZh": "如今移动支付随处可见。",
+    "tag": "财经",
+    "phrases": [
+      "mobile payment 移动支付",
+      "monthly payments 月供"
+    ],
+    "tip": "down payment=首付，买房高频词。"
+  },
+  {
+    "w": "account",
+    "pos": "n.",
+    "zh": "账户",
+    "ex": "Check your account weekly, not hourly.",
+    "exZh": "每周而不是每小时查看账户。",
+    "tag": "财经",
+    "phrases": [
+      "bank account 银行账户",
+      "take into account 考虑到"
+    ],
+    "tip": "account for 占比/解释：Exports account for 30%. 出口占三成。"
+  },
+  {
+    "w": "deposit",
+    "pos": "n./v.",
+    "zh": "存款；存入",
+    "ex": "Deposit a little on payday.",
+    "exZh": "发薪日存一点钱。",
+    "tag": "财经",
+    "phrases": [
+      "bank deposit 银行存款",
+      "a 10% deposit 一成首付/押金"
+    ],
+    "tip": "反义词 withdraw（取款）；deposit 还有『押金/定金』义。"
+  },
+  {
+    "w": "market cap",
+    "pos": "n.",
+    "zh": "市值",
+    "ex": "Its market cap passed one trillion yuan.",
+    "exZh": "它的市值突破了一万亿元。",
+    "tag": "财经",
+    "phrases": [
+      "market capitalization 总市值",
+      "large-cap stocks 大盘股"
+    ],
+    "tip": "= 市价 × 总股本；cap 是 capitalization 的缩写，不是『帽子』。"
+  },
+  {
+    "w": "sentiment",
+    "pos": "n.",
+    "zh": "市场情绪",
+    "ex": "Market sentiment turned bullish overnight.",
+    "exZh": "市场情绪一夜之间转多。",
+    "tag": "财经",
+    "phrases": [
+      "investor sentiment 投资者情绪",
+      "sentiment index 情绪指数"
+    ],
+    "tip": "sentiment 指群体情绪倾向；新闻常说 sentiment turned…（情绪转向）。"
+  },
+  {
+    "w": "liquidity",
+    "pos": "n.",
+    "zh": "流动性",
+    "ex": "Cash gives you liquidity in a crash.",
+    "exZh": "现金让你在崩盘时有流动性。",
+    "tag": "财经",
+    "phrases": [
+      "market liquidity 市场流动性",
+      "a liquidity crisis 流动性危机"
+    ],
+    "tip": "liquid（流动的/易变现的）的名词；资产能多快变成现金就是流动性。"
+  },
+  {
+    "w": "blue chip",
+    "pos": "n.",
+    "zh": "蓝筹股",
+    "ex": "Blue chips usually pay steady dividends.",
+    "exZh": "蓝筹股通常派发稳定的股息。",
+    "tag": "财经",
+    "phrases": [
+      "blue-chip stocks 蓝筹股",
+      "a blue-chip company 稳健的大公司"
+    ],
+    "tip": "扑克里的蓝色筹码面值最高 → 市值大、经营稳的公司。"
+  },
+  {
+    "w": "growth stock",
+    "pos": "n.",
+    "zh": "成长股",
+    "ex": "Growth stocks trade at high P/E ratios.",
+    "exZh": "成长股的市盈率通常很高。",
+    "tag": "财经",
+    "phrases": [
+      "a growth stock portfolio 成长股组合",
+      "growth-stock investing 成长股投资"
+    ],
+    "tip": "成长股赌的是未来的高增速，代价是当下估值贵、波动大。"
+  },
+  {
+    "w": "value investing",
+    "pos": "n.",
+    "zh": "价值投资",
+    "ex": "Value investing looks for price below worth.",
+    "exZh": "价值投资寻找价格低于价值的机会。",
+    "tag": "财经",
+    "phrases": [
+      "a value-investing approach 价值投资方法",
+      "the father of value investing 价值投资之父"
+    ],
+    "tip": "核心公式：价格 < 价值才买；安全边际正是两者之差。"
+  },
+  {
+    "w": "EPS",
+    "pos": "n.",
+    "zh": "每股收益",
+    "ex": "EPS tells you profit per share.",
+    "exZh": "EPS 告诉你每股赚了多少钱。",
+    "tag": "财经",
+    "phrases": [
+      "diluted EPS 摊薄每股收益",
+      "EPS growth 每股收益增长"
+    ],
+    "tip": "= 净利润 ÷ 总股本；PE = 股价 ÷ EPS，两个指标经常一起看。"
+  },
+  {
+    "w": "ROE",
+    "pos": "n.",
+    "zh": "净资产收益率",
+    "ex": "A high ROE means the firm uses equity well.",
+    "exZh": "高 ROE 说明公司把股东的钱用得很高效。",
+    "tag": "财经",
+    "phrases": [
+      "ROE above 15% 净资产收益率高于 15%",
+      "return on equity 净资产收益率（全称）"
+    ],
+    "tip": "巴菲特最看重的指标之一：长期 ROE 稳定在 15%+ 的公司很少见。"
+  },
+  {
+    "w": "cash flow",
+    "pos": "n.",
+    "zh": "现金流",
+    "ex": "Positive cash flow keeps a company alive.",
+    "exZh": "正向现金流让公司活下去。",
+    "tag": "财经",
+    "phrases": [
+      "operating cash flow 经营性现金流",
+      "free cash flow 自由现金流"
+    ],
+    "tip": "利润是观点，现金是事实——现金流断了，利润再好也没用。"
+  },
+  {
+    "w": "balance sheet",
+    "pos": "n.",
+    "zh": "资产负债表",
+    "ex": "The balance sheet shows assets and debts.",
+    "exZh": "资产负债表显示资产和负债。",
+    "tag": "财经",
+    "phrases": [
+      "a strong balance sheet 稳健的资产负债表",
+      "off-balance-sheet 表外的"
+    ],
+    "tip": "资产 = 负债 + 股东权益，这张表永远左右平衡，所以叫 balance。"
+  },
+  {
+    "w": "income statement",
+    "pos": "n.",
+    "zh": "利润表",
+    "ex": "The income statement covers one period.",
+    "exZh": "利润表对应一个时间段。",
+    "tag": "财经",
+    "phrases": [
+      "quarterly income statement 季度利润表",
+      "read the income statement 读利润表"
+    ],
+    "tip": "与资产负债表不同：利润表是「一段时间的流水」，资产负债表是「某一刻的快照」。"
+  },
+  {
+    "w": "depreciation",
+    "pos": "n.",
+    "zh": "折旧",
+    "ex": "Depreciation spreads the cost of equipment over years.",
+    "exZh": "折旧把设备成本分摊到多年。",
+    "tag": "财经",
+    "phrases": [
+      "depreciation expense 折旧费用",
+      "accelerated depreciation 加速折旧"
+    ],
+    "tip": "厂房机器会变旧，会计上用折旧把这份损耗逐年计入成本。"
+  },
+  {
+    "w": "leverage",
+    "pos": "n.",
+    "zh": "杠杆",
+    "ex": "Leverage magnifies both gains and losses.",
+    "exZh": "杠杆放大收益，也放大亏损。",
+    "tag": "财经",
+    "phrases": [
+      "use leverage 使用杠杆",
+      "highly leveraged 高杠杆的"
+    ],
+    "tip": "借钱投资就是加杠杆；它让「等得起」变成「等不起」，是爆仓的常见原因。"
+  },
+  {
+    "w": "margin call",
+    "pos": "n.",
+    "zh": "追加保证金通知",
+    "ex": "A sharp drop can trigger a margin call.",
+    "exZh": "暴跌可能触发追加保证金通知。",
+    "tag": "财经",
+    "phrases": [
+      "receive a margin call 收到追保通知",
+      "meet a margin call 补足保证金"
+    ],
+    "tip": "融资买入后若维持担保比例跌破线，券商会要求你补钱，否则强平。"
+  },
+  {
+    "w": "short selling",
+    "pos": "n.",
+    "zh": "卖空",
+    "ex": "Short selling profits when prices fall.",
+    "exZh": "卖空在价格下跌时赚钱。",
+    "tag": "财经",
+    "phrases": [
+      "short selling a stock 卖空一只股票",
+      "a short-selling ban 卖空禁令"
+    ],
+    "tip": "先借股票卖出、跌了再买回还券；亏损理论上无上限，风险极高。"
+  },
+  {
+    "w": "ETF",
+    "pos": "n.",
+    "zh": "交易型开放式指数基金",
+    "ex": "An ETF trades like a stock all day.",
+    "exZh": "ETF 像股票一样全天交易。",
+    "tag": "财经",
+    "phrases": [
+      "buy an ETF 买 ETF",
+      "broad-market ETF 宽基 ETF"
+    ],
+    "tip": "交易所交易基金：一篮子股票打包，费率低、买卖像股票一样方便。"
+  },
+  {
+    "w": "mutual fund",
+    "pos": "n.",
+    "zh": "共同基金",
+    "ex": "A mutual fund pools money from many investors.",
+    "exZh": "共同基金汇集众多投资者的钱。",
+    "tag": "财经",
+    "phrases": [
+      "invest in a mutual fund 投资共同基金",
+      "actively managed fund 主动管理基金"
+    ],
+    "tip": "场外基金，按净值申赎，一天只有一个成交价。"
+  },
+  {
+    "w": "hedge fund",
+    "pos": "n.",
+    "zh": "对冲基金",
+    "ex": "Hedge funds often use complex strategies.",
+    "exZh": "对冲基金常用复杂策略。",
+    "tag": "财经",
+    "phrases": [
+      "a hedge fund manager 对冲基金经理",
+      "hedge fund fees 对冲基金费用"
+    ],
+    "tip": "私募性质、收费高（常见 2% 管理费 + 20% 业绩提成）。"
+  },
+  {
+    "w": "private equity",
+    "pos": "n.",
+    "zh": "私募股权",
+    "ex": "Private equity buys companies to improve them.",
+    "exZh": "私募股权买入公司后加以改造。",
+    "tag": "财经",
+    "phrases": [
+      "private-equity firm 私募股权机构",
+      "PE fund 私募股权基金"
+    ],
+    "tip": "注意与「市盈率 PE」区分，同名不同义——看上下文。"
+  },
+  {
+    "w": "venture capital",
+    "pos": "n.",
+    "zh": "风险投资",
+    "ex": "Venture capital backs early startups.",
+    "exZh": "风险投资支持早期初创公司。",
+    "tag": "财经",
+    "phrases": [
+      "raise venture capital 融风险投资",
+      "a VC-backed startup 风投支持的初创"
+    ],
+    "tip": "高风险高回报，投十家可能九家归零，靠一家翻盘。"
+  },
+  {
+    "w": "startup",
+    "pos": "n.",
+    "zh": "初创公司",
+    "ex": "Most startups fail within five years.",
+    "exZh": "多数初创公司活不过五年。",
+    "tag": "财经",
+    "phrases": [
+      "launch a startup 创办初创公司",
+      "startup culture 创业文化"
+    ],
+    "tip": "强调「高增长 + 不确定性」，不是所有新公司都算 startup。"
+  },
+  {
+    "w": "monopoly",
+    "pos": "n.",
+    "zh": "垄断",
+    "ex": "A monopoly can set prices freely.",
+    "exZh": "垄断者可以自由定价。",
+    "tag": "财经",
+    "phrases": [
+      "a near-monopoly 近乎垄断",
+      "break a monopoly 打破垄断"
+    ],
+    "tip": "反垄断监管（antitrust）针对的就是它；护城河最宽的一种。"
+  },
+  {
+    "w": "competitor",
+    "pos": "n.",
+    "zh": "竞争对手",
+    "ex": "Know your company's competitors.",
+    "exZh": "了解你投资公司的竞争对手。",
+    "tag": "财经",
+    "phrases": [
+      "a fierce competitor 强劲对手",
+      "competitive advantage 竞争优势"
+    ],
+    "tip": "竞争格局比公司自己更重要：好行业里的平庸公司也能赚钱。"
+  },
+  {
+    "w": "supply",
+    "pos": "n.",
+    "zh": "供给",
+    "ex": "When supply rises, prices fall.",
+    "exZh": "供给增加，价格下跌。",
+    "tag": "财经",
+    "phrases": [
+      "supply and demand 供需",
+      "supply chain 供应链"
+    ],
+    "tip": "经济学第一课：价格由供需共同决定，单看一边永远看不懂。"
+  },
+  {
+    "w": "demand",
+    "pos": "n.",
+    "zh": "需求",
+    "ex": "Strong demand pushed prices up.",
+    "exZh": "强劲需求推高了价格。",
+    "tag": "财经",
+    "phrases": [
+      "meet demand 满足需求",
+      "demand curve 需求曲线"
+    ],
+    "tip": "demand 也可作动词：consumers demand quality 消费者要求品质。"
+  },
+  {
+    "w": "tariff",
+    "pos": "n.",
+    "zh": "关税",
+    "ex": "New tariffs raised import costs.",
+    "exZh": "新关税抬高了进口成本。",
+    "tag": "财经",
+    "phrases": [
+      "impose tariffs 加征关税",
+      "tariff barriers 关税壁垒"
+    ],
+    "tip": "贸易战的核心工具；对出口企业是利空，对本土同行可能是利好。"
+  },
+  {
+    "w": "subsidy",
+    "pos": "n.",
+    "zh": "补贴",
+    "ex": "The industry depends on government subsidies.",
+    "exZh": "该行业依赖政府补贴。",
+    "tag": "财经",
+    "phrases": [
+      "government subsidy 政府补贴",
+      "subsidize farmers 补贴农民"
+    ],
+    "tip": "补贴退坡（phase out）常是股价下跌的导火索，看政策要看趋势。"
+  },
+  {
+    "w": "central bank",
+    "pos": "n.",
+    "zh": "中央银行",
+    "ex": "The central bank controls money supply.",
+    "exZh": "央行控制货币供应。",
+    "tag": "财经",
+    "phrases": [
+      "the People's Bank of China 中国人民银行",
+      "central bank policy 央行政策"
+    ],
+    "tip": "中国的央行是人民银行，美国的对应机构是美联储（Fed）。"
+  },
+  {
+    "w": "monetary policy",
+    "pos": "n.",
+    "zh": "货币政策",
+    "ex": "Monetary policy affects interest rates.",
+    "exZh": "货币政策影响利率。",
+    "tag": "财经",
+    "phrases": [
+      "tighten monetary policy 收紧货币",
+      "loose monetary policy 宽松货币"
+    ],
+    "tip": "央行调节货币的松紧；宽松利好股市，收紧则相反。"
+  },
+  {
+    "w": "fiscal policy",
+    "pos": "n.",
+    "zh": "财政政策",
+    "ex": "Fiscal policy is set by the government.",
+    "exZh": "财政政策由政府制定。",
+    "tag": "财经",
+    "phrases": [
+      "expansionary fiscal policy 扩张性财政政策",
+      "fiscal deficit 财政赤字"
+    ],
+    "tip": "与货币政策分工：财政管「政府花多少钱」，货币管「钱有多贵」。"
+  },
+  {
+    "w": "GDP",
+    "pos": "n.",
+    "zh": "国内生产总值",
+    "ex": "GDP measures a country's output.",
+    "exZh": "GDP 衡量一国的产出。",
+    "tag": "财经",
+    "phrases": [
+      "GDP growth 经济增长",
+      "GDP per capita 人均 GDP"
+    ],
+    "tip": "连续两个季度负增长，通常被定义为衰退（recession）。"
+  },
+  {
+    "w": "CPI",
+    "pos": "n.",
+    "zh": "消费者物价指数",
+    "ex": "CPI tracks the cost of living.",
+    "exZh": "CPI 追踪生活成本。",
+    "tag": "财经",
+    "phrases": [
+      "CPI rose 2% 物价上涨 2%",
+      "core CPI 核心 CPI"
+    ],
+    "tip": "衡量通胀的常用指标；CPI 高企时，央行倾向加息。"
+  },
+  {
+    "w": "unemployment",
+    "pos": "n.",
+    "zh": "失业率",
+    "ex": "Rising unemployment worries markets.",
+    "exZh": "失业率上升令市场担忧。",
+    "tag": "财经",
+    "phrases": [
+      "the unemployment rate 失业率",
+      "youth unemployment 青年失业"
+    ],
+    "tip": "经济过热的降温信号，也可能预示消费走弱。"
+  },
+  {
+    "w": "consumption",
+    "pos": "n.",
+    "zh": "消费",
+    "ex": "Consumption drives two-thirds of the economy.",
+    "exZh": "消费拉动经济的三分之二。",
+    "tag": "财经",
+    "phrases": [
+      "household consumption 居民消费",
+      "consumption upgrade 消费升级"
+    ],
+    "tip": "中国经济的「三驾马车」：消费、投资、出口。"
+  },
+  {
+    "w": "export",
+    "pos": "n./v.",
+    "zh": "出口",
+    "ex": "Exports rose 8% last quarter.",
+    "exZh": "上季度出口增长 8%。",
+    "tag": "财经",
+    "phrases": [
+      "export growth 出口增长",
+      "export-oriented 出口导向的"
+    ],
+    "tip": "反义 import（进口）；汇率贬值通常利好出口。"
+  },
+  {
+    "w": "emerging market",
+    "pos": "n.",
+    "zh": "新兴市场",
+    "ex": "Emerging markets grow fast but swing hard.",
+    "exZh": "新兴市场增长快但波动大。",
+    "tag": "财经",
+    "phrases": [
+      "emerging-market stocks 新兴市场股票",
+      "EM currencies 新兴市场货币"
+    ],
+    "tip": "相对发达市场（developed market）；A 股常被归入新兴市场。"
+  },
+  {
+    "w": "commodity",
+    "pos": "n.",
+    "zh": "大宗商品",
+    "ex": "Commodity prices track global demand.",
+    "exZh": "大宗商品价格反映全球需求。",
+    "tag": "财经",
+    "phrases": [
+      "commodity prices 大宗商品价格",
+      "commodity futures 商品期货"
+    ],
+    "tip": "原油、铜、大豆这类同质化商品；周期属性强。"
+  },
+  {
+    "w": "real estate",
+    "pos": "n.",
+    "zh": "房地产",
+    "ex": "Real estate is a long-cycle asset.",
+    "exZh": "房地产是长周期资产。",
+    "tag": "财经",
+    "phrases": [
+      "real estate market 房地产市场",
+      "real estate investment 房地产投资"
+    ],
+    "tip": "买房看三件事：地段、地段、地段——本质是稀缺性。"
+  },
+  {
+    "w": "mortgage",
+    "pos": "n.",
+    "zh": "抵押贷款",
+    "ex": "A 30-year mortgage spreads the cost.",
+    "exZh": "30 年房贷把成本摊开。",
+    "tag": "财经",
+    "phrases": [
+      "mortgage rate 房贷利率",
+      "pay off a mortgage 还清房贷"
+    ],
+    "tip": "房贷利率下行，月供减少，对购房者和地产股都是利好。"
+  },
+  {
+    "w": "insurance",
+    "pos": "n.",
+    "zh": "保险",
+    "ex": "Insurance transfers risk for a premium.",
+    "exZh": "保险用保费转移风险。",
+    "tag": "财经",
+    "phrases": [
+      "buy insurance 买保险",
+      "insurance premium 保费"
+    ],
+    "tip": "保险的本质是「用小确定的钱，对冲大不确定的损失」。"
+  },
+  {
+    "w": "pension",
+    "pos": "n.",
+    "zh": "养老金",
+    "ex": "Pension funds invest for decades.",
+    "exZh": "养老基金做几十年的长期投资。",
+    "tag": "财经",
+    "phrases": [
+      "pension fund 养老基金",
+      "pension plan 养老金计划"
+    ],
+    "tip": "长期资金的典型代表，也是 A 股重要的机构投资者。"
+  },
+  {
+    "w": "tax",
+    "pos": "n.",
+    "zh": "税",
+    "ex": "Capital gains may be taxed.",
+    "exZh": "资本利得可能要缴税。",
+    "tag": "财经",
+    "phrases": [
+      "income tax 所得税",
+      "tax rate 税率"
+    ],
+    "tip": "A 股目前对个人股票买卖差价暂不征资本利得税，但分红要按持股时间计税。"
+  },
+  {
+    "w": "audit",
+    "pos": "n./v.",
+    "zh": "审计",
+    "ex": "The audit found no major issues.",
+    "exZh": "审计未发现重大问题。",
+    "tag": "财经",
+    "phrases": [
+      "annual audit 年度审计",
+      "audit report 审计报告"
+    ],
+    "tip": "看财报先看审计意见：非标意见（保留意见等）是重要警报。"
+  },
+  {
+    "w": "fraud",
+    "pos": "n.",
+    "zh": "欺诈",
+    "ex": "The company collapsed after the fraud surfaced.",
+    "exZh": "欺诈曝光后公司崩塌。",
+    "tag": "财经",
+    "phrases": [
+      "accounting fraud 财务造假",
+      "commit fraud 实施欺诈"
+    ],
+    "tip": "造假是永久损失风险的头号来源，一旦确认，股价往往归零。"
+  },
+  {
+    "w": "shareholder",
+    "pos": "n.",
+    "zh": "股东",
+    "ex": "Shareholders elect the board.",
+    "exZh": "股东选举董事会。",
+    "tag": "财经",
+    "phrases": [
+      "major shareholder 大股东",
+      "shareholder meeting 股东大会"
+    ],
+    "tip": "= stockholder；股东是所有者，债权人是债主，两者权利不同。"
+  },
+  {
+    "w": "board",
+    "pos": "n.",
+    "zh": "董事会",
+    "ex": "The board approved the merger.",
+    "exZh": "董事会批准了这次合并。",
+    "tag": "财经",
+    "phrases": [
+      "board of directors 董事会",
+      "board member 董事"
+    ],
+    "tip": "board 也指「板/甲板」；board of directors 才是董事会。"
+  },
+  {
+    "w": "regulation",
+    "pos": "n.",
+    "zh": "监管",
+    "ex": "New regulation tightened lending rules.",
+    "exZh": "新监管收紧了放贷规则。",
+    "tag": "财经",
+    "phrases": [
+      "government regulation 政府监管",
+      "regulatory risk 监管风险"
+    ],
+    "tip": "政策市里，监管方向常常比公司基本面更先影响股价。"
+  },
+  {
+    "w": "default",
+    "pos": "n./v.",
+    "zh": "违约",
+    "ex": "A default can wipe out bondholders.",
+    "exZh": "违约会让债券持有人血本无归。",
+    "tag": "财经",
+    "phrases": [
+      "default on a loan 贷款违约",
+      "sovereign default 主权违约"
+    ],
+    "tip": "债券投资的第一风险；评级下调（downgrade）往往提前预警。"
+  },
+  {
+    "w": "bankruptcy",
+    "pos": "n.",
+    "zh": "破产",
+    "ex": "Bankruptcy can erase shareholder value.",
+    "exZh": "破产可能让股东价值归零。",
+    "tag": "财经",
+    "phrases": [
+      "file for bankruptcy 申请破产",
+      "go bankrupt 破产"
+    ],
+    "tip": "破产清算时，债权人先于股东受偿——股东常是最后拿钱的人。"
+  },
+  {
+    "w": "credit",
+    "pos": "n.",
+    "zh": "信贷；信用",
+    "ex": "Cheap credit fuels booms.",
+    "exZh": "廉价信贷催生繁荣。",
+    "tag": "财经",
+    "phrases": [
+      "credit rating 信用评级",
+      "credit crunch 信贷紧缩"
+    ],
+    "tip": "credit card 信用卡；on credit 赊账。"
+  },
+  {
+    "w": "principal",
+    "pos": "n.",
+    "zh": "本金",
+    "ex": "You repay principal plus interest.",
+    "exZh": "你要还本金加利息。",
+    "tag": "财经",
+    "phrases": [
+      "repay the principal 偿还本金",
+      "principal and interest 本息"
+    ],
+    "tip": "易混词：principle 是「原则」，principal 是「本金/主要的」。"
+  },
+  {
+    "w": "yield curve",
+    "pos": "n.",
+    "zh": "收益率曲线",
+    "ex": "An inverted yield curve often precedes recession.",
+    "exZh": "收益率曲线倒挂常预示衰退。",
+    "tag": "财经",
+    "phrases": [
+      "yield curve inversion 收益率曲线倒挂",
+      "a steep yield curve 陡峭的收益率曲线"
+    ],
+    "tip": "短期利率高于长期 = 倒挂，历史上是衰退的先行指标。"
+  },
+  {
+    "w": "diversification",
+    "pos": "n.",
+    "zh": "分散投资",
+    "ex": "Diversification reduces single-stock risk.",
+    "exZh": "分散投资降低单只股票的风险。",
+    "tag": "财经",
+    "phrases": [
+      "portfolio diversification 组合分散",
+      "diversify risk 分散风险"
+    ],
+    "tip": "分散的是「个股风险」，不是「市场风险」——大盘暴跌时全都跌。"
+  },
+  {
+    "w": "motivation",
+    "pos": "n.",
+    "zh": "动力；积极性",
+    "ex": "Motivation fades; systems last.",
+    "exZh": "动力会消退，系统才持久。",
+    "tag": "成长",
+    "phrases": [
+      "lose motivation 失去动力",
+      "intrinsic motivation 内在动力"
+    ],
+    "tip": "依赖 motivation 的人容易半途而废，靠 system 的人能坚持。"
+  },
+  {
+    "w": "procrastination",
+    "pos": "n.",
+    "zh": "拖延",
+    "ex": "Procrastination is a fear problem, not a time problem.",
+    "exZh": "拖延是恐惧问题，不是时间问题。",
+    "tag": "成长",
+    "phrases": [
+      "beat procrastination 克服拖延",
+      "chronic procrastination 长期拖延"
+    ],
+    "tip": "对抗拖延最有效的方法：把任务缩小到「两分钟能开始」。"
+  },
+  {
+    "w": "resilience",
+    "pos": "n.",
+    "zh": "韧性；复原力",
+    "ex": "Resilience matters more than talent.",
+    "exZh": "韧性比天赋更重要。",
+    "tag": "成长",
+    "phrases": [
+      "build resilience 培养韧性",
+      "emotional resilience 情绪韧性"
+    ],
+    "tip": "市场会反复考验你，能不能在亏损后继续按纪律执行，靠的就是它。"
+  },
+  {
+    "w": "curiosity",
+    "pos": "n.",
+    "zh": "好奇心",
+    "ex": "Curiosity drives lifelong learning.",
+    "exZh": "好奇心驱动终身学习。",
+    "tag": "成长",
+    "phrases": [
+      "intellectual curiosity 求知欲",
+      "out of curiosity 出于好奇"
+    ],
+    "tip": "投资里最值钱的能力是「愿意搞懂」，而不是「猜得准」。"
+  },
+  {
+    "w": "mindfulness",
+    "pos": "n.",
+    "zh": "正念；觉察",
+    "ex": "Mindfulness helps you notice your emotions.",
+    "exZh": "正念帮你觉察自己的情绪。",
+    "tag": "成长",
+    "phrases": [
+      "practice mindfulness 练习正念",
+      "mindful investing 觉察式投资"
+    ],
+    "tip": "不评判地观察当下——专治「一跌就慌、一涨就追」。"
+  },
+  {
+    "w": "reflection",
+    "pos": "n.",
+    "zh": "反思",
+    "ex": "Weekly reflection beats daily busyness.",
+    "exZh": "每周反思胜过每天瞎忙。",
+    "tag": "成长",
+    "phrases": [
+      "self-reflection 自我反思",
+      "on reflection 回想之后"
+    ],
+    "tip": "复盘的本质是 reflection：不是记流水账，而是找规律。"
+  },
+  {
+    "w": "milestone",
+    "pos": "n.",
+    "zh": "里程碑",
+    "ex": "Celebrate small milestones.",
+    "exZh": "庆祝小里程碑。",
+    "tag": "成长",
+    "phrases": [
+      "reach a milestone 达成里程碑",
+      "a major milestone 重要节点"
+    ],
+    "tip": "把大目标切成 milestone，才能获得持续的正反馈。"
+  },
+  {
+    "w": "deadline",
+    "pos": "n.",
+    "zh": "截止日期",
+    "ex": "A deadline forces decisions.",
+    "exZh": "截止日期逼你做决定。",
+    "tag": "成长",
+    "phrases": [
+      "meet a deadline 赶上截止日",
+      "miss a deadline 错过截止日"
+    ],
+    "tip": "帕金森定律：工作会膨胀到填满你给它的全部时间。"
+  },
+  {
+    "w": "momentum",
+    "pos": "n.",
+    "zh": "势头；动量",
+    "ex": "Momentum keeps a habit alive.",
+    "exZh": "势头让习惯保持运转。",
+    "tag": "成长",
+    "phrases": [
+      "gain momentum 势头上扬",
+      "lose momentum 失去势头"
+    ],
+    "tip": "习惯建立初期最怕中断，「不断链」比「做得多」更重要。"
+  },
+  {
+    "w": "distraction",
+    "pos": "n.",
+    "zh": "分心",
+    "ex": "Distraction is the enemy of deep work.",
+    "exZh": "分心是深度工作的敌人。",
+    "tag": "成长",
+    "phrases": [
+      "avoid distraction 避免分心",
+      "constant distraction 持续分心"
+    ],
+    "tip": "手机是最大来源；把手机放到另一个房间，效率立刻翻倍。"
+  },
+  {
+    "w": "feedback",
+    "pos": "n.",
+    "zh": "反馈",
+    "ex": "Fast feedback accelerates learning.",
+    "exZh": "快速反馈加速学习。",
+    "tag": "成长",
+    "phrases": [
+      "give feedback 给予反馈",
+      "feedback loop 反馈循环"
+    ],
+    "tip": "没有反馈的练习只是重复；有反馈的重复才叫刻意练习。"
+  },
+  {
+    "w": "mentor",
+    "pos": "n.",
+    "zh": "导师",
+    "ex": "A good mentor shortens the learning curve.",
+    "exZh": "好导师缩短学习曲线。",
+    "tag": "成长",
+    "phrases": [
+      "find a mentor 找导师",
+      "mentor and mentee 导师与学员"
+    ],
+    "tip": "找导师不一定要认识对方——读他的书、看他的访谈也是。"
+  },
+  {
+    "w": "collaboration",
+    "pos": "n.",
+    "zh": "协作",
+    "ex": "Collaboration beats solo genius.",
+    "exZh": "协作胜过单打独斗。",
+    "tag": "成长",
+    "phrases": [
+      "team collaboration 团队协作",
+      "cross-team collaboration 跨团队协作"
+    ],
+    "tip": "一个人走得快，一群人走得远——前提是目标一致。"
+  },
+  {
+    "w": "negotiation",
+    "pos": "n.",
+    "zh": "谈判",
+    "ex": "Negotiation is about interests, not positions.",
+    "exZh": "谈判谈的是利益，不是立场。",
+    "tag": "成长",
+    "phrases": [
+      "salary negotiation 薪资谈判",
+      "negotiate a deal 谈成一笔交易"
+    ],
+    "tip": "核心技巧：先问「对方真正要什么」，而不是「我要什么」。"
+  },
+  {
+    "w": "leadership",
+    "pos": "n.",
+    "zh": "领导力",
+    "ex": "Leadership is influence, not authority.",
+    "exZh": "领导力是影响力，不是权力。",
+    "tag": "成长",
+    "phrases": [
+      "show leadership 展现领导力",
+      "leadership skills 领导力技能"
+    ],
+    "tip": "没有头衔也能有领导力——带动别人一起把事做成就是。"
+  },
+  {
+    "w": "empathy",
+    "pos": "n.",
+    "zh": "共情；同理心",
+    "ex": "Empathy starts with listening.",
+    "exZh": "共情从倾听开始。",
+    "tag": "成长",
+    "phrases": [
+      "show empathy 表达共情",
+      "empathy map 共情地图"
+    ],
+    "tip": "区分 empathy（感受对方）与 sympathy（同情对方）。"
+  },
+  {
+    "w": "integrity",
+    "pos": "n.",
+    "zh": "正直；诚信",
+    "ex": "Integrity is doing the right thing unseen.",
+    "exZh": "正直是没人看见时也做对的事。",
+    "tag": "成长",
+    "phrases": [
+      "personal integrity 个人操守",
+      "act with integrity 行事正直"
+    ],
+    "tip": "投资里，管理层诚信比增长数字更重要——造假的公司一律回避。"
+  },
+  {
+    "w": "accountability",
+    "pos": "n.",
+    "zh": "问责；责任担当",
+    "ex": "Accountability turns plans into results.",
+    "exZh": "问责把计划变成结果。",
+    "tag": "成长",
+    "phrases": [
+      "take accountability 承担责任",
+      "a culture of accountability 担责文化"
+    ],
+    "tip": "与 responsibility 区别：responsibility 是「该做」，accountability 是「必须交结果」。"
+  },
+  {
+    "w": "initiative",
+    "pos": "n.",
+    "zh": "主动性",
+    "ex": "Great people show initiative.",
+    "exZh": "优秀的人主动出击。",
+    "tag": "成长",
+    "phrases": [
+      "take the initiative 主动出手",
+      "on your own initiative 自作主张地"
+    ],
+    "tip": "等指令的人永远只能执行，主动补位的人才会被看见。"
+  },
+  {
+    "w": "adaptability",
+    "pos": "n.",
+    "zh": "适应力",
+    "ex": "Adaptability survives change.",
+    "exZh": "适应力让你在变化中活下来。",
+    "tag": "成长",
+    "phrases": [
+      "adapt to change 适应变化",
+      "adaptability skills 适应能力"
+    ],
+    "tip": "达尔文式的真理：活下来的不是最强的，而是最能适应的。"
+  },
+  {
+    "w": "ticker",
+    "pos": "n.",
+    "zh": "股票代码",
+    "ex": "Type the ticker to find the stock quickly.",
+    "exZh": "输入股票代码就能快速找到这只股票。",
+    "tag": "财经",
+    "phrases": [
+      "ticker symbol 股票代码",
+      "ticker tape 行情纸带"
+    ],
+    "tip": "tick=滴答声，老式行情机滴答滴答打印代码，ticker 由此得名。"
+  },
+  {
+    "w": "bullish",
+    "pos": "adj.",
+    "zh": "看涨的；乐观的",
+    "ex": "She is bullish on the chip sector.",
+    "exZh": "她看好芯片板块的后市。",
+    "tag": "财经",
+    "phrases": [
+      "bullish on sth. 看好某事物",
+      "bullish sentiment 看涨情绪"
+    ],
+    "tip": "bull（公牛）+ish（有点…的样子）→ 像公牛一样往上顶 → 看涨。"
+  },
+  {
+    "w": "bearish",
+    "pos": "adj.",
+    "zh": "看跌的；悲观的",
+    "ex": "Analysts turned bearish after the weak earnings.",
+    "exZh": "财报疲软后，分析师们转为看跌。",
+    "tag": "财经",
+    "phrases": [
+      "bearish on sth. 看空某事物",
+      "bearish trend 下跌趋势"
+    ],
+    "tip": "bear（熊）掌自上而下拍 → 跌。与 bullish 成对记。"
+  },
+  {
+    "w": "breakout",
+    "pos": "n.",
+    "zh": "突破（关键价位）",
+    "ex": "The stock made a breakout above its old high.",
+    "exZh": "这只股票向上突破了前期高点。",
+    "tag": "财经",
+    "phrases": [
+      "breakout point 突破点",
+      "false breakout 假突破"
+    ],
+    "tip": "break（打破）+out（出去）→ 价格冲出区间 → 突破。"
+  },
+  {
+    "w": "support",
+    "pos": "n.",
+    "zh": "支撑位；支撑",
+    "ex": "The price bounced twice at the support level.",
+    "exZh": "股价在支撑位附近反弹了两次。",
+    "tag": "财经",
+    "phrases": [
+      "support level 支撑位",
+      "find support 获得支撑"
+    ],
+    "tip": "想象地板托住价格：跌到这里就有人愿意买。"
+  },
+  {
+    "w": "resistance",
+    "pos": "n.",
+    "zh": "阻力位；阻力",
+    "ex": "The rally stalled near strong resistance.",
+    "exZh": "反弹在强阻力位附近停滞了。",
+    "tag": "财经",
+    "phrases": [
+      "resistance level 阻力位",
+      "break resistance 突破阻力"
+    ],
+    "tip": "与 support 相对：天花板压住价格，涨到这里就有人卖。"
+  },
+  {
+    "w": "drawdown",
+    "pos": "n.",
+    "zh": "回撤（从高点下跌的幅度）",
+    "ex": "The fund kept its drawdown under ten percent.",
+    "exZh": "这只基金把回撤控制在 10% 以内。",
+    "tag": "财经",
+    "phrases": [
+      "maximum drawdown 最大回撤",
+      "control drawdown 控制回撤"
+    ],
+    "tip": "draw（拉）+down（向下）→ 从山顶被拉下来多深，就是回撤。"
+  },
+  {
+    "w": "rebalance",
+    "pos": "v.",
+    "zh": "再平衡（调整持仓比例）",
+    "ex": "Rebalance your portfolio once a year.",
+    "exZh": "每年给投资组合做一次再平衡。",
+    "tag": "财经",
+    "phrases": [
+      "rebalance a portfolio 组合再平衡",
+      "annual rebalancing 年度再平衡"
+    ],
+    "tip": "re（重新）+balance（平衡）→ 涨多的卖一点、跌多的补一点，回到目标比例。"
+  },
+  {
+    "w": "stop-loss",
+    "pos": "n.",
+    "zh": "止损",
+    "ex": "Set a stop-loss before you buy, not after.",
+    "exZh": "买入前就设好止损，而不是被套之后。",
+    "tag": "财经",
+    "phrases": [
+      "set a stop-loss 设置止损",
+      "stop-loss order 止损单"
+    ],
+    "tip": "stop（停止）+loss（亏损）→ 让亏损到此为止的保险丝。"
+  },
+  {
+    "w": "position",
+    "pos": "n.",
+    "zh": "仓位；头寸",
+    "ex": "Keep each position small enough to sleep well.",
+    "exZh": "把每笔仓位控制在能睡得着觉的大小。",
+    "tag": "财经",
+    "phrases": [
+      "open a position 开仓",
+      "position size 仓位大小"
+    ],
+    "tip": "position 本义\"位置\"→ 你在市场里占的位置有多大，就是仓位。"
+  },
+  {
+    "w": "outperform",
+    "pos": "v.",
+    "zh": "跑赢；表现优于",
+    "ex": "Few funds outperform the index over ten years.",
+    "exZh": "拉长到十年，很少基金能跑赢指数。",
+    "tag": "财经",
+    "phrases": [
+      "outperform the market 跑赢大盘",
+      "outperform peers 优于同行"
+    ],
+    "tip": "out（超出）+perform（表现）→ 表现超出对手 → 跑赢。"
+  },
+  {
+    "w": "buyback",
+    "pos": "n.",
+    "zh": "（股票）回购",
+    "ex": "The company announced a two-billion-dollar buyback.",
+    "exZh": "公司宣布了 20 亿美元的股票回购计划。",
+    "tag": "财经",
+    "phrases": [
+      "share buyback 股份回购",
+      "buyback program 回购计划"
+    ],
+    "tip": "buy（买）+back（回来）→ 公司把自己发出去的股票买回来。"
+  },
+  {
+    "w": "prospectus",
+    "pos": "n.",
+    "zh": "招股说明书",
+    "ex": "Read the prospectus before buying an IPO.",
+    "exZh": "打新之前先读招股说明书。",
+    "tag": "财经",
+    "phrases": [
+      "IPO prospectus 招股书",
+      "file a prospectus 递交招股书"
+    ],
+    "tip": "prospect（前景）+us → 向你展示公司前景的正式文件。"
+  },
+  {
+    "w": "turnover",
+    "pos": "n.",
+    "zh": "成交额；换手率",
+    "ex": "High turnover means the stock changes hands fast.",
+    "exZh": "换手率高说明这只股票交易活跃。",
+    "tag": "财经",
+    "phrases": [
+      "turnover rate 换手率",
+      "daily turnover 日成交额"
+    ],
+    "tip": "turn（转）+over（一遍）→ 筹码转手一遍的快慢。"
+  },
+  {
+    "w": "spread",
+    "pos": "n.",
+    "zh": "价差；买卖价差",
+    "ex": "A wide spread makes frequent trading costly.",
+    "exZh": "买卖价差过大时，频繁交易成本很高。",
+    "tag": "财经",
+    "phrases": [
+      "bid-ask spread 买卖价差",
+      "narrow spread 窄价差"
+    ],
+    "tip": "spread=摊开 → 买价和卖价之间摊开的那段距离。"
+  },
+  {
+    "w": "perseverance",
+    "pos": "n.",
+    "zh": "坚持不懈",
+    "ex": "Perseverance beats talent when talent quits.",
+    "exZh": "当天赋半途而废时，坚持就是赢家。",
+    "tag": "成长",
+    "phrases": [
+      "show perseverance 展现毅力",
+      "perseverance pays off 坚持有回报"
+    ],
+    "tip": "persevere（坚持）的名词。马拉松拼的不是前 5 公里，而是最后 5 公里。"
+  },
+  {
+    "w": "grit",
+    "pos": "n.",
+    "zh": "坚毅；咬定目标的韧劲",
+    "ex": "Grit is passion plus long-term persistence.",
+    "exZh": "坚毅 = 热爱 + 长期主义式的坚持。",
+    "tag": "成长",
+    "phrases": [
+      "true grit 真正的坚毅",
+      "grit and growth 坚毅与成长"
+    ],
+    "tip": "本义\"砂砾\"→ 眼里进沙也不停步的那股劲。心理学家 Duckworth 的关键词。"
+  },
+  {
+    "w": "comfort zone",
+    "pos": "n.",
+    "zh": "舒适区",
+    "ex": "Growth begins just outside your comfort zone.",
+    "exZh": "成长始于舒适区之外一步的地方。",
+    "tag": "成长",
+    "phrases": [
+      "step out of the comfort zone 走出舒适区",
+      "stay in the comfort zone 待在舒适区"
+    ],
+    "tip": "舒适区像温水：待着舒服，但泡久了跳不出去。"
+  },
+  {
+    "w": "burnout",
+    "pos": "n.",
+    "zh": "倦怠；精疲力竭",
+    "ex": "Rest is part of the plan, not a reward after burnout.",
+    "exZh": "休息是计划的一部分，不是燃尽后的补偿。",
+    "tag": "成长",
+    "phrases": [
+      "avoid burnout 避免倦怠",
+      "burnout recovery 倦怠恢复"
+    ],
+    "tip": "burn（烧）+out（尽）→ 蜡烛烧到底。持续输出也要持续补给。"
+  },
+  {
+    "w": "routine",
+    "pos": "n.",
+    "zh": "例行程序；日常惯例",
+    "ex": "A morning routine saves willpower for real work.",
+    "exZh": "固定的晨间惯例能把意志力省给正事。",
+    "tag": "成长",
+    "phrases": [
+      "daily routine 日常惯例",
+      "build a routine 建立惯例"
+    ],
+    "tip": "route（路线）→ 每天走同一条路线 → 惯例。习惯成自然。"
+  },
+  {
+    "w": "prioritize",
+    "pos": "v.",
+    "zh": "排优先级；先做重要的事",
+    "ex": "Prioritize the one task that moves the needle.",
+    "exZh": "优先做那件真正推动进展的事。",
+    "tag": "成长",
+    "phrases": [
+      "prioritize tasks 给任务排序",
+      "prioritize ruthlessly 果断取舍"
+    ],
+    "tip": "priority（优先）的动词形式。要事第一，而不是急事第一。"
+  },
+  {
+    "w": "iterate",
+    "pos": "v.",
+    "zh": "迭代；小步改进",
+    "ex": "Ship it, measure it, then iterate.",
+    "exZh": "先做出来，再衡量效果，然后小步迭代。",
+    "tag": "成长",
+    "phrases": [
+      "iterate quickly 快速迭代",
+      "iterate on feedback 基于反馈迭代"
+    ],
+    "tip": "iter（再次）→ 一遍一遍来。好产品是改出来的，不是想出来的。"
+  },
+  {
+    "w": "benchmark",
+    "pos": "n.",
+    "zh": "基准；参照标准",
+    "ex": "Use the index as your benchmark, not your neighbor.",
+    "exZh": "把指数当基准，而不是隔壁老王的收益率。",
+    "tag": "成长",
+    "phrases": [
+      "set a benchmark 设定基准",
+      "benchmark against 对标"
+    ],
+    "tip": "bench（工作台）+mark（刻痕）→ 木匠在工作台上刻的标准线。"
+  },
+  {
+    "w": "trade-off",
+    "pos": "n.",
+    "zh": "权衡；取舍",
+    "ex": "Every choice is a trade-off of time and energy.",
+    "exZh": "每个选择都是时间与精力的取舍。",
+    "tag": "成长",
+    "phrases": [
+      "make a trade-off 做出取舍",
+      "trade-off between A and B 在A与B之间权衡"
+    ],
+    "tip": "trade（交换）+off（放弃）→ 得到一样，就得交出另一样。"
+  },
+  {
+    "w": "vision",
+    "pos": "n.",
+    "zh": "愿景；长远眼光",
+    "ex": "A clear vision makes daily choices easier.",
+    "exZh": "愿景清晰了，每天的选择就简单了。",
+    "tag": "成长",
+    "phrases": [
+      "long-term vision 长远愿景",
+      "share a vision 共启愿景"
+    ],
+    "tip": "vis=看 → 看得远的能力。先看见终点，再倒推今天。"
+  },
+  {
+    "w": "commitment",
+    "pos": "n.",
+    "zh": "承诺；投入",
+    "ex": "Motivation starts it; commitment finishes it.",
+    "exZh": "动力负责开始，承诺负责完成。",
+    "tag": "成长",
+    "phrases": [
+      "make a commitment 作出承诺",
+      "commitment to goals 对目标的投入"
+    ],
+    "tip": "commit（把自己交出去）→ 说出口并押上行动，才叫承诺。"
+  },
+  {
+    "w": "self-awareness",
+    "pos": "n.",
+    "zh": "自我觉察",
+    "ex": "Self-awareness turns mistakes into lessons.",
+    "exZh": "自我觉察能把错误变成课程。",
+    "tag": "成长",
+    "phrases": [
+      "build self-awareness 培养自我觉察",
+      "emotional self-awareness 情绪觉察"
+    ],
+    "tip": "self（自己）+awareness（觉知）→ 做自己行为的旁观者。"
+  },
+  {
+    "w": "deliberate practice",
+    "pos": "n.",
+    "zh": "刻意练习",
+    "ex": "Deliberate practice targets your weakest spot.",
+    "exZh": "刻意练习专挑你最薄弱的地方练。",
+    "tag": "成长",
+    "phrases": [
+      "deliberate practice session 刻意练习时段",
+      "practice deliberately 有目的地练习"
+    ],
+    "tip": "deliberate=故意的。不是重复一万小时，而是修正一万次。"
+  },
+  {
+    "w": "spaced repetition",
+    "pos": "n.",
+    "zh": "间隔重复",
+    "ex": "Spaced repetition beats cramming every time.",
+    "exZh": "间隔重复永远胜过临时抱佛脚。",
+    "tag": "成长",
+    "phrases": [
+      "spaced repetition system 间隔重复系统",
+      "review with spaced repetition 按间隔复习"
+    ],
+    "tip": "本 App 背单词的 1/2/4/7/15 天复习盒，就是 spaced repetition。"
+  },
+  {
+    "w": "deep work",
+    "pos": "n.",
+    "zh": "深度工作",
+    "ex": "Two hours of deep work beat eight hours of multitasking.",
+    "exZh": "两小时深度工作胜过八小时三心二意。",
+    "tag": "成长",
+    "phrases": [
+      "deep work block 深度工作时段",
+      "protect deep work 保护深度工作"
+    ],
+    "tip": "Cal Newport 的概念：无干扰、高专注的工作状态，稀缺且值钱。"
+  }
 ]
