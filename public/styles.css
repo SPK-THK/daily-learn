@@ -1282,3 +1282,28 @@ body.k-full-open { overflow: hidden; }
 .k-canvas.drawing { touch-action: none; cursor: crosshair; }
 .k-legend i.v5 { background: var(--ma10); }
 .k-legend i.v10 { background: repeating-linear-gradient(90deg, var(--ma20) 0 3px, transparent 3px 6px); }
+
+.st-mode { display: flex; gap: 6px; margin: 8px 0 2px; }
+.st-mode button {
+  border: 1px solid var(--line); background: var(--chip-bg); color: var(--muted);
+  font-family: inherit; font-size: 12px; padding: 5px 12px; border-radius: 999px; cursor: pointer;
+}
+.st-mode button.active { background: var(--text); border-color: var(--text); color: var(--bg); font-weight: 600; }
+.q-group {
+  grid-column: 1 / -1; display: flex; align-items: baseline; gap: 8px;
+  font-size: 12.5px; font-weight: 600; padding: 12px 0 2px; color: var(--text);
+}
+.q-group span { font-size: 10.5px; font-weight: 400; color: var(--muted); }
+.q-badge {
+  display: inline-block; margin-left: 6px; padding: 0 5px; border: 1px solid var(--line);
+  border-radius: 4px; font-size: 10px; line-height: 15px; color: var(--muted); vertical-align: 1px;
+}
+.q-reason { grid-column: 1 / -1; font-size: 11.5px; color: var(--muted); margin-top: -3px; }
+.pick-note { margin: 8px 0 0; }
+
+@media (max-width: 360px) {
+  .quote-row, .q-head { grid-template-columns: minmax(0, 1fr) 82px 70px 22px; gap: 6px; }
+  .q-name b { font-size: 14px; }
+  .q-badge { font-size: 9.5px; padding: 0 4px; margin-left: 4px; }
+  .chip-row .chip { font-size: 10.5px; padding: 2px 7px; }
+}

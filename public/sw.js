@@ -1,6 +1,6 @@
 /* 离线缓存：首次打开后，断网/电脑关机也能打开应用；行情请求走网络，不做缓存。
    v3：内容数据已从 HTML 内联改为 ./data/*.json，必须一并缓存，否则断网后学习页空白。 */
-const CACHE = 'daily-learn-3.8.0-r1';
+const CACHE = 'daily-learn-3.9.0-r1';
 const ASSETS = [
   './',
   './index.html',
@@ -42,6 +42,7 @@ self.addEventListener('fetch', e => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return; // 行情接口不缓存
+  if (url.pathname.startsWith('/api/')) return; // API（行情/推荐）始终走网络
   // 新闻快照走网络优先：每次打开尽量取最新，断网再回退缓存
   if (url.pathname.endsWith('/news.json')) {
     e.respondWith(

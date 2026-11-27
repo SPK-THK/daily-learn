@@ -41,8 +41,8 @@
       {
         id: "stock_review",
         icon: "\u{1F4C8}",
-        label: "\u590D\u76D8\u81EA\u9009\u80A1",
-        how: "\u5728\u300C\u80A1\u7968\u300D\u9875\u5237\u65B0\u884C\u60C5",
+        label: "\u590D\u76D8\u4ECA\u65E5\u884C\u60C5",
+        how: "\u5728\u300C\u80A1\u7968\u300D\u9875\u5237\u65B0\u4ECA\u65E5\u63A8\u8350",
         tab: "stock",
       },
     ],
@@ -241,6 +241,9 @@
   async function Ot(t, e) {
     let { lessons: n } = await fetch("/stock/lessons.json").then((r) => r.json()),
       s = Mt(localStorage.getItem(gt), $e),
+      picksCache = null,
+      stockMode = "picks",
+      stockSeq = 0,
       c = [],
       l = "quotes",
       a = null,
@@ -261,7 +264,7 @@
       L = null;
     t.innerHTML = `
     <div class="subnav">
-      <button data-view="quotes">\u81EA\u9009\u884C\u60C5</button>
+      <button data-view="quotes">\u4ECA\u65E5\u63A8\u8350</button>
       <button data-view="lessons">\u5165\u95E8\u6559\u7A0B</button>
     </div>
     <div id="st-body"></div>
@@ -272,6 +275,9 @@
       localStorage.setItem(gt, JSON.stringify(s));
     }
     localStorage.getItem(gt) === null && y();
+    try {
+      picksCache = JSON.parse(localStorage.getItem("dl.stock.picks") || "null");
+    } catch {}
     try {
       let saved = JSON.parse(localStorage.getItem("dl.stock.chart") || "null");
       if (saved && typeof saved === "object") {
@@ -363,22 +369,32 @@
         l === "quotes" ? I() : p());
     }
     function I() {
+      let isPicks = stockMode === "picks";
       g.innerHTML = `
       <div class="index-strip" id="st-index"></div>
       <div class="card">
         <div class="row-between">
-          <h2 class="card-title">\u81EA\u9009\u884C\u60C5 <span class="hint">\u7EA2\u6DA8\u7EFF\u8DCC</span></h2>
-          <button id="st-refresh" class="btn small">\u5237\u65B0</button>
+          <h2 class="card-title">${isPicks ? "今日推荐" : "自选行情"} <span class="hint">红涨绿跌</span></h2>
+          <button id="st-refresh" class="btn small">刷新</button>
         </div>
-        <div id="st-meta" class="hint meta-line">\u52A0\u8F7D\u4E2D\u2026</div>
+        <div class="st-mode" id="st-mode">
+          <button data-mode="picks" class="${isPicks ? "active" : ""}">今日推荐</button>
+          <button data-mode="mine" class="${isPicks ? "" : "active"}">我的自选</button>
+        </div>
+        <div id="st-meta" class="hint meta-line">加载中…</div>
         <div id="st-summary" class="chip-row"></div>
         <div id="st-list" class="quote-list"></div>
-        <div class="add-row">
-          <input id="st-code" placeholder="\u52A0\u81EA\u9009\uFF1Ash600519 / 600519" autocomplete="off" />
-          <button id="st-add" class="btn small">\u6DFB\u52A0</button>
-        </div>
+        ${
+          isPicks
+            ? '<p class="hint pick-note">每天更新：热门按成交额，机会按资金流入与量价筛选；点击一行看 K 线。仅为行情筛选，不构成投资建议。</p>'
+            : '<div class="add-row"><input id="st-code" placeholder="加自选：sh600519 / 600519" autocomplete="off" /><button id="st-add" class="btn small">添加</button></div>'
+        }
       </div>
-      <p class="hint footnote">点击任意一行展开行情，工具栏可切换周期、均线、类型、成交量并画趋势线 / 水平线；当日手动刷新一次行情，即完成「复盘自选股」打卡。</p>
+      <p class="hint footnote">${
+        isPicks
+          ? "今日推荐每天更新；手动刷新一次行情，即完成「复盘今日行情」打卡。"
+          : "点击任意一行展开行情，工具栏可切换周期、均线、类型、成交量并画趋势线 / 水平线；当日手动刷新一次行情，即完成「复盘今日行情」打卡。"
+      }</p>
     `;
       let r = (o) => g.querySelector(o);
       function b() {
@@ -388,45 +404,78 @@
           chartApi = null;
         }
         setTimeout(() => h && mountChart(h), 0);
-        let o = c.filter(($) => $.changePct > 0).length,
+        let isPicks = stockMode === "picks",
+          o = c.filter(($) => $.changePct > 0).length,
           v = c.filter(($) => $.changePct < 0).length,
-          E = c.length - o - v;
-        ((r("#st-summary").innerHTML = c.length
-          ? `<span class="chip up-chip">\u6DA8 ${o}</span><span class="chip flat-chip">\u5E73 ${E}</span><span class="chip down-chip">\u8DCC ${v}</span>`
-          : ""),
-          (r("#st-list").innerHTML = c.length
-            ? '<div class="q-head"><span>\u80A1\u7968</span><span>\u6700\u65B0\u4EF7</span><span>\u6DA8\u8DCC</span><span></span></div>' +
-              c
-                .map(($) => {
-                  let A = $.changePct > 0 ? "up" : $.changePct < 0 ? "down" : "flat",
-                    J =
-                      $.changePct == null
-                        ? "--"
-                        : `${$.changePct > 0 ? "+" : ""}${$.changePct.toFixed(2)}%`,
-                    Z =
-                      $.change == null ? "--" : `${$.change > 0 ? "+" : ""}${$.change.toFixed(2)}`,
-                    Y = h === $.code,
-                    B = x[$.code],
-                    ut = Y
-                      ? B && B.loading
-                        ? '<p class="hint k-err">K \u7EBF\u52A0\u8F7D\u4E2D\u2026</p>'
-                        : B && B.rows && B.rows.length
-                          ? k(B.rows, $.code, B.days)
-                          : '<p class="hint k-err">K\u7EBF\u83B7\u53D6\u5931\u8D25\uFF0C\u7A0D\u540E\u70B9\u51FB\u91CD\u8BD5</p>'
-                      : "";
-                  return `
+          E = c.length - o - v,
+          hot = c.filter(($) => $.group === "hot").length,
+          opp = c.filter(($) => $.group === "opp").length;
+        r("#st-summary").innerHTML = c.length
+          ? isPicks
+            ? `<span class="chip">热门 ${hot}</span><span class="chip">机会 ${opp}</span><span class="chip up-chip">涨 ${o}</span><span class="chip flat-chip">平 ${E}</span><span class="chip down-chip">跌 ${v}</span>`
+            : `<span class="chip up-chip">涨 ${o}</span><span class="chip flat-chip">平 ${E}</span><span class="chip down-chip">跌 ${v}</span>`
+          : "";
+        let list;
+        if (!c.length) {
+          list = `<p class="hint">${isPicks ? "今日推荐加载中…" : "暂无自选股，请在下方添加（如 sh600519）。"}</p>`;
+        } else {
+          list = '<div class="q-head"><span>股票</span><span>最新价</span><span>涨跌</span><span></span></div>';
+          let lastGroup = "";
+          c.forEach(($) => {
+            if (isPicks && $.group && $.group !== lastGroup) {
+              list += `<div class="q-group">${$.group === "hot" ? "热门" : "机会"}<span>${
+                $.group === "hot" ? "成交额榜" : "资金流入 + 量价"
+              }</span></div>`;
+              lastGroup = $.group;
+            }
+            let A = $.changePct > 0 ? "up" : $.changePct < 0 ? "down" : "flat",
+              J =
+                $.changePct == null
+                  ? "--"
+                  : `${$.changePct > 0 ? "+" : ""}${$.changePct.toFixed(2)}%`,
+              Z =
+                $.change == null ? "--" : `${$.change > 0 ? "+" : ""}${$.change.toFixed(2)}`,
+              Y = h === $.code,
+              B = x[$.code],
+              ut = Y
+                ? B && B.loading
+                  ? '<p class="hint k-err">K 线加载中…</p>'
+                  : B && B.rows && B.rows.length
+                    ? k(B.rows, $.code, B.days)
+                    : '<p class="hint k-err">K线获取失败，稍后点击重试</p>'
+                : "";
+            list += `
               <div class="quote-row ${Y ? "expanded" : ""}" data-code="${$.code}">
-                <div class="q-name"><b>${$.name}</b><span class="hint">${$.code}</span></div>
-                <div class="q-price ${A}">${$.price == null ? "\u505C\u724C" : $.price.toFixed(2)}</div>
+                <div class="q-name"><b>${$.name}</b><span class="hint">${$.code}</span>${
+                  isPicks && $.tag ? `<span class="q-badge">${$.tag}</span>` : ""
+                }</div>
+                <div class="q-price ${A}">${$.price == null ? "停牌" : $.price.toFixed(2)}</div>
                 <div class="q-chg"><span class="pill ${A}">${J}</span><span class="hint">${Z}</span></div>
-                <button class="q-del" title="\u5220\u9664" data-del="${$.code}">\xD7</button>
-              </div>${Y ? `<div class="k-card ${fullCode === $.code ? "k-full" : ""}" data-kcode="${$.code}">${ut}</div>` : ""}`;
-                })
-                .join("")
-            : '<p class="hint">\u6682\u65E0\u81EA\u9009\u80A1\uFF0C\u8BF7\u5728\u4E0B\u65B9\u6DFB\u52A0\uFF08\u5982 sh600519\uFF09\u3002</p>'),
-          (r("#st-meta").textContent = c.length
-            ? `\u66F4\u65B0\u4E8E ${new Date(c[0].serverTime).toLocaleTimeString("zh-CN")}${C() ? " \xB7 \u4EA4\u6613\u65F6\u6BB5\u81EA\u52A8\u5237\u65B0" : ""}`
-            : "\u6DFB\u52A0\u81EA\u9009\u80A1\u540E\u70B9\u51FB\u5237\u65B0"));
+                ${
+                  isPicks
+                    ? "<span></span>"
+                    : `<button class="q-del" title="删除" data-del="${$.code}">×</button>`
+                }
+                ${isPicks && $.reason ? `<div class="q-reason">${$.reason}</div>` : ""}
+              </div>${
+                Y
+                  ? `<div class="k-card ${fullCode === $.code ? "k-full" : ""}" data-kcode="${$.code}">${ut}</div>`
+                  : ""
+              }`;
+          });
+        }
+        r("#st-list").innerHTML = list;
+        r("#st-meta").textContent = c.length
+          ? isPicks
+            ? `更新于 ${new Date(c[0].serverTime).toLocaleTimeString("zh-CN")}${
+                picksCache && picksCache.date ? ` · ${picksCache.date}` : ""
+              }${C() ? " · 交易时段自动刷新" : ""}`
+            : `更新于 ${new Date(c[0].serverTime).toLocaleTimeString("zh-CN")}${
+                C() ? " · 交易时段自动刷新" : ""
+              }`
+          : isPicks
+            ? "正在获取今日推荐…"
+            : "添加自选股后点击刷新";
       }
       rerenderQuotes = () => b();
       function k(o, code, d) {
@@ -1013,15 +1062,108 @@
           x[o] = { days: d, rows: [] };
         }
       }
-      async function m(mark = false) {
-        r("#st-meta").textContent = "\u5237\u65B0\u4E2D\u2026";
+      function flattenPicks(v) {
+        if (!v || typeof v !== "object") return [];
+        let hot = Array.isArray(v.hot) ? v.hot : [],
+          opp = Array.isArray(v.opportunities) ? v.opportunities : [];
+        const one = (x, group, tag) =>
+          x && x.code
+            ? {
+                ...x,
+                group,
+                tag: x.tag || tag,
+                reason: x.reason || "",
+                serverTime: x.serverTime || Date.now(),
+              }
+            : null;
+        return [
+          ...hot.map((x) => one(x, "hot", "热门")),
+          ...opp.map((x) => one(x, "opp", "机会")),
+        ].filter(Boolean);
+      }
+      async function refreshPickQuotes(list) {
+        if (!list.length) return list;
+        try {
+          let q = await (
+            await S("/api/quotes?codes=" + encodeURIComponent(list.map((x) => x.code).join(",")))
+          ).json();
+          if (!Array.isArray(q)) return list;
+          let map = new Map(list.map((x) => [x.code.replace(/^(sh|sz)/, ""), x]));
+          q.forEach((v) => {
+            let old = map.get(String(v.code).replace(/^(sh|sz)/, ""));
+            if (old) {
+              old.price = v.price;
+              old.prev = v.prev;
+              old.change = v.change;
+              old.changePct = v.changePct;
+              old.serverTime = v.serverTime;
+            }
+          });
+          return [...map.values()];
+        } catch {
+          return list;
+        }
+      }
+      async function m(mark = false, force = false) {
+        const seq = ++stockSeq;
+        let meta = r("#st-meta");
+        if (meta) meta.textContent = "刷新中…";
+        if (stockMode === "picks") {
+          let today = be();
+          if (!force && picksCache && picksCache.date === today) {
+            let cached = flattenPicks(picksCache);
+            if (cached.length) {
+              let merged = await refreshPickQuotes(cached);
+              if (seq !== stockSeq) return;
+              c = merged;
+              b();
+              return;
+            }
+          }
+          try {
+            let v = await (await S("/api/picks", 15000)).json();
+            if (seq !== stockSeq) return;
+            let list = flattenPicks(v);
+            if (!list.length) throw new Error("今日推荐为空");
+            picksCache = v;
+            localStorage.setItem("dl.stock.picks", JSON.stringify(v));
+            c = list;
+            b();
+            mark && D();
+          } catch (e) {
+            if (seq !== stockSeq) return;
+            let fallback = picksCache ? flattenPicks(picksCache) : [];
+            if (fallback.length) {
+              c = fallback;
+              b();
+              let el = r("#st-meta");
+              if (el)
+                el.textContent = `推荐更新失败，展示 ${picksCache.date || "上次"} 缓存：${
+                  e.name === "AbortError" || e.message === "The user aborted a request."
+                    ? "请求超时"
+                    : e.message
+                }`;
+            } else {
+              stockMode = "mine";
+              I();
+            }
+          }
+          return;
+        }
         try {
           let v = await (await S("/api/quotes?codes=" + encodeURIComponent(s.join(",")))).json();
+          if (seq !== stockSeq) return;
           if (v.error) throw new Error(v.error);
           ((c = v), b(), mark && D());
         } catch (o) {
-          r("#st-meta").textContent =
-            `\u884C\u60C5\u83B7\u53D6\u5931\u8D25\uFF1A${o.name === "AbortError" || o.message === "The user aborted a request." ? "\u8BF7\u6C42\u8D85\u65F6" : o.message}\uFF08\u8BF7\u68C0\u67E5\u7F51\u7EDC\uFF09`;
+          if (seq !== stockSeq) return;
+          let el = r("#st-meta");
+          if (el)
+            el.textContent = `行情获取失败：${
+              o.name === "AbortError" || o.message === "The user aborted a request."
+                ? "请求超时"
+                : o.message
+            }（请检查网络）`;
         }
       }
       async function loadIndex() {
@@ -1038,8 +1180,9 @@
         loadIndex();
       };
       function addCode() {
-        let o = r("#st-code"),
-          v = o.value.trim().toLowerCase().replace(/[\s.]/g, "");
+        let o = r("#st-code");
+        if (!o) return;
+        let v = o.value.trim().toLowerCase().replace(/[\s.]/g, "");
         let mm = /^(\d{6})(sh|sz)?$/.exec(v);
         // 裸 6 位代码自动补前缀：6/5/9 开头归沪市，其余归深市
         if (mm) v = (mm[2] || (/^[659]/.test(mm[1]) ? "sh" : "sz")) + mm[1];
@@ -1068,7 +1211,7 @@
           })
           .join("");
       }
-      (r("#st-refresh").addEventListener("click", () => m(true)),
+      (r("#st-refresh").addEventListener("click", () => m(true, true)),
         r("#st-list").addEventListener("click", async (o) => {
           if (o.target.closest(".q-del")) {
             let $ = o.target.getAttribute("data-del");
@@ -1154,10 +1297,27 @@
             b();
           }
         }),
-        r("#st-add").addEventListener("click", () => addCode()),
-        r("#st-code").addEventListener("keydown", (o) => {
-          o.key === "Enter" && (o.preventDefault(), addCode());
-        }),
+        r("#st-mode").querySelectorAll("button").forEach((btn) =>
+          btn.addEventListener("click", () => {
+            let mode = btn.getAttribute("data-mode");
+            if (!mode || mode === stockMode) return;
+            stockMode = mode;
+            if (fullCode) {
+              fullCode = null;
+              document.body.classList.remove("k-full-open");
+            }
+            I();
+          }),
+        ),
+        (() => {
+          let add = r("#st-add"),
+            input = r("#st-code");
+          if (!add || !input) return;
+          add.addEventListener("click", () => addCode());
+          input.addEventListener("keydown", (o) => {
+            o.key === "Enter" && (o.preventDefault(), addCode());
+          });
+        })(),
         (L = () => {
           m(false);
           loadIndex();
@@ -2682,7 +2842,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.8.0";
+  var re = "3.9.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },
