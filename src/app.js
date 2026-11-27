@@ -2486,12 +2486,12 @@ ${i.zh}
       target: 5,
     },
     {
-      id: "lessons8",
+      id: "lessons22",
       icon: "\u{1F4C8}",
       title: "\u6295\u8D44\u5165\u95E8",
-      desc: "\u5B66\u5B8C 12 \u8282\u80A1\u7968\u8BFE\u7A0B",
+      desc: "\u5B66\u5B8C 22 \u8282\u80A1\u7968\u8BFE\u7A0B",
       metric: "lessonsDone",
-      target: 12,
+      target: 22,
     },
   ];
   function ne(t) {
@@ -2682,7 +2682,7 @@ ${i.zh}
     let n = Object.keys(t.data).filter((s) => s.startsWith(ie) && typeof t.data[s] == "string");
     return (n.forEach((s) => e.setItem(s, t.data[s])), n.length);
   }
-  var re = "3.7.0";
+  var re = "3.8.0";
   var dt = new EventTarget(),
     St = [
       { id: "today", init: Ct },
